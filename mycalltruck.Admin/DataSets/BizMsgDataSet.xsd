@@ -1,0 +1,492 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="BizMsgDataSet" targetNamespace="http://tempuri.org/BizMsgDataSet.xsd" xmlns:mstns="http://tempuri.org/BizMsgDataSet.xsd" xmlns="http://tempuri.org/BizMsgDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="TruckConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="TruckConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.mycalltruck.Admin.Properties.Settings.GlobalReference.Default.TruckConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="BIZ_MSGTableAdapter" GeneratorDataComponentClassName="BIZ_MSGTableAdapter" Name="BIZ_MSG" UserDataComponentName="BIZ_MSGTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TruckConnectionString (Settings)" DbObjectName="Truck.dbo.BIZ_MSG" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [BIZ_MSG] WHERE (([CMID] = @Original_CMID) AND ((@IsNull_UMID = 1 AND [UMID] IS NULL) OR ([UMID] = @Original_UMID)) AND ((@IsNull_MSG_TYPE = 1 AND [MSG_TYPE] IS NULL) OR ([MSG_TYPE] = @Original_MSG_TYPE)) AND ((@IsNull_STATUS = 1 AND [STATUS] IS NULL) OR ([STATUS] = @Original_STATUS)) AND ((@IsNull_CALL_STATUS = 1 AND [CALL_STATUS] IS NULL) OR ([CALL_STATUS] = @Original_CALL_STATUS)) AND ([REQUEST_TIME] = @Original_REQUEST_TIME) AND ([SEND_TIME] = @Original_SEND_TIME) AND ((@IsNull_REPORT_TIME = 1 AND [REPORT_TIME] IS NULL) OR ([REPORT_TIME] = @Original_REPORT_TIME)) AND ((@IsNull_DEST_PHONE = 1 AND [DEST_PHONE] IS NULL) OR ([DEST_PHONE] = @Original_DEST_PHONE)) AND ((@IsNull_SEND_PHONE = 1 AND [SEND_PHONE] IS NULL) OR ([SEND_PHONE] = @Original_SEND_PHONE)) AND ((@IsNull_DEST_NAME = 1 AND [DEST_NAME] IS NULL) OR ([DEST_NAME] = @Original_DEST_NAME)) AND ((@IsNull_SEND_NAME = 1 AND [SEND_NAME] IS NULL) OR ([SEND_NAME] = @Original_SEND_NAME)) AND ((@IsNull_SUBJECT = 1 AND [SUBJECT] IS NULL) OR ([SUBJECT] = @Original_SUBJECT)) AND ((@IsNull_MSG_BODY = 1 AND [MSG_BODY] IS NULL) OR ([MSG_BODY] = @Original_MSG_BODY)) AND ((@IsNull_NATION_CODE = 1 AND [NATION_CODE] IS NULL) OR ([NATION_CODE] = @Original_NATION_CODE)) AND ((@IsNull_SENDER_KEY = 1 AND [SENDER_KEY] IS NULL) OR ([SENDER_KEY] = @Original_SENDER_KEY)) AND ((@IsNull_TEMPLATE_CODE = 1 AND [TEMPLATE_CODE] IS NULL) OR ([TEMPLATE_CODE] = @Original_TEMPLATE_CODE)) AND ((@IsNull_RESPONSE_METHOD = 1 AND [RESPONSE_METHOD] IS NULL) OR ([RESPONSE_METHOD] = @Original_RESPONSE_METHOD)) AND ((@IsNull_TIMEOUT = 1 AND [TIMEOUT] IS NULL) OR ([TIMEOUT] = @Original_TIMEOUT)) AND ((@IsNull_RE_TYPE = 1 AND [RE_TYPE] IS NULL) OR ([RE_TYPE] = @Original_RE_TYPE)) AND ((@IsNull_RE_BODY = 1 AND [RE_BODY] IS NULL) OR ([RE_BODY] = @Original_RE_BODY)) AND ((@IsNull_RE_PART = 1 AND [RE_PART] IS NULL) OR ([RE_PART] = @Original_RE_PART)) AND ((@IsNull_WAP_URL = 1 AND [WAP_URL] IS NULL) OR ([WAP_URL] = @Original_WAP_URL)) AND ((@IsNull_COVER_FLAG = 1 AND [COVER_FLAG] IS NULL) OR ([COVER_FLAG] = @Original_COVER_FLAG)) AND ((@IsNull_SMS_FLAG = 1 AND [SMS_FLAG] IS NULL) OR ([SMS_FLAG] = @Original_SMS_FLAG)) AND ((@IsNull_REPLY_FLAG = 1 AND [REPLY_FLAG] IS NULL) OR ([REPLY_FLAG] = @Original_REPLY_FLAG)) AND ((@IsNull_RETRY_CNT = 1 AND [RETRY_CNT] IS NULL) OR ([RETRY_CNT] = @Original_RETRY_CNT)) AND ((@IsNull_ATTACHED_FILE = 1 AND [ATTACHED_FILE] IS NULL) OR ([ATTACHED_FILE] = @Original_ATTACHED_FILE)) AND ((@IsNull_VXML_FILE = 1 AND [VXML_FILE] IS NULL) OR ([VXML_FILE] = @Original_VXML_FILE)) AND ((@IsNull_USE_PAGE = 1 AND [USE_PAGE] IS NULL) OR ([USE_PAGE] = @Original_USE_PAGE)) AND ((@IsNull_USE_TIME = 1 AND [USE_TIME] IS NULL) OR ([USE_TIME] = @Original_USE_TIME)) AND ((@IsNull_SN_RESULT = 1 AND [SN_RESULT] IS NULL) OR ([SN_RESULT] = @Original_SN_RESULT)) AND ((@IsNull_TEL_INFO = 1 AND [TEL_INFO] IS NULL) OR ([TEL_INFO] = @Original_TEL_INFO)) AND ((@IsNull_CINFO = 1 AND [CINFO] IS NULL) OR ([CINFO] = @Original_CINFO)) AND ((@IsNull_USER_KEY = 1 AND [USER_KEY] IS NULL) OR ([USER_KEY] = @Original_USER_KEY)) AND ((@IsNull_AD_FLAG = 1 AND [AD_FLAG] IS NULL) OR ([AD_FLAG] = @Original_AD_FLAG)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_CMID" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="CMID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_UMID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="UMID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_UMID" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="UMID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_MSG_TYPE" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="MSG_TYPE" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_MSG_TYPE" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="MSG_TYPE" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_STATUS" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="STATUS" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_STATUS" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="STATUS" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_CALL_STATUS" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CALL_STATUS" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_CALL_STATUS" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="CALL_STATUS" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_REQUEST_TIME" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="REQUEST_TIME" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_SEND_TIME" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="SEND_TIME" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_REPORT_TIME" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="REPORT_TIME" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_REPORT_TIME" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="REPORT_TIME" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_DEST_PHONE" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="DEST_PHONE" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_DEST_PHONE" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="DEST_PHONE" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SEND_PHONE" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SEND_PHONE" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_SEND_PHONE" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SEND_PHONE" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_DEST_NAME" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="DEST_NAME" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_DEST_NAME" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="DEST_NAME" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SEND_NAME" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SEND_NAME" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_SEND_NAME" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SEND_NAME" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SUBJECT" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SUBJECT" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_SUBJECT" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SUBJECT" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_MSG_BODY" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="MSG_BODY" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_MSG_BODY" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="MSG_BODY" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_NATION_CODE" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="NATION_CODE" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_NATION_CODE" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="NATION_CODE" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SENDER_KEY" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SENDER_KEY" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_SENDER_KEY" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SENDER_KEY" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_TEMPLATE_CODE" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="TEMPLATE_CODE" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_TEMPLATE_CODE" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="TEMPLATE_CODE" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_RESPONSE_METHOD" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="RESPONSE_METHOD" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_RESPONSE_METHOD" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="RESPONSE_METHOD" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_TIMEOUT" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="TIMEOUT" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_TIMEOUT" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="TIMEOUT" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_RE_TYPE" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="RE_TYPE" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_RE_TYPE" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="RE_TYPE" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_RE_BODY" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="RE_BODY" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_RE_BODY" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="RE_BODY" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_RE_PART" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="RE_PART" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_RE_PART" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="RE_PART" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_WAP_URL" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="WAP_URL" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_WAP_URL" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="WAP_URL" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_COVER_FLAG" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="COVER_FLAG" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_COVER_FLAG" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="COVER_FLAG" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SMS_FLAG" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SMS_FLAG" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_SMS_FLAG" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SMS_FLAG" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_REPLY_FLAG" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="REPLY_FLAG" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_REPLY_FLAG" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="REPLY_FLAG" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_RETRY_CNT" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="RETRY_CNT" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_RETRY_CNT" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="RETRY_CNT" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_ATTACHED_FILE" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ATTACHED_FILE" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_ATTACHED_FILE" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="ATTACHED_FILE" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_VXML_FILE" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="VXML_FILE" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_VXML_FILE" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="VXML_FILE" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_USE_PAGE" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="USE_PAGE" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_USE_PAGE" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="USE_PAGE" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_USE_TIME" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="USE_TIME" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_USE_TIME" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="USE_TIME" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SN_RESULT" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SN_RESULT" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_SN_RESULT" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SN_RESULT" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_TEL_INFO" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="TEL_INFO" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_TEL_INFO" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="TEL_INFO" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_CINFO" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CINFO" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_CINFO" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="CINFO" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_USER_KEY" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="USER_KEY" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_USER_KEY" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="USER_KEY" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_AD_FLAG" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="AD_FLAG" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_AD_FLAG" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="AD_FLAG" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [BIZ_MSG] ([CMID], [UMID], [MSG_TYPE], [STATUS], [CALL_STATUS], [REQUEST_TIME], [SEND_TIME], [REPORT_TIME], [DEST_PHONE], [SEND_PHONE], [DEST_NAME], [SEND_NAME], [SUBJECT], [MSG_BODY], [NATION_CODE], [SENDER_KEY], [TEMPLATE_CODE], [RESPONSE_METHOD], [TIMEOUT], [RE_TYPE], [RE_BODY], [RE_PART], [WAP_URL], [COVER_FLAG], [SMS_FLAG], [REPLY_FLAG], [RETRY_CNT], [ATTACHED_FILE], [VXML_FILE], [USE_PAGE], [USE_TIME], [SN_RESULT], [TEL_INFO], [CINFO], [USER_KEY], [AD_FLAG]) VALUES (@CMID, @UMID, @MSG_TYPE, @STATUS, @CALL_STATUS, @REQUEST_TIME, @SEND_TIME, @REPORT_TIME, @DEST_PHONE, @SEND_PHONE, @DEST_NAME, @SEND_NAME, @SUBJECT, @MSG_BODY, @NATION_CODE, @SENDER_KEY, @TEMPLATE_CODE, @RESPONSE_METHOD, @TIMEOUT, @RE_TYPE, @RE_BODY, @RE_PART, @WAP_URL, @COVER_FLAG, @SMS_FLAG, @REPLY_FLAG, @RETRY_CNT, @ATTACHED_FILE, @VXML_FILE, @USE_PAGE, @USE_TIME, @SN_RESULT, @TEL_INFO, @CINFO, @USER_KEY, @AD_FLAG);
+SELECT CMID, UMID, MSG_TYPE, STATUS, CALL_STATUS, REQUEST_TIME, SEND_TIME, REPORT_TIME, DEST_PHONE, SEND_PHONE, DEST_NAME, SEND_NAME, SUBJECT, MSG_BODY, NATION_CODE, SENDER_KEY, TEMPLATE_CODE, RESPONSE_METHOD, TIMEOUT, RE_TYPE, RE_BODY, RE_PART, WAP_URL, COVER_FLAG, SMS_FLAG, REPLY_FLAG, RETRY_CNT, ATTACHED_FILE, VXML_FILE, USE_PAGE, USE_TIME, SN_RESULT, TEL_INFO, CINFO, USER_KEY, AD_FLAG FROM BIZ_MSG WHERE (CMID = @CMID)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@CMID" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="CMID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@UMID" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="UMID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@MSG_TYPE" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="MSG_TYPE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@STATUS" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="STATUS" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@CALL_STATUS" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="CALL_STATUS" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@REQUEST_TIME" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="REQUEST_TIME" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@SEND_TIME" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="SEND_TIME" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@REPORT_TIME" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="REPORT_TIME" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@DEST_PHONE" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="DEST_PHONE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SEND_PHONE" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SEND_PHONE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@DEST_NAME" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="DEST_NAME" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SEND_NAME" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SEND_NAME" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SUBJECT" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SUBJECT" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@MSG_BODY" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="MSG_BODY" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@NATION_CODE" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="NATION_CODE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SENDER_KEY" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SENDER_KEY" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@TEMPLATE_CODE" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="TEMPLATE_CODE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@RESPONSE_METHOD" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="RESPONSE_METHOD" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@TIMEOUT" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="TIMEOUT" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@RE_TYPE" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="RE_TYPE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@RE_BODY" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="RE_BODY" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@RE_PART" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="RE_PART" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@WAP_URL" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="WAP_URL" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@COVER_FLAG" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="COVER_FLAG" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@SMS_FLAG" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SMS_FLAG" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@REPLY_FLAG" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="REPLY_FLAG" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@RETRY_CNT" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="RETRY_CNT" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@ATTACHED_FILE" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="ATTACHED_FILE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@VXML_FILE" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="VXML_FILE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@USE_PAGE" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="USE_PAGE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@USE_TIME" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="USE_TIME" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@SN_RESULT" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SN_RESULT" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@TEL_INFO" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="TEL_INFO" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@CINFO" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="CINFO" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@USER_KEY" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="USER_KEY" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@AD_FLAG" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="AD_FLAG" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT  CMID, UMID, MSG_TYPE, STATUS, CALL_STATUS, REQUEST_TIME, SEND_TIME, REPORT_TIME, DEST_PHONE, SEND_PHONE, DEST_NAME, SEND_NAME, SUBJECT, MSG_BODY, 
+               NATION_CODE, SENDER_KEY, TEMPLATE_CODE, RESPONSE_METHOD, TIMEOUT, RE_TYPE, RE_BODY, RE_PART, WAP_URL, COVER_FLAG, SMS_FLAG, REPLY_FLAG, RETRY_CNT, 
+               ATTACHED_FILE, VXML_FILE, USE_PAGE, USE_TIME, SN_RESULT, TEL_INFO, CINFO, USER_KEY, AD_FLAG
+FROM     BIZ_MSG</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [BIZ_MSG] SET [CMID] = @CMID, [UMID] = @UMID, [MSG_TYPE] = @MSG_TYPE, [STATUS] = @STATUS, [CALL_STATUS] = @CALL_STATUS, [REQUEST_TIME] = @REQUEST_TIME, [SEND_TIME] = @SEND_TIME, [REPORT_TIME] = @REPORT_TIME, [DEST_PHONE] = @DEST_PHONE, [SEND_PHONE] = @SEND_PHONE, [DEST_NAME] = @DEST_NAME, [SEND_NAME] = @SEND_NAME, [SUBJECT] = @SUBJECT, [MSG_BODY] = @MSG_BODY, [NATION_CODE] = @NATION_CODE, [SENDER_KEY] = @SENDER_KEY, [TEMPLATE_CODE] = @TEMPLATE_CODE, [RESPONSE_METHOD] = @RESPONSE_METHOD, [TIMEOUT] = @TIMEOUT, [RE_TYPE] = @RE_TYPE, [RE_BODY] = @RE_BODY, [RE_PART] = @RE_PART, [WAP_URL] = @WAP_URL, [COVER_FLAG] = @COVER_FLAG, [SMS_FLAG] = @SMS_FLAG, [REPLY_FLAG] = @REPLY_FLAG, [RETRY_CNT] = @RETRY_CNT, [ATTACHED_FILE] = @ATTACHED_FILE, [VXML_FILE] = @VXML_FILE, [USE_PAGE] = @USE_PAGE, [USE_TIME] = @USE_TIME, [SN_RESULT] = @SN_RESULT, [TEL_INFO] = @TEL_INFO, [CINFO] = @CINFO, [USER_KEY] = @USER_KEY, [AD_FLAG] = @AD_FLAG WHERE (([CMID] = @Original_CMID) AND ((@IsNull_UMID = 1 AND [UMID] IS NULL) OR ([UMID] = @Original_UMID)) AND ((@IsNull_MSG_TYPE = 1 AND [MSG_TYPE] IS NULL) OR ([MSG_TYPE] = @Original_MSG_TYPE)) AND ((@IsNull_STATUS = 1 AND [STATUS] IS NULL) OR ([STATUS] = @Original_STATUS)) AND ((@IsNull_CALL_STATUS = 1 AND [CALL_STATUS] IS NULL) OR ([CALL_STATUS] = @Original_CALL_STATUS)) AND ([REQUEST_TIME] = @Original_REQUEST_TIME) AND ([SEND_TIME] = @Original_SEND_TIME) AND ((@IsNull_REPORT_TIME = 1 AND [REPORT_TIME] IS NULL) OR ([REPORT_TIME] = @Original_REPORT_TIME)) AND ((@IsNull_DEST_PHONE = 1 AND [DEST_PHONE] IS NULL) OR ([DEST_PHONE] = @Original_DEST_PHONE)) AND ((@IsNull_SEND_PHONE = 1 AND [SEND_PHONE] IS NULL) OR ([SEND_PHONE] = @Original_SEND_PHONE)) AND ((@IsNull_DEST_NAME = 1 AND [DEST_NAME] IS NULL) OR ([DEST_NAME] = @Original_DEST_NAME)) AND ((@IsNull_SEND_NAME = 1 AND [SEND_NAME] IS NULL) OR ([SEND_NAME] = @Original_SEND_NAME)) AND ((@IsNull_SUBJECT = 1 AND [SUBJECT] IS NULL) OR ([SUBJECT] = @Original_SUBJECT)) AND ((@IsNull_MSG_BODY = 1 AND [MSG_BODY] IS NULL) OR ([MSG_BODY] = @Original_MSG_BODY)) AND ((@IsNull_NATION_CODE = 1 AND [NATION_CODE] IS NULL) OR ([NATION_CODE] = @Original_NATION_CODE)) AND ((@IsNull_SENDER_KEY = 1 AND [SENDER_KEY] IS NULL) OR ([SENDER_KEY] = @Original_SENDER_KEY)) AND ((@IsNull_TEMPLATE_CODE = 1 AND [TEMPLATE_CODE] IS NULL) OR ([TEMPLATE_CODE] = @Original_TEMPLATE_CODE)) AND ((@IsNull_RESPONSE_METHOD = 1 AND [RESPONSE_METHOD] IS NULL) OR ([RESPONSE_METHOD] = @Original_RESPONSE_METHOD)) AND ((@IsNull_TIMEOUT = 1 AND [TIMEOUT] IS NULL) OR ([TIMEOUT] = @Original_TIMEOUT)) AND ((@IsNull_RE_TYPE = 1 AND [RE_TYPE] IS NULL) OR ([RE_TYPE] = @Original_RE_TYPE)) AND ((@IsNull_RE_BODY = 1 AND [RE_BODY] IS NULL) OR ([RE_BODY] = @Original_RE_BODY)) AND ((@IsNull_RE_PART = 1 AND [RE_PART] IS NULL) OR ([RE_PART] = @Original_RE_PART)) AND ((@IsNull_WAP_URL = 1 AND [WAP_URL] IS NULL) OR ([WAP_URL] = @Original_WAP_URL)) AND ((@IsNull_COVER_FLAG = 1 AND [COVER_FLAG] IS NULL) OR ([COVER_FLAG] = @Original_COVER_FLAG)) AND ((@IsNull_SMS_FLAG = 1 AND [SMS_FLAG] IS NULL) OR ([SMS_FLAG] = @Original_SMS_FLAG)) AND ((@IsNull_REPLY_FLAG = 1 AND [REPLY_FLAG] IS NULL) OR ([REPLY_FLAG] = @Original_REPLY_FLAG)) AND ((@IsNull_RETRY_CNT = 1 AND [RETRY_CNT] IS NULL) OR ([RETRY_CNT] = @Original_RETRY_CNT)) AND ((@IsNull_ATTACHED_FILE = 1 AND [ATTACHED_FILE] IS NULL) OR ([ATTACHED_FILE] = @Original_ATTACHED_FILE)) AND ((@IsNull_VXML_FILE = 1 AND [VXML_FILE] IS NULL) OR ([VXML_FILE] = @Original_VXML_FILE)) AND ((@IsNull_USE_PAGE = 1 AND [USE_PAGE] IS NULL) OR ([USE_PAGE] = @Original_USE_PAGE)) AND ((@IsNull_USE_TIME = 1 AND [USE_TIME] IS NULL) OR ([USE_TIME] = @Original_USE_TIME)) AND ((@IsNull_SN_RESULT = 1 AND [SN_RESULT] IS NULL) OR ([SN_RESULT] = @Original_SN_RESULT)) AND ((@IsNull_TEL_INFO = 1 AND [TEL_INFO] IS NULL) OR ([TEL_INFO] = @Original_TEL_INFO)) AND ((@IsNull_CINFO = 1 AND [CINFO] IS NULL) OR ([CINFO] = @Original_CINFO)) AND ((@IsNull_USER_KEY = 1 AND [USER_KEY] IS NULL) OR ([USER_KEY] = @Original_USER_KEY)) AND ((@IsNull_AD_FLAG = 1 AND [AD_FLAG] IS NULL) OR ([AD_FLAG] = @Original_AD_FLAG)));
+SELECT CMID, UMID, MSG_TYPE, STATUS, CALL_STATUS, REQUEST_TIME, SEND_TIME, REPORT_TIME, DEST_PHONE, SEND_PHONE, DEST_NAME, SEND_NAME, SUBJECT, MSG_BODY, NATION_CODE, SENDER_KEY, TEMPLATE_CODE, RESPONSE_METHOD, TIMEOUT, RE_TYPE, RE_BODY, RE_PART, WAP_URL, COVER_FLAG, SMS_FLAG, REPLY_FLAG, RETRY_CNT, ATTACHED_FILE, VXML_FILE, USE_PAGE, USE_TIME, SN_RESULT, TEL_INFO, CINFO, USER_KEY, AD_FLAG FROM BIZ_MSG WHERE (CMID = @CMID)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@CMID" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="CMID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@UMID" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="UMID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@MSG_TYPE" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="MSG_TYPE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@STATUS" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="STATUS" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@CALL_STATUS" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="CALL_STATUS" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@REQUEST_TIME" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="REQUEST_TIME" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@SEND_TIME" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="SEND_TIME" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@REPORT_TIME" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="REPORT_TIME" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@DEST_PHONE" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="DEST_PHONE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SEND_PHONE" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SEND_PHONE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@DEST_NAME" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="DEST_NAME" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SEND_NAME" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SEND_NAME" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SUBJECT" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SUBJECT" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@MSG_BODY" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="MSG_BODY" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@NATION_CODE" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="NATION_CODE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SENDER_KEY" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SENDER_KEY" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@TEMPLATE_CODE" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="TEMPLATE_CODE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@RESPONSE_METHOD" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="RESPONSE_METHOD" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@TIMEOUT" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="TIMEOUT" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@RE_TYPE" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="RE_TYPE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@RE_BODY" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="RE_BODY" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@RE_PART" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="RE_PART" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@WAP_URL" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="WAP_URL" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@COVER_FLAG" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="COVER_FLAG" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@SMS_FLAG" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SMS_FLAG" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@REPLY_FLAG" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="REPLY_FLAG" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@RETRY_CNT" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="RETRY_CNT" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@ATTACHED_FILE" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="ATTACHED_FILE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@VXML_FILE" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="VXML_FILE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@USE_PAGE" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="USE_PAGE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@USE_TIME" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="USE_TIME" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@SN_RESULT" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SN_RESULT" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@TEL_INFO" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="TEL_INFO" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@CINFO" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="CINFO" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@USER_KEY" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="USER_KEY" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@AD_FLAG" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="AD_FLAG" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_CMID" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="CMID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_UMID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="UMID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_UMID" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="UMID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_MSG_TYPE" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="MSG_TYPE" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_MSG_TYPE" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="MSG_TYPE" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_STATUS" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="STATUS" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_STATUS" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="STATUS" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_CALL_STATUS" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CALL_STATUS" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_CALL_STATUS" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="CALL_STATUS" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_REQUEST_TIME" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="REQUEST_TIME" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_SEND_TIME" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="SEND_TIME" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_REPORT_TIME" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="REPORT_TIME" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_REPORT_TIME" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="REPORT_TIME" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_DEST_PHONE" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="DEST_PHONE" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_DEST_PHONE" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="DEST_PHONE" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SEND_PHONE" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SEND_PHONE" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_SEND_PHONE" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SEND_PHONE" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_DEST_NAME" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="DEST_NAME" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_DEST_NAME" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="DEST_NAME" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SEND_NAME" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SEND_NAME" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_SEND_NAME" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SEND_NAME" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SUBJECT" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SUBJECT" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_SUBJECT" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SUBJECT" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_MSG_BODY" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="MSG_BODY" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_MSG_BODY" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="MSG_BODY" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_NATION_CODE" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="NATION_CODE" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_NATION_CODE" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="NATION_CODE" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SENDER_KEY" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SENDER_KEY" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_SENDER_KEY" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SENDER_KEY" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_TEMPLATE_CODE" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="TEMPLATE_CODE" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_TEMPLATE_CODE" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="TEMPLATE_CODE" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_RESPONSE_METHOD" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="RESPONSE_METHOD" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_RESPONSE_METHOD" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="RESPONSE_METHOD" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_TIMEOUT" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="TIMEOUT" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_TIMEOUT" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="TIMEOUT" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_RE_TYPE" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="RE_TYPE" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_RE_TYPE" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="RE_TYPE" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_RE_BODY" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="RE_BODY" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_RE_BODY" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="RE_BODY" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_RE_PART" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="RE_PART" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_RE_PART" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="RE_PART" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_WAP_URL" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="WAP_URL" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_WAP_URL" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="WAP_URL" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_COVER_FLAG" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="COVER_FLAG" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_COVER_FLAG" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="COVER_FLAG" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SMS_FLAG" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SMS_FLAG" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_SMS_FLAG" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SMS_FLAG" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_REPLY_FLAG" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="REPLY_FLAG" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_REPLY_FLAG" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="REPLY_FLAG" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_RETRY_CNT" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="RETRY_CNT" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_RETRY_CNT" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="RETRY_CNT" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_ATTACHED_FILE" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ATTACHED_FILE" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_ATTACHED_FILE" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="ATTACHED_FILE" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_VXML_FILE" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="VXML_FILE" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_VXML_FILE" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="VXML_FILE" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_USE_PAGE" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="USE_PAGE" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_USE_PAGE" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="USE_PAGE" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_USE_TIME" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="USE_TIME" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_USE_TIME" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="USE_TIME" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SN_RESULT" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SN_RESULT" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_SN_RESULT" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SN_RESULT" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_TEL_INFO" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="TEL_INFO" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_TEL_INFO" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="TEL_INFO" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_CINFO" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CINFO" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_CINFO" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="CINFO" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_USER_KEY" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="USER_KEY" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_USER_KEY" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="USER_KEY" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_AD_FLAG" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="AD_FLAG" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_AD_FLAG" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="AD_FLAG" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="CMID" DataSetColumn="CMID" />
+              <Mapping SourceColumn="UMID" DataSetColumn="UMID" />
+              <Mapping SourceColumn="MSG_TYPE" DataSetColumn="MSG_TYPE" />
+              <Mapping SourceColumn="STATUS" DataSetColumn="STATUS" />
+              <Mapping SourceColumn="CALL_STATUS" DataSetColumn="CALL_STATUS" />
+              <Mapping SourceColumn="REQUEST_TIME" DataSetColumn="REQUEST_TIME" />
+              <Mapping SourceColumn="SEND_TIME" DataSetColumn="SEND_TIME" />
+              <Mapping SourceColumn="REPORT_TIME" DataSetColumn="REPORT_TIME" />
+              <Mapping SourceColumn="DEST_PHONE" DataSetColumn="DEST_PHONE" />
+              <Mapping SourceColumn="SEND_PHONE" DataSetColumn="SEND_PHONE" />
+              <Mapping SourceColumn="DEST_NAME" DataSetColumn="DEST_NAME" />
+              <Mapping SourceColumn="SEND_NAME" DataSetColumn="SEND_NAME" />
+              <Mapping SourceColumn="SUBJECT" DataSetColumn="SUBJECT" />
+              <Mapping SourceColumn="MSG_BODY" DataSetColumn="MSG_BODY" />
+              <Mapping SourceColumn="NATION_CODE" DataSetColumn="NATION_CODE" />
+              <Mapping SourceColumn="SENDER_KEY" DataSetColumn="SENDER_KEY" />
+              <Mapping SourceColumn="TEMPLATE_CODE" DataSetColumn="TEMPLATE_CODE" />
+              <Mapping SourceColumn="RESPONSE_METHOD" DataSetColumn="RESPONSE_METHOD" />
+              <Mapping SourceColumn="TIMEOUT" DataSetColumn="TIMEOUT" />
+              <Mapping SourceColumn="RE_TYPE" DataSetColumn="RE_TYPE" />
+              <Mapping SourceColumn="RE_BODY" DataSetColumn="RE_BODY" />
+              <Mapping SourceColumn="RE_PART" DataSetColumn="RE_PART" />
+              <Mapping SourceColumn="WAP_URL" DataSetColumn="WAP_URL" />
+              <Mapping SourceColumn="COVER_FLAG" DataSetColumn="COVER_FLAG" />
+              <Mapping SourceColumn="SMS_FLAG" DataSetColumn="SMS_FLAG" />
+              <Mapping SourceColumn="REPLY_FLAG" DataSetColumn="REPLY_FLAG" />
+              <Mapping SourceColumn="RETRY_CNT" DataSetColumn="RETRY_CNT" />
+              <Mapping SourceColumn="ATTACHED_FILE" DataSetColumn="ATTACHED_FILE" />
+              <Mapping SourceColumn="VXML_FILE" DataSetColumn="VXML_FILE" />
+              <Mapping SourceColumn="USE_PAGE" DataSetColumn="USE_PAGE" />
+              <Mapping SourceColumn="USE_TIME" DataSetColumn="USE_TIME" />
+              <Mapping SourceColumn="SN_RESULT" DataSetColumn="SN_RESULT" />
+              <Mapping SourceColumn="TEL_INFO" DataSetColumn="TEL_INFO" />
+              <Mapping SourceColumn="CINFO" DataSetColumn="CINFO" />
+              <Mapping SourceColumn="USER_KEY" DataSetColumn="USER_KEY" />
+              <Mapping SourceColumn="AD_FLAG" DataSetColumn="AD_FLAG" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="BizMsgDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="BizMsgDataSet" msprop:Generator_UserDSName="BizMsgDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="BIZ_MSG" msprop:Generator_TableClassName="BIZ_MSGDataTable" msprop:Generator_TableVarName="tableBIZ_MSG" msprop:Generator_TablePropName="BIZ_MSG" msprop:Generator_RowDeletingName="BIZ_MSGRowDeleting" msprop:Generator_RowChangingName="BIZ_MSGRowChanging" msprop:Generator_RowEvHandlerName="BIZ_MSGRowChangeEventHandler" msprop:Generator_RowDeletedName="BIZ_MSGRowDeleted" msprop:Generator_UserTableName="BIZ_MSG" msprop:Generator_RowChangedName="BIZ_MSGRowChanged" msprop:Generator_RowEvArgName="BIZ_MSGRowChangeEvent" msprop:Generator_RowClassName="BIZ_MSGRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CMID" msprop:Generator_ColumnVarNameInTable="columnCMID" msprop:Generator_ColumnPropNameInRow="CMID" msprop:Generator_ColumnPropNameInTable="CMIDColumn" msprop:Generator_UserColumnName="CMID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="32" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="UMID" msprop:Generator_ColumnVarNameInTable="columnUMID" msprop:Generator_ColumnPropNameInRow="UMID" msprop:Generator_ColumnPropNameInTable="UMIDColumn" msprop:Generator_UserColumnName="UMID" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="32" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MSG_TYPE" msprop:Generator_ColumnVarNameInTable="columnMSG_TYPE" msprop:Generator_ColumnPropNameInRow="MSG_TYPE" msprop:Generator_ColumnPropNameInTable="MSG_TYPEColumn" msprop:Generator_UserColumnName="MSG_TYPE" type="xs:int" minOccurs="0" />
+              <xs:element name="STATUS" msprop:Generator_ColumnVarNameInTable="columnSTATUS" msprop:Generator_ColumnPropNameInRow="STATUS" msprop:Generator_ColumnPropNameInTable="STATUSColumn" msprop:Generator_UserColumnName="STATUS" type="xs:int" minOccurs="0" />
+              <xs:element name="CALL_STATUS" msprop:Generator_ColumnVarNameInTable="columnCALL_STATUS" msprop:Generator_ColumnPropNameInRow="CALL_STATUS" msprop:Generator_ColumnPropNameInTable="CALL_STATUSColumn" msprop:Generator_UserColumnName="CALL_STATUS" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="REQUEST_TIME" msprop:Generator_ColumnVarNameInTable="columnREQUEST_TIME" msprop:Generator_ColumnPropNameInRow="REQUEST_TIME" msprop:Generator_ColumnPropNameInTable="REQUEST_TIMEColumn" msprop:Generator_UserColumnName="REQUEST_TIME" type="xs:dateTime" />
+              <xs:element name="SEND_TIME" msprop:Generator_ColumnVarNameInTable="columnSEND_TIME" msprop:Generator_ColumnPropNameInRow="SEND_TIME" msprop:Generator_ColumnPropNameInTable="SEND_TIMEColumn" msprop:Generator_UserColumnName="SEND_TIME" type="xs:dateTime" />
+              <xs:element name="REPORT_TIME" msprop:Generator_ColumnVarNameInTable="columnREPORT_TIME" msprop:Generator_ColumnPropNameInRow="REPORT_TIME" msprop:Generator_ColumnPropNameInTable="REPORT_TIMEColumn" msprop:Generator_UserColumnName="REPORT_TIME" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="DEST_PHONE" msprop:Generator_ColumnVarNameInTable="columnDEST_PHONE" msprop:Generator_ColumnPropNameInRow="DEST_PHONE" msprop:Generator_ColumnPropNameInTable="DEST_PHONEColumn" msprop:Generator_UserColumnName="DEST_PHONE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="16" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SEND_PHONE" msprop:Generator_ColumnVarNameInTable="columnSEND_PHONE" msprop:Generator_ColumnPropNameInRow="SEND_PHONE" msprop:Generator_ColumnPropNameInTable="SEND_PHONEColumn" msprop:Generator_UserColumnName="SEND_PHONE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="16" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DEST_NAME" msprop:Generator_ColumnVarNameInTable="columnDEST_NAME" msprop:Generator_ColumnPropNameInRow="DEST_NAME" msprop:Generator_ColumnPropNameInTable="DEST_NAMEColumn" msprop:Generator_UserColumnName="DEST_NAME" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="32" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SEND_NAME" msprop:Generator_ColumnVarNameInTable="columnSEND_NAME" msprop:Generator_ColumnPropNameInRow="SEND_NAME" msprop:Generator_ColumnPropNameInTable="SEND_NAMEColumn" msprop:Generator_UserColumnName="SEND_NAME" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="32" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SUBJECT" msprop:Generator_ColumnVarNameInTable="columnSUBJECT" msprop:Generator_ColumnPropNameInRow="SUBJECT" msprop:Generator_ColumnPropNameInTable="SUBJECTColumn" msprop:Generator_UserColumnName="SUBJECT" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="64" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MSG_BODY" msprop:Generator_ColumnVarNameInTable="columnMSG_BODY" msprop:Generator_ColumnPropNameInRow="MSG_BODY" msprop:Generator_ColumnPropNameInTable="MSG_BODYColumn" msprop:Generator_UserColumnName="MSG_BODY" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NATION_CODE" msprop:Generator_ColumnVarNameInTable="columnNATION_CODE" msprop:Generator_ColumnPropNameInRow="NATION_CODE" msprop:Generator_ColumnPropNameInTable="NATION_CODEColumn" msprop:Generator_UserColumnName="NATION_CODE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SENDER_KEY" msprop:Generator_ColumnVarNameInTable="columnSENDER_KEY" msprop:Generator_ColumnPropNameInRow="SENDER_KEY" msprop:Generator_ColumnPropNameInTable="SENDER_KEYColumn" msprop:Generator_UserColumnName="SENDER_KEY" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TEMPLATE_CODE" msprop:Generator_ColumnVarNameInTable="columnTEMPLATE_CODE" msprop:Generator_ColumnPropNameInRow="TEMPLATE_CODE" msprop:Generator_ColumnPropNameInTable="TEMPLATE_CODEColumn" msprop:Generator_UserColumnName="TEMPLATE_CODE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RESPONSE_METHOD" msprop:Generator_ColumnVarNameInTable="columnRESPONSE_METHOD" msprop:Generator_ColumnPropNameInRow="RESPONSE_METHOD" msprop:Generator_ColumnPropNameInTable="RESPONSE_METHODColumn" msprop:Generator_UserColumnName="RESPONSE_METHOD" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TIMEOUT" msprop:Generator_ColumnVarNameInTable="columnTIMEOUT" msprop:Generator_ColumnPropNameInRow="TIMEOUT" msprop:Generator_ColumnPropNameInTable="TIMEOUTColumn" msprop:Generator_UserColumnName="TIMEOUT" type="xs:int" minOccurs="0" />
+              <xs:element name="RE_TYPE" msprop:Generator_ColumnVarNameInTable="columnRE_TYPE" msprop:Generator_ColumnPropNameInRow="RE_TYPE" msprop:Generator_ColumnPropNameInTable="RE_TYPEColumn" msprop:Generator_UserColumnName="RE_TYPE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="3" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RE_BODY" msprop:Generator_ColumnVarNameInTable="columnRE_BODY" msprop:Generator_ColumnPropNameInRow="RE_BODY" msprop:Generator_ColumnPropNameInTable="RE_BODYColumn" msprop:Generator_UserColumnName="RE_BODY" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RE_PART" msprop:Generator_ColumnVarNameInTable="columnRE_PART" msprop:Generator_ColumnPropNameInRow="RE_PART" msprop:Generator_ColumnPropNameInTable="RE_PARTColumn" msprop:Generator_UserColumnName="RE_PART" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="WAP_URL" msprop:Generator_ColumnVarNameInTable="columnWAP_URL" msprop:Generator_ColumnPropNameInRow="WAP_URL" msprop:Generator_ColumnPropNameInTable="WAP_URLColumn" msprop:Generator_UserColumnName="WAP_URL" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="80" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="COVER_FLAG" msprop:Generator_ColumnVarNameInTable="columnCOVER_FLAG" msprop:Generator_ColumnPropNameInRow="COVER_FLAG" msprop:Generator_ColumnPropNameInTable="COVER_FLAGColumn" msprop:Generator_UserColumnName="COVER_FLAG" type="xs:int" minOccurs="0" />
+              <xs:element name="SMS_FLAG" msprop:Generator_ColumnVarNameInTable="columnSMS_FLAG" msprop:Generator_ColumnPropNameInRow="SMS_FLAG" msprop:Generator_ColumnPropNameInTable="SMS_FLAGColumn" msprop:Generator_UserColumnName="SMS_FLAG" type="xs:int" minOccurs="0" />
+              <xs:element name="REPLY_FLAG" msprop:Generator_ColumnVarNameInTable="columnREPLY_FLAG" msprop:Generator_ColumnPropNameInRow="REPLY_FLAG" msprop:Generator_ColumnPropNameInTable="REPLY_FLAGColumn" msprop:Generator_UserColumnName="REPLY_FLAG" type="xs:int" minOccurs="0" />
+              <xs:element name="RETRY_CNT" msprop:Generator_ColumnVarNameInTable="columnRETRY_CNT" msprop:Generator_ColumnPropNameInRow="RETRY_CNT" msprop:Generator_ColumnPropNameInTable="RETRY_CNTColumn" msprop:Generator_UserColumnName="RETRY_CNT" type="xs:int" minOccurs="0" />
+              <xs:element name="ATTACHED_FILE" msprop:Generator_ColumnVarNameInTable="columnATTACHED_FILE" msprop:Generator_ColumnPropNameInRow="ATTACHED_FILE" msprop:Generator_ColumnPropNameInTable="ATTACHED_FILEColumn" msprop:Generator_UserColumnName="ATTACHED_FILE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="VXML_FILE" msprop:Generator_ColumnVarNameInTable="columnVXML_FILE" msprop:Generator_ColumnPropNameInRow="VXML_FILE" msprop:Generator_ColumnPropNameInTable="VXML_FILEColumn" msprop:Generator_UserColumnName="VXML_FILE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="64" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="USE_PAGE" msprop:Generator_ColumnVarNameInTable="columnUSE_PAGE" msprop:Generator_ColumnPropNameInRow="USE_PAGE" msprop:Generator_ColumnPropNameInTable="USE_PAGEColumn" msprop:Generator_UserColumnName="USE_PAGE" type="xs:int" minOccurs="0" />
+              <xs:element name="USE_TIME" msprop:Generator_ColumnVarNameInTable="columnUSE_TIME" msprop:Generator_ColumnPropNameInRow="USE_TIME" msprop:Generator_ColumnPropNameInTable="USE_TIMEColumn" msprop:Generator_UserColumnName="USE_TIME" type="xs:int" minOccurs="0" />
+              <xs:element name="SN_RESULT" msprop:Generator_ColumnVarNameInTable="columnSN_RESULT" msprop:Generator_ColumnPropNameInRow="SN_RESULT" msprop:Generator_ColumnPropNameInTable="SN_RESULTColumn" msprop:Generator_UserColumnName="SN_RESULT" type="xs:int" minOccurs="0" />
+              <xs:element name="TEL_INFO" msprop:Generator_ColumnVarNameInTable="columnTEL_INFO" msprop:Generator_ColumnPropNameInRow="TEL_INFO" msprop:Generator_ColumnPropNameInTable="TEL_INFOColumn" msprop:Generator_UserColumnName="TEL_INFO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CINFO" msprop:Generator_ColumnVarNameInTable="columnCINFO" msprop:Generator_ColumnPropNameInRow="CINFO" msprop:Generator_ColumnPropNameInTable="CINFOColumn" msprop:Generator_UserColumnName="CINFO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="32" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="USER_KEY" msprop:Generator_ColumnVarNameInTable="columnUSER_KEY" msprop:Generator_ColumnPropNameInRow="USER_KEY" msprop:Generator_ColumnPropNameInTable="USER_KEYColumn" msprop:Generator_UserColumnName="USER_KEY" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AD_FLAG" msprop:Generator_ColumnVarNameInTable="columnAD_FLAG" msprop:Generator_ColumnPropNameInRow="AD_FLAG" msprop:Generator_ColumnPropNameInTable="AD_FLAGColumn" msprop:Generator_UserColumnName="AD_FLAG" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:BIZ_MSG" />
+      <xs:field xpath="mstns:CMID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

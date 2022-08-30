@@ -1,0 +1,3186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\PdfiumViewer.Native.x86.no_v8-no_xfa.2018.4.8.256\build\PdfiumViewer.Native.x86.no_v8-no_xfa.props" Condition="Exists('..\packages\PdfiumViewer.Native.x86.no_v8-no_xfa.2018.4.8.256\build\PdfiumViewer.Native.x86.no_v8-no_xfa.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F55437D0-2650-4CB6-AF93-C4D6E439BAC3}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>mycalltruck.Admin</RootNamespace>
+    <AssemblyName>mycalltruck.Admin</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>true</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>http://220.73.136.46/myCallTruck.Admin/mycalltruckadmin/</InstallUrl>
+    <UpdateUrl>http://220.73.136.46/myCallTruck.Admin/mycalltruckadmin/</UpdateUrl>
+    <SupportUrl>http://chasero.co.kr</SupportUrl>
+    <ErrorReportUrl>http://chasero.co.kr</ErrorReportUrl>
+    <ProductName>차세로 관리자</ProductName>
+    <PublisherName>Chasero</PublisherName>
+    <SuiteName>Cardpay.Admin</SuiteName>
+    <MinimumRequiredVersion>1.0.0.1266</MinimumRequiredVersion>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>myCallTruckAdmin.htm</WebPage>
+    <TrustUrlParameters>true</TrustUrlParameters>
+    <ApplicationRevision>1267</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>true</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>FF45B8DE7619D500A57F3237E98D80F7EB74DFBA</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>mycalltruck.Admin_3_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>ic_launcher.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <DelaySign>false</DelaySign>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DynamicExpresso.Core, Version=1.3.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DynamicExpresso.Core.1.3.3.5\lib\net40\DynamicExpresso.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus, Version=4.0.1.1, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EPPlus.4.0.1.1\lib\net20\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Linkhub, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Popbill\Library\Linkhub.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Web.2012.1.0.0\lib\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.2\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI, Version=2.3.0.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.3.0\lib\net40\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OOXML, Version=2.3.0.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.3.0\lib\net40\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net, Version=2.3.0.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.3.0\lib\net40\NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats, Version=2.3.0.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.3.0\lib\net40\NPOI.OpenXmlFormats.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfiumViewer, Version=2.13.0.0, Culture=neutral, PublicKeyToken=91e4789cfb0609e0, processorArchitecture=MSIL">
+      <HintPath>..\packages\PdfiumViewer.2.13.0.0\lib\net20\PdfiumViewer.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="ReachFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.IO">
+      <HintPath>..\packages\Microsoft.Bcl.1.1.9\lib\net40\System.IO.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http, Version=2.2.28.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.28\lib\net40\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Extensions, Version=2.2.28.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.28\lib\net40\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives, Version=2.2.28.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.28\lib\net40\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest, Version=2.2.28.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.28\lib\net40\System.Net.Http.WebRequest.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Printing" />
+    <Reference Include="System.Runtime">
+      <HintPath>..\packages\Microsoft.Bcl.1.1.9\lib\net40\System.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Threading.Tasks">
+      <HintPath>..\packages\Microsoft.Bcl.1.1.9\lib\net40\System.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.4.0\lib\portable-net40+sl4+win8+wp8\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Adapters\DriversAdapter.cs" />
+    <Compile Include="Class\CallHelper.cs" />
+    <Compile Include="Class\CentrexHelper.cs" />
+    <Compile Include="Class\Common\ApplicationColor.cs" />
+    <Compile Include="Class\Common\BasicModel.cs" />
+    <Compile Include="Class\Common\CustomException.cs" />
+    <Compile Include="Class\Common\DESCryptClass.cs" />
+    <Compile Include="Class\Common\Excel.cs" />
+    <Compile Include="Class\Common\ExcelOpen.cs" />
+    <Compile Include="Class\Common\LocalUser.cs" />
+    <Compile Include="Class\Common\ScrollPanelMessageFilter.cs" />
+    <Compile Include="Class\Common\SingleDataSet.cs" />
+    <Compile Include="Class\Data.cs" />
+    <Compile Include="Class\DataSet\CustomerRepository.cs" />
+    <Compile Include="Class\DataSet\ContractRepository.cs" />
+    <Compile Include="Class\DataSet\DriverRepository.cs" />
+    <Compile Include="Class\ExcelInfoHelper.cs" />
+    <Compile Include="Class\Extensions\ExcelFunction.cs" />
+    <Compile Include="Class\Extensions\Excel_Epplus.cs" />
+    <Compile Include="Class\Extensions\ExtSWF.cs" />
+    <Compile Include="Class\Extensions\PrimaryExtension.cs" />
+    <Compile Include="Class\Extensions\SqlDataReaderExtension.cs" />
+    <Compile Include="Class\Filter.cs" />
+    <Compile Include="Class\Helper.cs" />
+    <Compile Include="Class\LocationHelper.cs" />
+    <Compile Include="Class\SendMessageToAnotherApplication.cs" />
+    <Compile Include="Class\XML\FormStyle.cs" />
+    <Compile Include="Class\XML\XMLAccess.cs" />
+    <Compile Include="CMDataSet.cs">
+      <DependentUpon>CMDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CMDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CMDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\AppSMSDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AppSMSDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\BankDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BankDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\BaseDataSet.cs">
+      <DependentUpon>BaseDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\BaseDataSet.Designer.cs">
+      <DependentUpon>BaseDataSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\CallDataSet.cs" />
+    <Compile Include="DataSets\CallSms.cs" />
+    <Compile Include="DataSets\Calls.cs" />
+    <Compile Include="DataSets\ClientDataSet.cs">
+      <DependentUpon>ClientDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\ClientDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ClientDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\ClientPoint.cs" />
+    <Compile Include="DataSets\Customer.cs" />
+    <Compile Include="DataSets\CustomerManagerDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CustomerManagerDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\CustomerStartManageDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CustomerStartManageDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\Driver.cs" />
+    <Compile Include="DataSets\DriverInstance.cs" />
+    <Compile Include="DataSets\DriverPoint.cs" />
+    <Compile Include="DataSets\EDocumnetDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EDocumnetDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\FPISDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FPISDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\LoginLog.cs">
+      <DependentUpon>LoginLog.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\LoginLog.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LoginLog.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\NSTATSDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NSTATSDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\OrderDataSet.cs">
+      <DependentUpon>OrderDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\Order.cs" />
+    <Compile Include="DataSets\OrderB.cs" />
+    <Compile Include="DataSets\OrderDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrderDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\OrderG.cs" />
+    <Compile Include="DataSets\OrderItemDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrderItemDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\OrderUpdateLog.cs" />
+    <Compile Include="DataSets\PayExcelDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PayExcelDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\SalesDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SalesDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\SalesManage.cs" />
+    <Compile Include="DataSets\Schalar.cs" />
+    <Compile Include="DataSets\ShareOrderBDataSet.cs" />
+    <Compile Include="DataSets\ShareOrderGDataSet.cs" />
+    <Compile Include="DataSets\ShareOrderDataSet.cs" />
+    <Compile Include="DataSets\Trade.cs" />
+    <Compile Include="DataSets\TradeDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TradeDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\UseListDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UseListDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DialogAppSms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DialogAppSms.Designer.cs">
+      <DependentUpon>DialogAppSms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog_EtaxManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog_EtaxManage.Designer.cs">
+      <DependentUpon>Dialog_EtaxManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog_BankResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog_BankResult.Designer.cs">
+      <DependentUpon>Dialog_BankResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog_BankUpload.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog_BankUpload.Designer.cs">
+      <DependentUpon>Dialog_BankUpload.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog_BankCreate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog_BankCreate.Designer.cs">
+      <DependentUpon>Dialog_BankCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog_AcceptBank.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog_AcceptBank.Designer.cs">
+      <DependentUpon>Dialog_AcceptBank.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog_CancelAcc_CU.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog_CancelAcc_CU.Designer.cs">
+      <DependentUpon>Dialog_CancelAcc_CU.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog_OrderMemo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog_OrderMemo.Designer.cs">
+      <DependentUpon>Dialog_OrderMemo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog_OrderUpdatLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog_OrderUpdatLog.Designer.cs">
+      <DependentUpon>Dialog_OrderUpdatLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog_AccLogs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog_AccLogs.Designer.cs">
+      <DependentUpon>Dialog_AccLogs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog_CancelAcc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog_CancelAcc.Designer.cs">
+      <DependentUpon>Dialog_CancelAcc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog_AcceptAcc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog_AcceptAcc.Designer.cs">
+      <DependentUpon>Dialog_AcceptAcc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog_CustomerImage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog_CustomerImage.Designer.cs">
+      <DependentUpon>Dialog_CustomerImage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog_DEBUG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog_DEBUG.Designer.cs">
+      <DependentUpon>Dialog_DEBUG.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EXCELINSERT5.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EXCELINSERT5.Designer.cs">
+      <DependentUpon>EXCELINSERT5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EXCELINSERT4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EXCELINSERT4.Designer.cs">
+      <DependentUpon>EXCELINSERT4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EXCELINSERT_DRIVER_MISU.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EXCELINSERT_DRIVER_MISU.Designer.cs">
+      <DependentUpon>EXCELINSERT_DRIVER_MISU.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EXCELINSERT_CUSTOMER_MISU.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EXCELINSERT_CUSTOMER_MISU.Designer.cs">
+      <DependentUpon>EXCELINSERT_CUSTOMER_MISU.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EXCELINSERT_DRIVER_SHARE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EXCELINSERT_DRIVER_SHARE.Designer.cs">
+      <DependentUpon>EXCELINSERT_DRIVER_SHARE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EXCELINSERT_DRIVER_DEFAULT_SG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EXCELINSERT_DRIVER_DEFAULT_SG.Designer.cs">
+      <DependentUpon>EXCELINSERT_DRIVER_DEFAULT_SG.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EXCELINSERT_DRIVER_DEFAULT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EXCELINSERT_DRIVER_DEFAULT.Designer.cs">
+      <DependentUpon>EXCELINSERT_DRIVER_DEFAULT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EXCELINSERT_PayExcel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EXCELINSERT_PayExcel.Designer.cs">
+      <DependentUpon>EXCELINSERT_PayExcel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EXCELINSERT_USELIST.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EXCELINSERT_USELIST.Designer.cs">
+      <DependentUpon>EXCELINSERT_USELIST.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EXCELRESULT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EXCELRESULT.Designer.cs">
+      <DependentUpon>EXCELRESULT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FindZipNew.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FindZipNew.Designer.cs">
+      <DependentUpon>FindZipNew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FindZip.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FindZip.Designer.cs">
+      <DependentUpon>FindZip.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormImagesDefault.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormImagesDefault.Designer.cs">
+      <DependentUpon>FormImagesDefault.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormImages2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormImages2.Designer.cs">
+      <DependentUpon>FormImages2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormImages.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormImages.Designer.cs">
+      <DependentUpon>FormImages.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm0104_DTGTOTAL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm0104_DTGTOTAL.Designer.cs">
+      <DependentUpon>Frm0104_DTGTOTAL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCustomerStartList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCustomerStartList.Designer.cs">
+      <DependentUpon>FrmCustomerStartList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPdfViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPdfViewer.Designer.cs">
+      <DependentUpon>FrmPdfViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmEDocumentList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEDocumentList.Designer.cs">
+      <DependentUpon>FrmEDocumentList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCargoZip.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCargoZip.Designer.cs">
+      <DependentUpon>FrmCargoZip.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCarNumSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCarNumSearch.Designer.cs">
+      <DependentUpon>FrmCarNumSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmClientUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmClientUser.designer.cs">
+      <DependentUpon>FrmClientUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmClientRegisterUser_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmClientRegisterUser_Add.designer.cs">
+      <DependentUpon>FrmClientRegisterUser_Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmClientUser_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmClientUser_Add.designer.cs">
+      <DependentUpon>FrmClientUser_Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCustomerSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCustomerSearch.Designer.cs">
+      <DependentUpon>FrmCustomerSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmEdocument.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEdocument.Designer.cs">
+      <DependentUpon>FrmEdocument.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmETAXIN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmETAXIN.Designer.cs">
+      <DependentUpon>FrmETAXIN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmETAXCanCle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmETAXCanCle.Designer.cs">
+      <DependentUpon>FrmETAXCanCle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmETAXREIN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmETAXREIN.Designer.cs">
+      <DependentUpon>FrmETAXREIN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmETAXRERESULT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmETAXRERESULT.Designer.cs">
+      <DependentUpon>FrmETAXRERESULT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmETAXRESULT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmETAXRESULT.Designer.cs">
+      <DependentUpon>FrmETAXRESULT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmExcel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmExcel.Designer.cs">
+      <DependentUpon>FrmExcel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmGridProperty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGridProperty.Designer.cs">
+      <DependentUpon>FrmGridProperty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmHelpBank.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmHelpBank.Designer.cs">
+      <DependentUpon>FrmHelpBank.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmHelp_Youtube.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmHelp_Youtube.Designer.cs">
+      <DependentUpon>FrmHelp_Youtube.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmHelp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmHelp.Designer.cs">
+      <DependentUpon>FrmHelp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLogin_C.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLogin_C.Designer.cs">
+      <DependentUpon>FrmLogin_C.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLogin_B.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLogin_B.Designer.cs">
+      <DependentUpon>FrmLogin_B.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLogin_A.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLogin_A.Designer.cs">
+      <DependentUpon>FrmLogin_A.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMDI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMDI.Designer.cs">
+      <DependentUpon>FrmMDI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMN0000_PROGRAMAS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMN0000_PROGRAMAS.Designer.cs">
+      <DependentUpon>FrmMN0000_PROGRAMAS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMN0000_PROGRAMAS_ADD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMN0000_PROGRAMAS_ADD.Designer.cs">
+      <DependentUpon>FrmMN0000_PROGRAMAS_ADD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMN0104_DRIVERRECORDMANAGE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMN0104_DRIVERRECORDMANAGE.Designer.cs">
+      <DependentUpon>FrmMN0104_DRIVERRECORDMANAGE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMN0203_CAROWNERMANAGE_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMN0203_CAROWNERMANAGE_Add.Designer.cs">
+      <DependentUpon>FrmMN0203_CAROWNERMANAGE_Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMN0203_CAROWNERMANAGE_FAULT_Add2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMN0203_CAROWNERMANAGE_FAULT_Add2.Designer.cs">
+      <DependentUpon>FrmMN0203_CAROWNERMANAGE_FAULT_Add2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMN0203_CAROWNERMANAGE_FAULT_Add _SG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMN0203_CAROWNERMANAGE_FAULT_Add _SG.Designer.cs">
+      <DependentUpon>FrmMN0203_CAROWNERMANAGE_FAULT_Add _SG.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMN0203_CAROWNERMANAGE_SG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMN0203_CAROWNERMANAGE_SG.Designer.cs">
+      <DependentUpon>FrmMN0203_CAROWNERMANAGE_SG.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMN0216_ORDERITEM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMN0216_ORDERITEM.Designer.cs">
+      <DependentUpon>FrmMN0216_ORDERITEM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMN0216_ORDERITEM_ADD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMN0216_ORDERITEM_ADD.Designer.cs">
+      <DependentUpon>FrmMN0216_ORDERITEM_ADD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMN0301Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMN0301Add.Designer.cs">
+      <DependentUpon>FrmMN0301Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMN0215_CUSTOMERMANAGE_ADD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMN0215_CUSTOMERMANAGE_ADD.Designer.cs">
+      <DependentUpon>FrmMN0215_CUSTOMERMANAGE_ADD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMN0215_CUSTOMERMANAGE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMN0215_CUSTOMERMANAGE.Designer.cs">
+      <DependentUpon>FrmMN0215_CUSTOMERMANAGE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMN0301B.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMN0301B.Designer.cs">
+      <DependentUpon>FrmMN0301B.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMN0301G.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMN0301G.Designer.cs">
+      <DependentUpon>FrmMN0301G.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMN0301PrevPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMN0301PrevPopup.Designer.cs">
+      <DependentUpon>FrmMN0301PrevPopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMN0301_SMS_List.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMN0301_SMS_List.Designer.cs">
+      <DependentUpon>FrmMN0301_SMS_List.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMN0304.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMN0304.Designer.cs">
+      <DependentUpon>FrmMN0304.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMN301_Call_PopupNew.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMN301_Call_PopupNew.Designer.cs">
+      <DependentUpon>FrmMN301_Call_PopupNew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMN301_Call_PopupSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMN301_Call_PopupSetting.Designer.cs">
+      <DependentUpon>FrmMN301_Call_PopupSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMNSTATSbak - 복사본.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMNSTATS - 복사본.Designer.cs">
+      <DependentUpon>FrmMNSTATSbak - 복사본.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMNSTATS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMNSTATS.Designer.cs">
+      <DependentUpon>FrmMNSTATS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMNRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMNRegister.Designer.cs">
+      <DependentUpon>FrmMNRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMN0209_CUSTOMER_Add_SG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMN0209_CUSTOMER_Add_SG.Designer.cs">
+      <DependentUpon>FrmMN0209_CUSTOMER_Add_SG.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMN0209_CUSTOMER_SG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMN0209_CUSTOMER_SG.Designer.cs">
+      <DependentUpon>FrmMN0209_CUSTOMER_SG.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMN0214_SUBCARGOOWNERMANAGE_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMN0214_SUBCARGOOWNERMANAGE_Add.Designer.cs">
+      <DependentUpon>FrmMN0214_SUBCARGOOWNERMANAGE_Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMN0214_SUBCARGOOWNERMANAGE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMN0214_SUBCARGOOWNERMANAGE.Designer.cs">
+      <DependentUpon>FrmMN0214_SUBCARGOOWNERMANAGE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMN0204_CARGOOWNERMANAGE_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMN0204_CARGOOWNERMANAGE_Add.Designer.cs">
+      <DependentUpon>FrmMN0204_CARGOOWNERMANAGE_Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMN0101_EMPTYCARINFOR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMN0101_EMPTYCARINFOR.Designer.cs">
+      <DependentUpon>FrmMN0101_EMPTYCARINFOR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMN0208_DRIVERADDMANAGE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMN0208_DRIVERADDMANAGE.Designer.cs">
+      <DependentUpon>FrmMN0208_DRIVERADDMANAGE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMN0208_DRIVERADDMANAGE_ADD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMN0208_DRIVERADDMANAGE_ADD.Designer.cs">
+      <DependentUpon>FrmMN0208_DRIVERADDMANAGE_ADD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMN0209_CUSTOMER.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMN0209_CUSTOMER.Designer.cs">
+      <DependentUpon>FrmMN0209_CUSTOMER.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMN0209_CUSTOMER_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMN0209_CUSTOMER_Add.Designer.cs">
+      <DependentUpon>FrmMN0209_CUSTOMER_Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMN0210_AccountOptions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMN0210_AccountOptions.Designer.cs">
+      <DependentUpon>FrmMN0210_AccountOptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMN0210_AccountOptions_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMN0210_AccountOptions_Add.Designer.cs">
+      <DependentUpon>FrmMN0210_AccountOptions_Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMN0212_SALESMANAGE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMN0212_SALESMANAGE.Designer.cs">
+      <DependentUpon>FrmMN0212_SALESMANAGE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMN0212_SALESMANAGE_ADD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMN0212_SALESMANAGE_ADD.Designer.cs">
+      <DependentUpon>FrmMN0212_SALESMANAGE_ADD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMN0203_CAROWNERMANAGE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMN0203_CAROWNERMANAGE.Designer.cs">
+      <DependentUpon>FrmMN0203_CAROWNERMANAGE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMN0204_CARGOOWNERMANAGE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMN0204_CARGOOWNERMANAGE.Designer.cs">
+      <DependentUpon>FrmMN0204_CARGOOWNERMANAGE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMN0206_SETMANAGE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMN0206_SETMANAGE.Designer.cs">
+      <DependentUpon>FrmMN0206_SETMANAGE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMN0207_SALESMANAGE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMN0207_SALESMANAGE.Designer.cs">
+      <DependentUpon>FrmMN0207_SALESMANAGE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMN0207_SALESMANAGE_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMN0207_SALESMANAGE_Add.Designer.cs">
+      <DependentUpon>FrmMN0207_SALESMANAGE_Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMN0213_PRICEMANAGE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMN0213_PRICEMANAGE.Designer.cs">
+      <DependentUpon>FrmMN0213_PRICEMANAGE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMN0213_PRICEMANAGE_Header.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMN0213_PRICEMANAGE_Header.Designer.cs">
+      <DependentUpon>FrmMN0213_PRICEMANAGE_Header.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMN0301.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMN0301.Designer.cs">
+      <DependentUpon>FrmMN0301.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMN0301_Call_List.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMN0301_Call_List.Designer.cs">
+      <DependentUpon>FrmMN0301_Call_List.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMN0301_CARGOACCEPT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMN0301_CARGOACCEPT.Designer.cs">
+      <DependentUpon>FrmMN0301_CARGOACCEPT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMN0303_CARGOFPIS_Add2_Default.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMN0303_CARGOFPIS_Add2_Default.Designer.cs">
+      <DependentUpon>FrmMN0303_CARGOFPIS_Add2_Default.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMN0303_CARGOFPIS_Add_Default.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMN0303_CARGOFPIS_Add_Default.Designer.cs">
+      <DependentUpon>FrmMN0303_CARGOFPIS_Add_Default.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMN0404_CHAGECARMANAGE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMN0404_CHAGECARMANAGE.Designer.cs">
+      <DependentUpon>FrmMN0404_CHAGECARMANAGE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMN0404_CHAGECARMANAGE_ADD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMN0404_CHAGECARMANAGE_ADD.Designer.cs">
+      <DependentUpon>FrmMN0404_CHAGECARMANAGE_ADD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMN0701_DRIVERPAY.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMN0701_DRIVERPAY.Designer.cs">
+      <DependentUpon>FrmMN0701_DRIVERPAY.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMN0702_CustomerAcc_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMN0702_CustomerAcc_Add.Designer.cs">
+      <DependentUpon>FrmMN0702_CustomerAcc_Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMN0801_Call.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMN0801_Call.Designer.cs">
+      <DependentUpon>FrmMN0801_Call.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMN0802_Order_Excel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMN0802_Order_Excel.Designer.cs">
+      <DependentUpon>FrmMN0802_Order_Excel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMN0804VAccountPool.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMN0804VAccountPool.Designer.cs">
+      <DependentUpon>FrmMN0804VAccountPool.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMN0803_Send_Image.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMN0803_Send_Image.Designer.cs">
+      <DependentUpon>FrmMN0803_Send_Image.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMN301_Call_Popup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMN301_Call_Popup.Designer.cs">
+      <DependentUpon>FrmMN301_Call_Popup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMNAccount06.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMNAccount06.Designer.cs">
+      <DependentUpon>FrmMNAccount06.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMNAccount05.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMNAccount05.Designer.cs">
+      <DependentUpon>FrmMNAccount05.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMNAccount04.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMNAccount04.Designer.cs">
+      <DependentUpon>FrmMNAccount04.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMNAccount03.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMNAccount03.Designer.cs">
+      <DependentUpon>FrmMNAccount03.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMNAccount02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMNAccount02.Designer.cs">
+      <DependentUpon>FrmMNAccount02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMNCardAccTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMNCardAccTest.Designer.cs">
+      <DependentUpon>FrmMNCardAccTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMNCarFPIS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMNCarFPIS.Designer.cs">
+      <DependentUpon>FrmMNCarFPIS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMNCustomerTotal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMNCustomerTotal.Designer.cs">
+      <DependentUpon>FrmMNCustomerTotal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMNFPISADD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMNFPISADD.Designer.cs">
+      <DependentUpon>FrmMNFPISADD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMNFPIS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMNFPIS.Designer.cs">
+      <DependentUpon>FrmMNFPIS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMNFPISCONT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMNFPISCONT.Designer.cs">
+      <DependentUpon>FrmMNFPISCONT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRMMNLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMMNLog.Designer.cs">
+      <DependentUpon>FRMMNLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRMMNNOTICEDRIVER.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMMNNOTICEDRIVER.Designer.cs">
+      <DependentUpon>FRMMNNOTICEDRIVER.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRMMNNOTICEDRIVER_ADD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMMNNOTICEDRIVER_ADD.Designer.cs">
+      <DependentUpon>FRMMNNOTICEDRIVER_ADD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMNAccount01.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMNAccount01.Designer.cs">
+      <DependentUpon>FrmMNAccount01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMNSTATS8.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMNSTATS8.Designer.cs">
+      <DependentUpon>FrmMNSTATS8.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMNSTATS1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMNSTATS1.Designer.cs">
+      <DependentUpon>FrmMNSTATS1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMNSTATS5.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMNSTATS5.Designer.cs">
+      <DependentUpon>FrmMNSTATS5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAPPSMSLIST.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAPPSMSLIST.Designer.cs">
+      <DependentUpon>FrmAPPSMSLIST.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPayExcel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPayExcel.Designer.cs">
+      <DependentUpon>FrmPayExcel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRMMNUSELIST.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMMNUSELIST.Designer.cs">
+      <DependentUpon>FRMMNUSELIST.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPopbillRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPopbillRegister.Designer.cs">
+      <DependentUpon>FrmPopbillRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPopbill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPopbill.Designer.cs">
+      <DependentUpon>FrmPopbill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAppSms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAppSms.Designer.cs">
+      <DependentUpon>FrmAppSms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSMSResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSMSResult.Designer.cs">
+      <DependentUpon>FrmSMSResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSMS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSMS.Designer.cs">
+      <DependentUpon>FrmSMS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmNStatistics.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmNStatistics.Designer.cs">
+      <DependentUpon>FrmNStatistics.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmStatistics.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmStatistics.Designer.cs">
+      <DependentUpon>FrmStatistics.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTax.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTax.designer.cs">
+      <DependentUpon>FrmTax.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTaxSales2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTaxSales2.designer.cs">
+      <DependentUpon>FrmTaxSales2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTaxSales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTaxSales.designer.cs">
+      <DependentUpon>FrmTaxSales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTrade_Add_CU_SG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTrade_Add_CU_SG.Designer.cs">
+      <DependentUpon>FrmTrade_Add_CU_SG.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTrade_Add_SG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTrade_Add_SG.Designer.cs">
+      <DependentUpon>FrmTrade_Add_SG.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTrade_CU_SG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTrade_CU_SG.designer.cs">
+      <DependentUpon>FrmTrade_CU_SG.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTrade_SG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTrade_SG.designer.cs">
+      <DependentUpon>FrmTrade_SG.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTrade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTrade.designer.cs">
+      <DependentUpon>FrmTrade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTradeExcel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTradeExcel.Designer.cs">
+      <DependentUpon>FrmTradeExcel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMN0212_SALESMANAGE_ADD2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMN0212_SALESMANAGE_ADD2.Designer.cs">
+      <DependentUpon>FrmMN0212_SALESMANAGE_ADD2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTradeNew2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTradeNew2.Designer.cs">
+      <DependentUpon>FrmTradeNew2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTrade_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTrade_Add.Designer.cs">
+      <DependentUpon>FrmTrade_Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMN0702_CustomerAcc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMN0702_CustomerAcc.Designer.cs">
+      <DependentUpon>FrmMN0702_CustomerAcc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AddressViewModel.cs" />
+    <Compile Include="Models\CustomSelectViewModel.cs" />
+    <Compile Include="Models\GetCustomSelectViewModel.cs" />
+    <Compile Include="Models\GetPreOrderViewModel.cs" />
+    <Compile Include="Models\Images.cs" />
+    <Compile Include="Models\ImageViewModels.cs" />
+    <Compile Include="Models\PreOrderViewModel.cs" />
+    <Compile Include="Models\PreviewPreOrderViewModel.cs" />
+    <Compile Include="NewDGV.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PlaceholderTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PrintDialogMessageBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrintDialogMessageBox.Designer.cs">
+      <DependentUpon>PrintDialogMessageBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="TaskDialogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TaskDialogForm.designer.cs">
+      <DependentUpon>TaskDialogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCAccount01.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCAccount01.Designer.cs">
+      <DependentUpon>UCAccount01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCAccount02.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCAccount02.Designer.cs">
+      <DependentUpon>UCAccount02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCAccount03.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCAccount03.Designer.cs">
+      <DependentUpon>UCAccount03.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCAccount04.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCAccount04.Designer.cs">
+      <DependentUpon>UCAccount04.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCAccount05.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCAccount05.Designer.cs">
+      <DependentUpon>UCAccount05.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCAccount06.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCAccount06.Designer.cs">
+      <DependentUpon>UCAccount06.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCNSTATS6bak.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCNSTATS6bak.Designer.cs">
+      <DependentUpon>UCNSTATS6bak.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCNSTATS6.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCNSTATS6.Designer.cs">
+      <DependentUpon>UCNSTATS6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCNSTATS5.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCNSTATS5.Designer.cs">
+      <DependentUpon>UCNSTATS5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCNSTATS4.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCNSTATS4.Designer.cs">
+      <DependentUpon>UCNSTATS4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCNSTATS3.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCNSTATS3.Designer.cs">
+      <DependentUpon>UCNSTATS3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCNSTATS2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCNSTATS2.Designer.cs">
+      <DependentUpon>UCNSTATS2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCNSTATS1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCNSTATS1.Designer.cs">
+      <DependentUpon>UCNSTATS1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCSTATS1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCSTATS1.Designer.cs">
+      <DependentUpon>UCSTATS1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCSTATS2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCSTATS2.Designer.cs">
+      <DependentUpon>UCSTATS2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCSTATS3.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCSTATS3.Designer.cs">
+      <DependentUpon>UCSTATS3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCSTATS4.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCSTATS4.Designer.cs">
+      <DependentUpon>UCSTATS4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCSTATS5.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCSTATS5.Designer.cs">
+      <DependentUpon>UCSTATS5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCSTATS6.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCSTATS6.Designer.cs">
+      <DependentUpon>UCSTATS6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCSTATS7.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCSTATS7.Designer.cs">
+      <DependentUpon>UCSTATS7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ButtonMessage.cs" />
+    <Compile Include="FrmMN0102_EMPTYCARNOTICE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMN0102_EMPTYCARNOTICE.Designer.cs">
+      <DependentUpon>FrmMN0102_EMPTYCARNOTICE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMN0103_EMPTYCARHISTORY.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMN0103_EMPTYCARHISTORY.Designer.cs">
+      <DependentUpon>FrmMN0103_EMPTYCARHISTORY.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMN0203_CAROWNERMANAGE_Add2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMN0203_CAROWNERMANAGE_Add2.Designer.cs">
+      <DependentUpon>FrmMN0203_CAROWNERMANAGE_Add2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMN0303_CARGOFPIS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMN0303_CARGOFPIS.Designer.cs">
+      <DependentUpon>FrmMN0303_CARGOFPIS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMN0303_CARGOFPIS_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMN0303_CARGOFPIS_Add.Designer.cs">
+      <DependentUpon>FrmMN0303_CARGOFPIS_Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMN0303_CARGOFPIS_Add2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMN0303_CARGOFPIS_Add2.Designer.cs">
+      <DependentUpon>FrmMN0303_CARGOFPIS_Add2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMN0303_CARGOFPIS_Add3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMN0303_CARGOFPIS_Add3.Designer.cs">
+      <DependentUpon>FrmMN0303_CARGOFPIS_Add3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMN0301_CARGOACCEPT_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMN0301_CARGOACCEPT_Add.Designer.cs">
+      <DependentUpon>FrmMN0301_CARGOACCEPT_Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMN0206_SETMANAGE1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMN0206_SETMANAGE1.Designer.cs">
+      <DependentUpon>FrmMN0206_SETMANAGE1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCarNumSearch2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCarNumSearch2.Designer.cs">
+      <DependentUpon>FrmCarNumSearch2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDriverSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDriverSearch.Designer.cs">
+      <DependentUpon>FrmDriverSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCustomerSearch2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCustomerSearch2.Designer.cs">
+      <DependentUpon>FrmCustomerSearch2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EXCELINSERT_Trade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EXCELINSERT_Trade.Designer.cs">
+      <DependentUpon>EXCELINSERT_Trade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMN0404_CHAGECARMANAGE_ADD2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMN0404_CHAGECARMANAGE_ADD2.Designer.cs">
+      <DependentUpon>FrmMN0404_CHAGECARMANAGE_ADD2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EXCELINSERT_DRIVER2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EXCELINSERT_DRIVER2.Designer.cs">
+      <DependentUpon>EXCELINSERT_DRIVER2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTradeSum.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTradeSum.Designer.cs">
+      <DependentUpon>FrmTradeSum.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCardSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCardSearch.Designer.cs">
+      <DependentUpon>FrmCardSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog_AcceptAcc_C.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog_AcceptAcc_C.Designer.cs">
+      <DependentUpon>Dialog_AcceptAcc_C.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTrade_Client.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTrade_Client.designer.cs">
+      <DependentUpon>FrmTrade_Client.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EXCELINSERT2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EXCELINSERT2.Designer.cs">
+      <DependentUpon>EXCELINSERT2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTrade_Client_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTrade_Client_Add.Designer.cs">
+      <DependentUpon>FrmTrade_Client_Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EXCELINSERT_Trade_Client.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EXCELINSERT_Trade_Client.Designer.cs">
+      <DependentUpon>EXCELINSERT_Trade_Client.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EXCELINSERT_DRIVER_LG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EXCELINSERT_DRIVER_LG.Designer.cs">
+      <DependentUpon>EXCELINSERT_DRIVER_LG.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmNewTrade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmNewTrade.designer.cs">
+      <DependentUpon>FrmNewTrade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EXCELINSERT_SubMall.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EXCELINSERT_SubMall.Designer.cs">
+      <DependentUpon>EXCELINSERT_SubMall.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EXCELINSERT3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EXCELINSERT3.Designer.cs">
+      <DependentUpon>EXCELINSERT3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMN0203_CAROWNERMANAGE_FAULT_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMN0203_CAROWNERMANAGE_FAULT_Add.Designer.cs">
+      <DependentUpon>FrmMN0203_CAROWNERMANAGE_FAULT_Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EXCELINSERT_DRIVER.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EXCELINSERT_DRIVER.Designer.cs">
+      <DependentUpon>EXCELINSERT_DRIVER.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMNSTATS2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMNSTATS2.Designer.cs">
+      <DependentUpon>FrmMNSTATS2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EXCELINSERT_CUSTOMER.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EXCELINSERT_CUSTOMER.Designer.cs">
+      <DependentUpon>EXCELINSERT_CUSTOMER.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EXCELINSERT_CARGOFPIS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EXCELINSERT_CARGOFPIS.Designer.cs">
+      <DependentUpon>EXCELINSERT_CARGOFPIS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EXCELINSERT_DRIVERMANAGE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EXCELINSERT_DRIVERMANAGE.Designer.cs">
+      <DependentUpon>EXCELINSERT_DRIVERMANAGE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EXCELINSERT_NOTICEDRIVER.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EXCELINSERT_NOTICEDRIVER.Designer.cs">
+      <DependentUpon>EXCELINSERT_NOTICEDRIVER.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMNSTATS3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMNSTATS3.Designer.cs">
+      <DependentUpon>FrmMNSTATS3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMNSTATS4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMNSTATS4.Designer.cs">
+      <DependentUpon>FrmMNSTATS4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMNSTATS6.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMNSTATS6.Designer.cs">
+      <DependentUpon>FrmMNSTATS6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMNSTATS7.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMNSTATS7.Designer.cs">
+      <DependentUpon>FrmMNSTATS7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTaxNew.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTaxNew.designer.cs">
+      <DependentUpon>FrmTaxNew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLogin_A_Test.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLogin_A_Test.Designer.cs">
+      <DependentUpon>FrmLogin_A_Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog_CancelAccTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog_CancelAccTest.Designer.cs">
+      <DependentUpon>Dialog_CancelAccTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DataGridViewDisableCheckBoxCell.cs" />
+    <Compile Include="UI\DottedGroupbox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\DottedPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <EmbeddedResource Include="DialogAppSms.resx">
+      <DependentUpon>DialogAppSms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog_EtaxManage.resx">
+      <DependentUpon>Dialog_EtaxManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog_BankResult.resx">
+      <DependentUpon>Dialog_BankResult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog_BankUpload.resx">
+      <DependentUpon>Dialog_BankUpload.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog_BankCreate.resx">
+      <DependentUpon>Dialog_BankCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog_AcceptBank.resx">
+      <DependentUpon>Dialog_AcceptBank.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog_CancelAcc_CU.resx">
+      <DependentUpon>Dialog_CancelAcc_CU.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog_OrderMemo.resx">
+      <DependentUpon>Dialog_OrderMemo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog_OrderUpdatLog.resx">
+      <DependentUpon>Dialog_OrderUpdatLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog_AccLogs.resx">
+      <DependentUpon>Dialog_AccLogs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog_CancelAcc.resx">
+      <DependentUpon>Dialog_CancelAcc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog_AcceptAcc.resx">
+      <DependentUpon>Dialog_AcceptAcc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog_CustomerImage.resx">
+      <DependentUpon>Dialog_CustomerImage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog_DEBUG.resx">
+      <DependentUpon>Dialog_DEBUG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EXCELINSERT5.resx">
+      <DependentUpon>EXCELINSERT5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EXCELINSERT4.resx">
+      <DependentUpon>EXCELINSERT4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EXCELINSERT_DRIVER_MISU.resx">
+      <DependentUpon>EXCELINSERT_DRIVER_MISU.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EXCELINSERT_CUSTOMER_MISU.resx">
+      <DependentUpon>EXCELINSERT_CUSTOMER_MISU.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EXCELINSERT_DRIVER_SHARE.resx">
+      <DependentUpon>EXCELINSERT_DRIVER_SHARE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EXCELINSERT_DRIVER_DEFAULT_SG.resx">
+      <DependentUpon>EXCELINSERT_DRIVER_DEFAULT_SG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EXCELINSERT_DRIVER_DEFAULT.resx">
+      <DependentUpon>EXCELINSERT_DRIVER_DEFAULT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EXCELINSERT_PayExcel.resx">
+      <DependentUpon>EXCELINSERT_PayExcel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EXCELINSERT_USELIST.resx">
+      <DependentUpon>EXCELINSERT_USELIST.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EXCELRESULT.resx">
+      <DependentUpon>EXCELRESULT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FindZipNew.resx">
+      <DependentUpon>FindZipNew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FindZip.resx">
+      <DependentUpon>FindZip.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormImagesDefault.resx">
+      <DependentUpon>FormImagesDefault.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormImages2.resx">
+      <DependentUpon>FormImages2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormImages.resx">
+      <DependentUpon>FormImages.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm0104_DTGTOTAL.resx">
+      <DependentUpon>Frm0104_DTGTOTAL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCustomerStartList.resx">
+      <DependentUpon>FrmCustomerStartList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPdfViewer.resx">
+      <DependentUpon>FrmPdfViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmEDocumentList.resx">
+      <DependentUpon>FrmEDocumentList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCargoZip.resx">
+      <DependentUpon>FrmCargoZip.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCarNumSearch.resx">
+      <DependentUpon>FrmCarNumSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmClientUser.resx">
+      <DependentUpon>FrmClientUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmClientRegisterUser_Add.resx">
+      <DependentUpon>FrmClientRegisterUser_Add.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmClientUser_Add.resx">
+      <DependentUpon>FrmClientUser_Add.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCustomerSearch.resx">
+      <DependentUpon>FrmCustomerSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmEdocument.resx">
+      <DependentUpon>FrmEdocument.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmETAXIN.resx">
+      <DependentUpon>FrmETAXIN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmETAXCanCle.resx">
+      <DependentUpon>FrmETAXCanCle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmETAXREIN.resx">
+      <DependentUpon>FrmETAXREIN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmETAXRERESULT.resx">
+      <DependentUpon>FrmETAXRERESULT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmETAXRESULT.resx">
+      <DependentUpon>FrmETAXRESULT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmExcel.resx">
+      <DependentUpon>FrmExcel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmGridProperty.resx">
+      <DependentUpon>FrmGridProperty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmHelpBank.resx">
+      <DependentUpon>FrmHelpBank.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmHelp_Youtube.resx">
+      <DependentUpon>FrmHelp_Youtube.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmHelp.resx">
+      <DependentUpon>FrmHelp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLogin_C.resx">
+      <DependentUpon>FrmLogin_C.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLogin_B.resx">
+      <DependentUpon>FrmLogin_B.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLogin_A.resx">
+      <DependentUpon>FrmLogin_A.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMDI.resx">
+      <DependentUpon>FrmMDI.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMN0000_PROGRAMAS.resx">
+      <DependentUpon>FrmMN0000_PROGRAMAS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMN0000_PROGRAMAS_ADD.resx">
+      <DependentUpon>FrmMN0000_PROGRAMAS_ADD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMN0101_EMPTYCARINFOR.resx">
+      <DependentUpon>FrmMN0101_EMPTYCARINFOR.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMN0104_DRIVERRECORDMANAGE.resx">
+      <DependentUpon>FrmMN0104_DRIVERRECORDMANAGE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMN0203_CAROWNERMANAGE_FAULT_Add2.resx">
+      <DependentUpon>FrmMN0203_CAROWNERMANAGE_FAULT_Add2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMN0203_CAROWNERMANAGE_FAULT_Add _SG.resx">
+      <DependentUpon>FrmMN0203_CAROWNERMANAGE_FAULT_Add _SG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMN0203_CAROWNERMANAGE_SG.resx">
+      <DependentUpon>FrmMN0203_CAROWNERMANAGE_SG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMN0216_ORDERITEM.resx">
+      <DependentUpon>FrmMN0216_ORDERITEM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMN0216_ORDERITEM_ADD.resx">
+      <DependentUpon>FrmMN0216_ORDERITEM_ADD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMN0301Add.resx">
+      <DependentUpon>FrmMN0301Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMN0215_CUSTOMERMANAGE_ADD.resx">
+      <DependentUpon>FrmMN0215_CUSTOMERMANAGE_ADD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMN0215_CUSTOMERMANAGE.resx">
+      <DependentUpon>FrmMN0215_CUSTOMERMANAGE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMN0301B.resx">
+      <DependentUpon>FrmMN0301B.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMN0301G.resx">
+      <DependentUpon>FrmMN0301G.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMN0301PrevPopup.resx">
+      <DependentUpon>FrmMN0301PrevPopup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMN0301_SMS_List.resx">
+      <DependentUpon>FrmMN0301_SMS_List.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMN0304.resx">
+      <DependentUpon>FrmMN0304.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMN301_Call_PopupNew.resx">
+      <DependentUpon>FrmMN301_Call_PopupNew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMN301_Call_PopupSetting.resx">
+      <DependentUpon>FrmMN301_Call_PopupSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMNSTATS - 복사본.resx">
+      <DependentUpon>FrmMNSTATSbak - 복사본.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMNSTATS.resx">
+      <DependentUpon>FrmMNSTATS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMNRegister.resx">
+      <DependentUpon>FrmMNRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMN0209_CUSTOMER_Add_SG.resx">
+      <DependentUpon>FrmMN0209_CUSTOMER_Add_SG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMN0209_CUSTOMER_SG.resx">
+      <DependentUpon>FrmMN0209_CUSTOMER_SG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMN0214_SUBCARGOOWNERMANAGE_Add.resx">
+      <DependentUpon>FrmMN0214_SUBCARGOOWNERMANAGE_Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMN0214_SUBCARGOOWNERMANAGE.resx">
+      <DependentUpon>FrmMN0214_SUBCARGOOWNERMANAGE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMN0208_DRIVERADDMANAGE.resx">
+      <DependentUpon>FrmMN0208_DRIVERADDMANAGE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMN0208_DRIVERADDMANAGE_ADD.resx">
+      <DependentUpon>FrmMN0208_DRIVERADDMANAGE_ADD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMN0209_CUSTOMER.resx">
+      <DependentUpon>FrmMN0209_CUSTOMER.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMN0209_CUSTOMER_Add.resx">
+      <DependentUpon>FrmMN0209_CUSTOMER_Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMN0210_AccountOptions.resx">
+      <DependentUpon>FrmMN0210_AccountOptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMN0210_AccountOptions_Add.resx">
+      <DependentUpon>FrmMN0210_AccountOptions_Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMN0212_SALESMANAGE.resx">
+      <DependentUpon>FrmMN0212_SALESMANAGE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMN0212_SALESMANAGE_ADD.resx">
+      <DependentUpon>FrmMN0212_SALESMANAGE_ADD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMN0203_CAROWNERMANAGE.resx">
+      <DependentUpon>FrmMN0203_CAROWNERMANAGE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMN0203_CAROWNERMANAGE_Add.resx">
+      <DependentUpon>FrmMN0203_CAROWNERMANAGE_Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMN0204_CARGOOWNERMANAGE.resx">
+      <DependentUpon>FrmMN0204_CARGOOWNERMANAGE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMN0204_CARGOOWNERMANAGE_Add.resx">
+      <DependentUpon>FrmMN0204_CARGOOWNERMANAGE_Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMN0206_SETMANAGE.resx">
+      <DependentUpon>FrmMN0206_SETMANAGE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMN0207_SALESMANAGE.resx">
+      <DependentUpon>FrmMN0207_SALESMANAGE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMN0207_SALESMANAGE_Add.resx">
+      <DependentUpon>FrmMN0207_SALESMANAGE_Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMN0213_PRICEMANAGE.resx">
+      <DependentUpon>FrmMN0213_PRICEMANAGE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMN0213_PRICEMANAGE_Header.resx">
+      <DependentUpon>FrmMN0213_PRICEMANAGE_Header.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMN0301.resx">
+      <DependentUpon>FrmMN0301.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMN0301_Call_List.resx">
+      <DependentUpon>FrmMN0301_Call_List.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMN0301_CARGOACCEPT.resx">
+      <DependentUpon>FrmMN0301_CARGOACCEPT.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMN0303_CARGOFPIS_Add2_Default.resx">
+      <DependentUpon>FrmMN0303_CARGOFPIS_Add2_Default.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMN0303_CARGOFPIS_Add_Default.resx">
+      <DependentUpon>FrmMN0303_CARGOFPIS_Add_Default.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMN0404_CHAGECARMANAGE.resx">
+      <DependentUpon>FrmMN0404_CHAGECARMANAGE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMN0404_CHAGECARMANAGE_ADD.resx">
+      <DependentUpon>FrmMN0404_CHAGECARMANAGE_ADD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMN0701_DRIVERPAY.resx">
+      <DependentUpon>FrmMN0701_DRIVERPAY.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMN0702_CustomerAcc_Add.resx">
+      <DependentUpon>FrmMN0702_CustomerAcc_Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMN0801_Call.resx">
+      <DependentUpon>FrmMN0801_Call.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMN0802_Order_Excel.resx">
+      <DependentUpon>FrmMN0802_Order_Excel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMN0804VAccountPool.resx">
+      <DependentUpon>FrmMN0804VAccountPool.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMN0803_Send_Image.resx">
+      <DependentUpon>FrmMN0803_Send_Image.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMN301_Call_Popup.resx">
+      <DependentUpon>FrmMN301_Call_Popup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMNAccount06.resx">
+      <DependentUpon>FrmMNAccount06.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMNAccount05.resx">
+      <DependentUpon>FrmMNAccount05.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMNAccount04.resx">
+      <DependentUpon>FrmMNAccount04.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMNAccount03.resx">
+      <DependentUpon>FrmMNAccount03.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMNAccount02.resx">
+      <DependentUpon>FrmMNAccount02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMNCardAccTest.resx">
+      <DependentUpon>FrmMNCardAccTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMNCarFPIS.resx">
+      <DependentUpon>FrmMNCarFPIS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMNCustomerTotal.resx">
+      <DependentUpon>FrmMNCustomerTotal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMNFPISADD.resx">
+      <DependentUpon>FrmMNFPISADD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMNFPIS.resx">
+      <DependentUpon>FrmMNFPIS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMNFPISCONT.resx">
+      <DependentUpon>FrmMNFPISCONT.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRMMNLog.resx">
+      <DependentUpon>FRMMNLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRMMNNOTICEDRIVER.resx">
+      <DependentUpon>FRMMNNOTICEDRIVER.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRMMNNOTICEDRIVER_ADD.resx">
+      <DependentUpon>FRMMNNOTICEDRIVER_ADD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMNAccount01.resx">
+      <DependentUpon>FrmMNAccount01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMNSTATS8.resx">
+      <DependentUpon>FrmMNSTATS8.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMNSTATS1.resx">
+      <DependentUpon>FrmMNSTATS1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMNSTATS5.resx">
+      <DependentUpon>FrmMNSTATS5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAPPSMSLIST.resx">
+      <DependentUpon>FrmAPPSMSLIST.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPayExcel.resx">
+      <DependentUpon>FrmPayExcel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRMMNUSELIST.resx">
+      <DependentUpon>FRMMNUSELIST.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPopbillRegister.resx">
+      <DependentUpon>FrmPopbillRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPopbill.resx">
+      <DependentUpon>FrmPopbill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAppSms.resx">
+      <DependentUpon>FrmAppSms.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSMSResult.resx">
+      <DependentUpon>FrmSMSResult.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSMS.resx">
+      <DependentUpon>FrmSMS.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmNStatistics.resx">
+      <DependentUpon>FrmNStatistics.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmStatistics.resx">
+      <DependentUpon>FrmStatistics.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTax.resx">
+      <DependentUpon>FrmTax.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTaxSales2.resx">
+      <DependentUpon>FrmTaxSales2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTaxSales.resx">
+      <DependentUpon>FrmTaxSales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTrade_Add_CU_SG.resx">
+      <DependentUpon>FrmTrade_Add_CU_SG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTrade_Add_SG.resx">
+      <DependentUpon>FrmTrade_Add_SG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTrade_CU_SG.resx">
+      <DependentUpon>FrmTrade_CU_SG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTrade_SG.resx">
+      <DependentUpon>FrmTrade_SG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTrade.resx">
+      <DependentUpon>FrmTrade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTradeExcel.resx">
+      <DependentUpon>FrmTradeExcel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMN0212_SALESMANAGE_ADD2.resx">
+      <DependentUpon>FrmMN0212_SALESMANAGE_ADD2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTradeNew2.resx">
+      <DependentUpon>FrmTradeNew2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTrade_Add.resx">
+      <DependentUpon>FrmTrade_Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMN0702_CustomerAcc.resx">
+      <DependentUpon>FrmMN0702_CustomerAcc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewDGV.resx">
+      <DependentUpon>NewDGV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintDialogMessageBox.resx">
+      <DependentUpon>PrintDialogMessageBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMN0102_EMPTYCARNOTICE.resx">
+      <DependentUpon>FrmMN0102_EMPTYCARNOTICE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMN0103_EMPTYCARHISTORY.resx">
+      <DependentUpon>FrmMN0103_EMPTYCARHISTORY.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMN0203_CAROWNERMANAGE_Add2.resx">
+      <DependentUpon>FrmMN0203_CAROWNERMANAGE_Add2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMN0303_CARGOFPIS.resx">
+      <DependentUpon>FrmMN0303_CARGOFPIS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMN0303_CARGOFPIS_Add.resx">
+      <DependentUpon>FrmMN0303_CARGOFPIS_Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMN0303_CARGOFPIS_Add2.resx">
+      <DependentUpon>FrmMN0303_CARGOFPIS_Add2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMN0303_CARGOFPIS_Add3.resx">
+      <DependentUpon>FrmMN0303_CARGOFPIS_Add3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMN0301_CARGOACCEPT_Add.resx">
+      <DependentUpon>FrmMN0301_CARGOACCEPT_Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\NSTATS5.rdlc" />
+    <EmbeddedResource Include="Report\NSTATS1.rdlc" />
+    <EmbeddedResource Include="Report\STATS6.rdlc" />
+    <EmbeddedResource Include="Report\STATS5.rdlc" />
+    <EmbeddedResource Include="Report\STATS4.rdlc" />
+    <EmbeddedResource Include="Report\STATS3.rdlc" />
+    <EmbeddedResource Include="Report\STATS2.rdlc" />
+    <EmbeddedResource Include="Report\STATS1.rdlc" />
+    <EmbeddedResource Include="Report\STATS8.rdlc" />
+    <EmbeddedResource Include="SalesList3.rdlc" />
+    <EmbeddedResource Include="SalesList2.rdlc" />
+    <EmbeddedResource Include="SalesList.rdlc" />
+    <EmbeddedResource Include="TaskDialogForm.resx">
+      <DependentUpon>TaskDialogForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tax.Out.rdlc" />
+    <EmbeddedResource Include="Tax.Client.rdlc" />
+    <EmbeddedResource Include="Tax.Driver.rdlc" />
+    <EmbeddedResource Include="Tax.rdlc" />
+    <EmbeddedResource Include="FrmMN0206_SETMANAGE1.resx">
+      <DependentUpon>FrmMN0206_SETMANAGE1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCarNumSearch2.resx">
+      <DependentUpon>FrmCarNumSearch2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDriverSearch.resx">
+      <DependentUpon>FrmDriverSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCustomerSearch2.resx">
+      <DependentUpon>FrmCustomerSearch2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EXCELINSERT_Trade.resx">
+      <DependentUpon>EXCELINSERT_Trade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMN0404_CHAGECARMANAGE_ADD2.resx">
+      <DependentUpon>FrmMN0404_CHAGECARMANAGE_ADD2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EXCELINSERT_DRIVER2.resx">
+      <DependentUpon>EXCELINSERT_DRIVER2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTradeSum.resx">
+      <DependentUpon>FrmTradeSum.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCardSearch.resx">
+      <DependentUpon>FrmCardSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog_AcceptAcc_C.resx">
+      <DependentUpon>Dialog_AcceptAcc_C.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTrade_Client.resx">
+      <DependentUpon>FrmTrade_Client.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EXCELINSERT2.resx">
+      <DependentUpon>EXCELINSERT2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTrade_Client_Add.resx">
+      <DependentUpon>FrmTrade_Client_Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EXCELINSERT_Trade_Client.resx">
+      <DependentUpon>EXCELINSERT_Trade_Client.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EXCELINSERT_DRIVER_LG.resx">
+      <DependentUpon>EXCELINSERT_DRIVER_LG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmNewTrade.resx">
+      <DependentUpon>FrmNewTrade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EXCELINSERT_SubMall.resx">
+      <DependentUpon>EXCELINSERT_SubMall.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EXCELINSERT3.resx">
+      <DependentUpon>EXCELINSERT3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMN0203_CAROWNERMANAGE_FAULT_Add.resx">
+      <DependentUpon>FrmMN0203_CAROWNERMANAGE_FAULT_Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EXCELINSERT_DRIVER.resx">
+      <DependentUpon>EXCELINSERT_DRIVER.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMNSTATS2.resx">
+      <DependentUpon>FrmMNSTATS2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EXCELINSERT_CUSTOMER.resx">
+      <DependentUpon>EXCELINSERT_CUSTOMER.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EXCELINSERT_CARGOFPIS.resx">
+      <DependentUpon>EXCELINSERT_CARGOFPIS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EXCELINSERT_DRIVERMANAGE.resx">
+      <DependentUpon>EXCELINSERT_DRIVERMANAGE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EXCELINSERT_NOTICEDRIVER.resx">
+      <DependentUpon>EXCELINSERT_NOTICEDRIVER.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMNSTATS3.resx">
+      <DependentUpon>FrmMNSTATS3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMNSTATS4.resx">
+      <DependentUpon>FrmMNSTATS4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMNSTATS6.resx">
+      <DependentUpon>FrmMNSTATS6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMNSTATS7.resx">
+      <DependentUpon>FrmMNSTATS7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTaxNew.resx">
+      <DependentUpon>FrmTaxNew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TaxNew.rdlc" />
+    <EmbeddedResource Include="FrmLogin_A_Test.resx">
+      <DependentUpon>FrmLogin_A_Test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog_CancelAccTest.resx">
+      <DependentUpon>Dialog_CancelAccTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCAccount01.resx">
+      <DependentUpon>UCAccount01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCAccount02.resx">
+      <DependentUpon>UCAccount02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCAccount03.resx">
+      <DependentUpon>UCAccount03.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCAccount04.resx">
+      <DependentUpon>UCAccount04.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCAccount05.resx">
+      <DependentUpon>UCAccount05.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCAccount06.resx">
+      <DependentUpon>UCAccount06.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCNSTATS6bak.resx">
+      <DependentUpon>UCNSTATS6bak.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCNSTATS6.resx">
+      <DependentUpon>UCNSTATS6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCNSTATS5.resx">
+      <DependentUpon>UCNSTATS5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCNSTATS4.resx">
+      <DependentUpon>UCNSTATS4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCNSTATS3.resx">
+      <DependentUpon>UCNSTATS3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCNSTATS2.resx">
+      <DependentUpon>UCNSTATS2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCNSTATS1.resx">
+      <DependentUpon>UCNSTATS1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCSTATS1.resx">
+      <DependentUpon>UCSTATS1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCSTATS2.resx">
+      <DependentUpon>UCSTATS2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCSTATS3.resx">
+      <DependentUpon>UCSTATS3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCSTATS4.resx">
+      <DependentUpon>UCSTATS4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCSTATS5.resx">
+      <DependentUpon>UCSTATS5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCSTATS6.resx">
+      <DependentUpon>UCSTATS6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCSTATS7.resx">
+      <DependentUpon>UCSTATS7.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="CMDataSet.xsc">
+      <DependentUpon>CMDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CMDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CMDataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="CMDataSet.xss">
+      <DependentUpon>CMDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\AppSMSDataSet.xsc">
+      <DependentUpon>AppSMSDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\AppSMSDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AppSMSDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\AppSMSDataSet.xss">
+      <DependentUpon>AppSMSDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\BankDataSet.xsc">
+      <DependentUpon>BankDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\BankDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BankDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\BankDataSet.xss">
+      <DependentUpon>BankDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\BaseDataSet.xsc">
+      <DependentUpon>BaseDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\BaseDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BaseDataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\BaseDataSet.xss">
+      <DependentUpon>BaseDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\ClientDataSet.xsc">
+      <DependentUpon>ClientDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\ClientDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ClientDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\ClientDataSet.xss">
+      <DependentUpon>ClientDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\CustomerManagerDataSet.xsc">
+      <DependentUpon>CustomerManagerDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\CustomerManagerDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CustomerManagerDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\CustomerManagerDataSet.xss">
+      <DependentUpon>CustomerManagerDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\CustomerStartManageDataSet.xsc">
+      <DependentUpon>CustomerStartManageDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\CustomerStartManageDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CustomerStartManageDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\CustomerStartManageDataSet.xss">
+      <DependentUpon>CustomerStartManageDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\EDocumnetDataSet.xsc">
+      <DependentUpon>EDocumnetDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\EDocumnetDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EDocumnetDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\EDocumnetDataSet.xss">
+      <DependentUpon>EDocumnetDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\FPISDataSet.xsc">
+      <DependentUpon>FPISDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\FPISDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FPISDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\FPISDataSet.xss">
+      <DependentUpon>FPISDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\LoginLog.xsc">
+      <DependentUpon>LoginLog.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\LoginLog.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LoginLog.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\LoginLog.xss">
+      <DependentUpon>LoginLog.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\NSTATSDataSet.xsc">
+      <DependentUpon>NSTATSDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\NSTATSDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NSTATSDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\NSTATSDataSet.xss">
+      <DependentUpon>NSTATSDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\OrderDataSet.xsc">
+      <DependentUpon>OrderDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\OrderDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OrderDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSets\OrderDataSet.xss">
+      <DependentUpon>OrderDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\OrderItemDataSet.xsc">
+      <DependentUpon>OrderItemDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\OrderItemDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OrderItemDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\OrderItemDataSet.xss">
+      <DependentUpon>OrderItemDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\PayExcelDataSet.xsc">
+      <DependentUpon>PayExcelDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\PayExcelDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PayExcelDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\PayExcelDataSet.xss">
+      <DependentUpon>PayExcelDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\SalesDataSet.xsc">
+      <DependentUpon>SalesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\SalesDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SalesDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\SalesDataSet.xss">
+      <DependentUpon>SalesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\TradeDataSet.xsc">
+      <DependentUpon>TradeDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\TradeDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TradeDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\TradeDataSet.xss">
+      <DependentUpon>TradeDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\UseListDataSet.xsc">
+      <DependentUpon>UseListDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\UseListDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UseListDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\UseListDataSet.xss">
+      <DependentUpon>UseListDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\DataSources\mycalltruck.Admin.Models.Images.datasource">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Resources\%28오프라인PG%29_일괄_아이디신청_양식_160330.xls" />
+    <None Include="Resources\APP설치문자입력.xlsx" />
+    <None Include="Resources\Help01-01.mht" />
+    <None Include="Resources\Help01-02.mht" />
+    <None Include="Resources\Help01-03.mht" />
+    <None Include="Resources\Help01-04.mht" />
+    <None Include="Resources\Help01-05.mht" />
+    <None Include="Resources\Help01-06.mht" />
+    <None Include="Resources\Help01-07.mht" />
+    <None Include="Resources\Help01-08.mht" />
+    <None Include="Resources\KEB하나_대량이체.mht" />
+    <None Include="Resources\KEB하나_대량이체.xps" />
+    <None Include="Resources\KEB하나_이체처리결과.mht" />
+    <None Include="Resources\mycallTruckManual.mht" />
+    <None Include="Resources\가상계좌번호입력.xlsx" />
+    <None Include="Resources\거래처_미수미지급.xlsx" />
+    <None Include="Resources\거래처관리입력양식.xlsx" />
+    <None Include="Resources\거래처관리입력양식_Blank.xlsx" />
+    <None Include="Resources\거래처일괄등록.xls" />
+    <None Include="Resources\고객별사용내역.xlsx" />
+    <None Include="Resources\국민_대량이체.mht" />
+    <None Include="Resources\국민_대량이체.pdf" />
+    <None Include="Resources\국민_대량이체.xps" />
+    <None Include="Resources\국민_대량이체_업로드.xls" />
+    <None Include="Resources\국민_대량이체_업로드.xlsx" />
+    <None Include="Resources\국민_대량이체_업로드1.xls" />
+    <None Include="Resources\국민_이체처리결과.mht" />
+    <None Include="Resources\국민_이체처리결과.xps" />
+    <None Include="Resources\국민대량이체.pdf" />
+    <None Include="Resources\국민대량이체결과.pdf" />
+    <None Include="Resources\기사관리입력양식.xlsx" />
+    <None Include="Resources\기사정보일괄입력.xls" />
+    <None Include="Resources\기업_대량이체.mht" />
+    <None Include="Resources\기업_대량이체.xps" />
+    <None Include="Resources\기업_이체처리결과.mht" />
+    <None Include="Resources\기업_이체처리결과.xps" />
+    <None Include="Resources\기업은행_대량이체_업로드.xls" />
+    <None Include="Resources\농협_대량이체.mht" />
+    <None Include="Resources\농협_대량이체.xps" />
+    <None Include="Resources\농협_대량이체_업로드.xls" />
+    <None Include="Resources\농협_이체처리결과.mht" />
+    <None Include="Resources\농협_이체처리결과.xps" />
+    <None Include="Resources\농협은행 양식.xls" />
+    <None Include="Resources\농협은행 양식.xlsx" />
+    <None Include="Resources\다복종합물류_엑셀양식 %281%29.xls" />
+    <None Include="Resources\매입차주정산양식_Blank.xlsx" />
+    <None Include="Resources\매출주선위탁사정산_Blank.xlsx" />
+    <None Include="Resources\매출화주정산양식_Blank.xlsx" />
+    <None Include="Resources\배차관리_일괄등록_간편양식.xlsx" />
+    <None Include="Resources\배차일보_Blank.xlsx" />
+    <None Include="Resources\신한_대량이체.mht" />
+    <None Include="Resources\신한_대량이체.xps" />
+    <None Include="Resources\신한_이체처리결과.mht" />
+    <None Include="Resources\신한_이체처리결과.xps" />
+    <None Include="Resources\신한은행_대량이체_업로드.xls" />
+    <None Include="Resources\실패결과.xls" />
+    <None Include="Resources\알림톡_일괄등록.xls" />
+    <None Include="Resources\알림톡일괄등록양식.xlsx" />
+    <None Include="Resources\우리_대량이체.mht" />
+    <None Include="Resources\우리_대량이체.xps" />
+    <None Include="Resources\우리_대량이체_업로드.xls" />
+    <None Include="Resources\우리_대량이체_업로드.xlsx" />
+    <None Include="Resources\우리_이체처리결과.mht" />
+    <None Include="Resources\우리_이체처리결과.xps" />
+    <None Include="Resources\위수탁관리입력양식.xlsx" />
+    <None Include="Resources\위수탁관리입력양식_Blank.xlsx" />
+    <None Include="Resources\위탁관리일괄입력양식.xls" />
+    <None Include="Resources\일괄입력위탁신고양식.xlsx" />
+    <None Include="Resources\적용상세내역.xls" />
+    <None Include="Resources\정산요약.xlsx" />
+    <None Include="Resources\지입차일괄역발행양식.xlsx" />
+    <None Include="Resources\지입차일괄역발행양식_Blank.xlsx" />
+    <None Include="Resources\차량_미수미지급.xlsx" />
+    <None Include="Resources\차량_일괄입력_기본형.xls" />
+    <None Include="Resources\차량관리공유양식.xlsx" />
+    <None Include="Resources\차량관리입력양식%28기본%29.xlsx" />
+    <None Include="Resources\차량관리입력양식%28기본%29_Blank.xlsx" />
+    <None Include="Resources\차량관리입력양식%28기본%29__XLSX.xlsx" />
+    <None Include="Resources\차량관리입력양식%28표준%29_Blank.xlsx" />
+    <None Include="Resources\차량관리입력양식%28표준%29_XLSX.xlsx" />
+    <None Include="Resources\배차정보입력양식.xls" />
+    <None Include="Resources\배차정보입력양식.xlsx" />
+    <None Include="Resources\부가가치세_신고양식.xls" />
+    <None Include="Resources\서브몰일괄입력_양식.xls" />
+    <None Include="Resources\세금계산서.xlsx" />
+    <None Include="Resources\승인결과.xls" />
+    <None Include="Resources\신용대출.xlsx" />
+    <None Include="Resources\신한은행 양식.xlsx" />
+    <None Include="Resources\엑셀_배차관리_외부양식_#1.xls" />
+    <None Include="Resources\운송사몰_내보내기_양식.xls" />
+    <None Include="Resources\운송완료건_일괄등록.xls" />
+    <None Include="Resources\운송완료건_일괄등록양식.xls" />
+    <None Include="Resources\일괄입력사용자_신고양식%28미대행%29.xls" />
+    <None Include="Resources\일괄입력운송신고양식.xls" />
+    <None Include="Resources\일괄입력위탁신고양식.xls" />
+    <None Include="Resources\지입차일괄역발행양식.xls" />
+    <None Include="Resources\차량관리.xls" />
+    <None Include="Resources\차량관리.xlsx" />
+    <None Include="Resources\차량일괄입력_양식.xls" />
+    <None Include="Resources\차주몰_내보내기_양식.xls" />
+    <None Include="Resources\차주몰_내보내기_양식.xlsx" />
+    <None Include="Resources\카드페이_운송사_메뉴얼_Ver2.0.xps" />
+    <None Include="Resources\카드페이_지입_화물_반품_내역.xlsx" />
+    <None Include="Resources\카드페이_지입_화물_배차_내역.xlsx" />
+    <None Include="Resources\카드페이_화물_배차_내역.xlsx" />
+    <None Include="Resources\하나_대량이체_업로드.xls" />
+    <None Include="Resources\하나은행_대량이체.xps" />
+    <None Include="Resources\하나은행_이체처리결과.xps" />
+    <None Include="Resources\협력업체일괄역발행양식.xls" />
+    <None Include="Resources\회원가입_배차정보입력양식.xlsx" />
+    <None Include="Resources\회원가입_배차정보입력양식1.xlsx" />
+    <None Include="Resources\회원가입_배차정보입력양식2.xlsx" />
+    <None Include="Resources\회원가입_배차정보입력양식_Blank.xlsx" />
+    <None Include="Resources\회원정보.xls" />
+    <None Include="Resources\회원정보.xlsx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2%28x86 및 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CARDPAY.ico" />
+    <Content Include="Documents\Car-Change.txt" />
+    <Content Include="Documents\기능-목록.txt" />
+    <Content Include="Documents\데이터베이스-세부.txt" />
+    <Content Include="Documents\데이터베이스.txt" />
+    <Content Include="Documents\보안개선.txt" />
+    <Content Include="Documents\인증.txt" />
+    <Content Include="External\LGUBaseOpenApi.ocx" />
+    <Content Include="FB0570D71436003B.ico" />
+    <Content Include="ic_launcher.ico" />
+    <None Include="Resources\ic_photo_gray_48dp_2x.png" />
+    <None Include="Resources\black_010.png" />
+    <None Include="Resources\black_020.png" />
+    <None Include="Resources\black_030.png" />
+    <None Include="Resources\black_040.png" />
+    <None Include="Resources\black_050.png" />
+    <None Include="Resources\black_060.png" />
+    <None Include="Resources\black_070.png" />
+    <None Include="Resources\black_080.png" />
+    <None Include="Resources\black_090.png" />
+    <None Include="Resources\black_100.png" />
+    <None Include="Resources\black_110.png" />
+    <None Include="Resources\black_120.png" />
+    <None Include="Resources\black_130.png" />
+    <None Include="Resources\black_140.png" />
+    <None Include="Resources\black_150.png" />
+    <None Include="Resources\black_160.png" />
+    <None Include="Resources\gray_010.png" />
+    <None Include="Resources\gray_020.png" />
+    <None Include="Resources\gray_030.png" />
+    <None Include="Resources\gray_040.png" />
+    <None Include="Resources\gray_050.png" />
+    <None Include="Resources\gray_060.png" />
+    <None Include="Resources\gray_070.png" />
+    <None Include="Resources\gray_080.png" />
+    <None Include="Resources\gray_090.png" />
+    <None Include="Resources\gray_100.png" />
+    <None Include="Resources\gray_110.png" />
+    <None Include="Resources\gray_120.png" />
+    <None Include="Resources\gray_130.png" />
+    <None Include="Resources\gray_140.png" />
+    <None Include="Resources\gray_150.png" />
+    <None Include="Resources\gray_160.png" />
+    <None Include="Resources\login_bg.png" />
+    <None Include="Resources\blue_000.png" />
+    <None Include="Resources\rotate.png" />
+    <None Include="Resources\default.png" />
+    <None Include="Resources\hover.png" />
+    <None Include="Resources\press.png" />
+    <None Include="Resources\Memo1.png" />
+    <None Include="Resources\Phone1.png" />
+    <None Include="Resources\Setting1.png" />
+    <None Include="Resources\Sms1.png" />
+    <None Include="Resources\그림4.png" />
+    <None Include="Resources\그림6.png" />
+    <None Include="Resources\타이틀.png" />
+    <None Include="Resources\Call.png" />
+    <None Include="Resources\CallRe.png" />
+    <None Include="Resources\CallSend.png" />
+    <None Include="Resources\black_030 - 복사본.png" />
+    <None Include="Resources\CallPopupBackground.png" />
+    <None Include="Resources\blue_0001.png" />
+    <None Include="Resources\CallSms.png" />
+    <None Include="Resources\CallMemo.png" />
+    <None Include="Resources\CallTitle.png" />
+    <None Include="Resources\CallSetting.png" />
+    <None Include="Resources\CallBack.png" />
+    <None Include="Resources\Customer1.png" />
+    <None Include="Resources\CallCustomer.png" />
+    <None Include="Resources\CallQ.png" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll" />
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll" />
+    <Content Include="SqlServerTypes\x86\msvcr120.dll" />
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll" />
+    <None Include="Resources\신한은행대량이체결과.png" />
+    <None Include="Resources\신한은행대량이체.png" />
+    <None Include="Resources\하나은행대량이체결과.png" />
+    <None Include="Resources\하나은행대량이체.png" />
+    <None Include="Resources\농협이체결과.png" />
+    <None Include="Resources\농협대량이체.png" />
+    <None Include="Resources\ChaseroLogo.png" />
+    <None Include="Resources\차세로_문서용.png" />
+    <None Include="Resources\AppSMS.png" />
+    <None Include="Resources\Phone_disabled.png" />
+    <None Include="Resources\대량이체결과.png" />
+    <None Include="Resources\기업은행대량이체결과.png" />
+    <None Include="Resources\기업은행대량이체.png" />
+    <None Include="Resources\우리은행대량이체결과.png" />
+    <None Include="Resources\우리은행대량이체.png" />
+    <None Include="Resources\대량이체.png" />
+    <None Include="Resources\슬라이드42.PNG" />
+    <None Include="Resources\슬라이드41.PNG" />
+    <None Include="Resources\슬라이드40.PNG" />
+    <None Include="Resources\슬라이드39.PNG" />
+    <None Include="Resources\슬라이드38.PNG" />
+    <None Include="Resources\슬라이드37.PNG" />
+    <None Include="Resources\슬라이드36.PNG" />
+    <None Include="Resources\슬라이드35.PNG" />
+    <None Include="Resources\슬라이드34.PNG" />
+    <None Include="Resources\슬라이드33.PNG" />
+    <None Include="Resources\슬라이드32.PNG" />
+    <None Include="Resources\슬라이드31.PNG" />
+    <None Include="Resources\슬라이드30.PNG" />
+    <None Include="Resources\슬라이드29.PNG" />
+    <None Include="Resources\슬라이드28.PNG" />
+    <None Include="Resources\슬라이드27.PNG" />
+    <None Include="Resources\슬라이드26.PNG" />
+    <None Include="Resources\슬라이드25.PNG" />
+    <None Include="Resources\슬라이드24.PNG" />
+    <None Include="Resources\슬라이드23.PNG" />
+    <None Include="Resources\슬라이드22.PNG" />
+    <None Include="Resources\슬라이드21.PNG" />
+    <None Include="Resources\슬라이드20.PNG" />
+    <None Include="Resources\슬라이드19.PNG" />
+    <None Include="Resources\슬라이드18.PNG" />
+    <None Include="Resources\슬라이드17.PNG" />
+    <None Include="Resources\슬라이드16.PNG" />
+    <None Include="Resources\슬라이드15.PNG" />
+    <None Include="Resources\슬라이드14.PNG" />
+    <None Include="Resources\슬라이드13.PNG" />
+    <None Include="Resources\슬라이드12.PNG" />
+    <None Include="Resources\슬라이드11.PNG" />
+    <None Include="Resources\슬라이드10.PNG" />
+    <None Include="Resources\슬라이드9.PNG" />
+    <None Include="Resources\슬라이드8.PNG" />
+    <None Include="Resources\슬라이드7.PNG" />
+    <None Include="Resources\슬라이드6.PNG" />
+    <None Include="Resources\슬라이드5.PNG" />
+    <None Include="Resources\슬라이드4.PNG" />
+    <None Include="Resources\슬라이드3.PNG" />
+    <None Include="Resources\슬라이드2.PNG" />
+    <None Include="Resources\슬라이드1.PNG" />
+    <None Include="Resources\youtube-512.png" />
+    <None Include="Resources\Phone.png" />
+    <None Include="Resources\04_2_disabled.png" />
+    <None Include="Resources\08_New_disabled.png" />
+    <None Include="Resources\15.png" />
+    <None Include="Resources\ic_photo_white_48dp_2x.png" />
+    <None Include="Resources\ic_photo_black_48dp_2x.png" />
+    <None Include="Resources\01_New.png" />
+    <None Include="Resources\04_2.png" />
+    <None Include="Resources\05_New.png" />
+    <None Include="Resources\08_New.png" />
+    <None Include="Resources\10.png" />
+    <None Include="Resources\12_New.png" />
+    <None Include="Resources\13_New.png" />
+    <None Include="Resources\14_New.png" />
+    <None Include="Resources\Done.png" />
+    <None Include="Resources\Wait.png" />
+    <None Include="Resources\100.gif" />
+    <None Include="Resources\90.gif" />
+    <None Include="Resources\80.gif" />
+    <None Include="Resources\70.gif" />
+    <None Include="Resources\60.gif" />
+    <None Include="Resources\50.gif" />
+    <None Include="Resources\40.gif" />
+    <None Include="Resources\30.gif" />
+    <None Include="Resources\20.gif" />
+    <None Include="Resources\10.gif" />
+    <None Include="Resources\00.gif" />
+    <None Include="Resources\excel_16.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxLGUBASEOPENAPILib">
+      <Guid>{2889595E-1ACC-4A44-AEB5-F5ECE0EB579E}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>True</Isolated>
+    </COMReference>
+    <COMReference Include="LGUBASEOPENAPILib">
+      <Guid>{2889595E-1ACC-4A44-AEB5-F5ECE0EB579E}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>True</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="de\Microsoft.ReportViewer.Design.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>False</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="EnvDTE">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>False</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="es\Microsoft.ReportViewer.Design.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>False</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="fr\Microsoft.ReportViewer.Design.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>False</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="it\Microsoft.ReportViewer.Design.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>False</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="ja\Microsoft.ReportViewer.Common.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>False</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="ja\Microsoft.ReportViewer.Design.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>False</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="ko\EntityFramework.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>False</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="ko\EntityFramework.SqlServer.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>False</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="ko\Microsoft.ReportViewer.Common.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>False</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="ko\Microsoft.ReportViewer.DataVisualization.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>False</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="ko\Microsoft.ReportViewer.Design.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>False</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="ko\Microsoft.ReportViewer.WinForms.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>False</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.MSXML">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>False</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.VisualStudio.OLE.Interop">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.VisualStudio.Shell.Interop">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.VisualStudio.Shell.Interop.8.0">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.VisualStudio.TextManager.Interop">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.VisualStudio.TextManager.Interop.8.0">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="pt\Microsoft.ReportViewer.Design.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>False</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="ru\Microsoft.ReportViewer.Design.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>False</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="stdole">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>False</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="zh-CHS\Microsoft.ReportViewer.Design.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>False</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="zh-CHT\Microsoft.ReportViewer.Design.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>False</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Popbill\Popbill.csproj">
+      <Project>{57f03b3e-c713-443a-ac04-90291b429204}</Project>
+      <Name>Popbill</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="mycalltruck\Admin\Properties\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+    <Error Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+  </Target>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>이 프로젝트는 이 컴퓨터에 없는 NuGet 패키지를 참조합니다. 해당 패키지를 다운로드하려면 NuGet 패키지 복원을 사용하십시오. 자세한 내용은 http://go.microsoft.com/fwlink/?LinkID=322105를 참조하십시오. 누락된 파일은 {0}입니다.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\PdfiumViewer.Native.x86.no_v8-no_xfa.2018.4.8.256\build\PdfiumViewer.Native.x86.no_v8-no_xfa.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\PdfiumViewer.Native.x86.no_v8-no_xfa.2018.4.8.256\build\PdfiumViewer.Native.x86.no_v8-no_xfa.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

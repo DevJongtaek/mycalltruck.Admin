@@ -1,0 +1,323 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="UseListDataSet" targetNamespace="http://tempuri.org/UseListDataSet.xsd" xmlns:mstns="http://tempuri.org/UseListDataSet.xsd" xmlns="http://tempuri.org/UseListDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="TruckConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="TruckConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.mycalltruck.Admin.Properties.Settings.GlobalReference.Default.TruckConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="AccountListTableAdapter" GeneratorDataComponentClassName="AccountListTableAdapter" Name="AccountList" UserDataComponentName="AccountListTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TruckConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT  AccountList.Idx, AccountList.PayDate, AccountList.ClientName, AccountList.ClientId, AccountList.ClientCode, AccountList.DriverName, Drivers.DriverId, AccountList.LGD_MID, 
+               AccountList.PayState, AccountList.Amount, AccountList.VAT, AccountList.PayAmount, AccountList.ApproveNum, AccountList.LGD_OID, AccountList.CreateDate
+FROM     AccountList LEFT OUTER JOIN
+               Drivers ON AccountList.DriverId = Drivers.DriverId
+WHERE  (Drivers.ServiceState = '1')
+ORDER BY AccountList.PayDate DESC</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Idx" DataSetColumn="Idx" />
+              <Mapping SourceColumn="PayDate" DataSetColumn="PayDate" />
+              <Mapping SourceColumn="ClientName" DataSetColumn="ClientName" />
+              <Mapping SourceColumn="ClientId" DataSetColumn="ClientId" />
+              <Mapping SourceColumn="ClientCode" DataSetColumn="ClientCode" />
+              <Mapping SourceColumn="DriverName" DataSetColumn="DriverName" />
+              <Mapping SourceColumn="DriverId" DataSetColumn="DriverId" />
+              <Mapping SourceColumn="LGD_MID" DataSetColumn="LGD_MID" />
+              <Mapping SourceColumn="PayState" DataSetColumn="PayState" />
+              <Mapping SourceColumn="Amount" DataSetColumn="Amount" />
+              <Mapping SourceColumn="VAT" DataSetColumn="VAT" />
+              <Mapping SourceColumn="PayAmount" DataSetColumn="PayAmount" />
+              <Mapping SourceColumn="ApproveNum" DataSetColumn="ApproveNum" />
+              <Mapping SourceColumn="LGD_OID" DataSetColumn="LGD_OID" />
+              <Mapping SourceColumn="CreateDate" DataSetColumn="CreateDate" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="TruckConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBySearch" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBySearch" GeneratorSourceName="FillBySearch" GetMethodModifier="Public" GetMethodName="GetDataBySearch" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBySearch" UserSourceName="FillBySearch">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT  AccountList.Idx, AccountList.PayDate, AccountList.ClientName, AccountList.ClientId, AccountList.ClientCode, AccountList.DriverName, Drivers.DriverId, AccountList.LGD_MID, 
+               AccountList.PayState, AccountList.Amount, AccountList.VAT, AccountList.PayAmount, AccountList.ApproveNum, AccountList.LGD_OID, AccountList.CreateDate
+FROM     AccountList LEFT OUTER JOIN
+               Drivers ON AccountList.DriverId = Drivers.DriverId
+WHERE  (Drivers.ServiceState = '1') AND (AccountList.PayDate &gt;= @Sdate) AND (AccountList.PayDate &lt;= @Edate) AND (AccountList.ClientId IS NOT NULL) AND 
+               (AccountList.DriverName LIKE '%' + @DriverName + '%')
+UNION ALL
+SELECT  0 AS Expr1, '' AS PayDate, '' AS Expr2, 0 AS Expr3, '' AS Expr4, '' AS Expr5, 0 AS Expr6, '' AS Expr7, '' AS Expr8, SUM(AccountList_1.Amount) AS Expr9, SUM(AccountList_1.VAT) AS Expr10, 
+               SUM(AccountList_1.PayAmount) AS Expr11, '' AS Expr12, '' AS Expr13, NULL AS Expr14
+FROM     AccountList AS AccountList_1 INNER JOIN
+               Drivers AS Drivers_1 ON AccountList_1.DriverId = Drivers_1.DriverId
+WHERE  (AccountList_1.PayDate &gt;= @Sdate) AND (AccountList_1.PayDate &lt;= @Edate) AND (AccountList_1.ClientId IS NOT NULL) AND (AccountList_1.DriverName LIKE '%' + @DriverName + '%') AND 
+               (Drivers_1.ServiceState = '1')
+ORDER BY AccountList.PayDate DESC</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="Sdate" ColumnName="PayDate" DataSourceName="Truck.dbo.AccountList" DataTypeServer="nvarchar(MAX)" DbType="String" Direction="Input" ParameterName="@Sdate" Precision="0" ProviderType="NVarChar" Scale="0" Size="2147483647" SourceColumn="PayDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Edate" ColumnName="PayDate" DataSourceName="Truck.dbo.AccountList" DataTypeServer="nvarchar(MAX)" DbType="String" Direction="Input" ParameterName="@Edate" Precision="0" ProviderType="NVarChar" Scale="0" Size="2147483647" SourceColumn="PayDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="DriverName" ColumnName="DriverName" DataSourceName="Truck.dbo.AccountList" DataTypeServer="nvarchar(MAX)" DbType="String" Direction="Input" ParameterName="@DriverName" Precision="0" ProviderType="NVarChar" Scale="0" Size="2147483647" SourceColumn="DriverName" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="TruckConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBySearchClient" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBySearchClient" GeneratorSourceName="FillBySearchClient" GetMethodModifier="Public" GetMethodName="GetDataBySearchClient" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBySearchClient" UserSourceName="FillBySearchClient">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT  AccountList.Idx, AccountList.PayDate, AccountList.ClientName, AccountList.ClientId, AccountList.ClientCode, AccountList.DriverName, Drivers.DriverId, AccountList.LGD_MID, 
+               AccountList.PayState, AccountList.Amount, AccountList.VAT, AccountList.PayAmount, AccountList.ApproveNum, AccountList.LGD_OID, AccountList.CreateDate
+FROM     AccountList LEFT OUTER JOIN
+               Drivers ON AccountList.DriverId = Drivers.DriverId
+WHERE  (Drivers.ServiceState = '1') AND (AccountList.PayDate &gt;= @Sdate) AND (AccountList.PayDate &lt;= @Edate) AND (AccountList.ClientId = @ClientId) AND (AccountList.ClientId IS NOT NULL) AND 
+               (AccountList.ClientId IS NOT NULL) AND (AccountList.DriverName LIKE '%' + @DriverName + '%')
+UNION ALL
+SELECT  0 AS Expr1, '' AS PayDate, '' AS Expr2, 0 AS Expr3, '' AS Expr4, '' AS Expr5, 0 AS Expr6, '' AS Expr7, '' AS Expr8, SUM(AccountList_1.Amount) AS Expr9, SUM(AccountList_1.VAT) AS Expr10, 
+               SUM(AccountList_1.PayAmount) AS Expr11, '' AS Expr12, '' AS Expr13, NULL AS Expr14
+FROM     AccountList AS AccountList_1 INNER JOIN
+               Drivers AS Drivers_1 ON AccountList_1.DriverId = Drivers_1.DriverId
+WHERE  (AccountList_1.PayDate &gt;= @Sdate) AND (AccountList_1.PayDate &lt;= @Edate) AND (AccountList_1.ClientId = @ClientId) AND (AccountList_1.ClientId IS NOT NULL) AND 
+               (AccountList_1.DriverName LIKE '%' + @DriverName + '%') AND (Drivers_1.ServiceState = '1')
+ORDER BY AccountList.PayDate DESC</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="Sdate" ColumnName="PayDate" DataSourceName="Truck.dbo.AccountList" DataTypeServer="nvarchar(MAX)" DbType="String" Direction="Input" ParameterName="@Sdate" Precision="0" ProviderType="NVarChar" Scale="0" Size="2147483647" SourceColumn="PayDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Edate" ColumnName="PayDate" DataSourceName="Truck.dbo.AccountList" DataTypeServer="nvarchar(MAX)" DbType="String" Direction="Input" ParameterName="@Edate" Precision="0" ProviderType="NVarChar" Scale="0" Size="2147483647" SourceColumn="PayDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="ClientId" ColumnName="ClientId" DataSourceName="Truck.dbo.AccountList" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ClientId" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="ClientId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="DriverName" ColumnName="DriverName" DataSourceName="Truck.dbo.AccountList" DataTypeServer="nvarchar(MAX)" DbType="String" Direction="Input" ParameterName="@DriverName" Precision="0" ProviderType="NVarChar" Scale="0" Size="2147483647" SourceColumn="DriverName" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ClientsTaxListTableAdapter" GeneratorDataComponentClassName="ClientsTaxListTableAdapter" Name="ClientsTaxList" UserDataComponentName="ClientsTaxListTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TruckConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT  ClientPoints.CDate, ClientPoints.Amount, ClientPoints.ClientId, Clients.MobileNo, Clients.Name, Clients.CEO, ClientPoints.MethodType, ClientPoints.Remark
+FROM     ClientPoints INNER JOIN
+               Clients ON ClientPoints.ClientId = Clients.ClientId
+UNION ALL
+SELECT  GETDATE() AS Expr1, SUM(Amount) AS Expr2, 0 AS Expr3, '' AS Expr4, '' AS Expr5, '' AS Expr6, '' AS Expr7, '' AS Expr8
+FROM     ClientPoints AS ClientPoints_1</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="CDate" DataSetColumn="CDate" />
+              <Mapping SourceColumn="Amount" DataSetColumn="Amount" />
+              <Mapping SourceColumn="ClientId" DataSetColumn="ClientId" />
+              <Mapping SourceColumn="MobileNo" DataSetColumn="MobileNo" />
+              <Mapping SourceColumn="Name" DataSetColumn="Name" />
+              <Mapping SourceColumn="CEO" DataSetColumn="CEO" />
+              <Mapping SourceColumn="MethodType" DataSetColumn="MethodType" />
+              <Mapping SourceColumn="Remark" DataSetColumn="Remark" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DriverTaxListTableAdapter" GeneratorDataComponentClassName="DriverTaxListTableAdapter" Name="DriverTaxList" UserDataComponentName="DriverTaxListTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TruckConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT CDate,Amount,DriverPoints.DriverId,Drivers.MobileNo,Drivers.CarNo,Drivers.CarYear,Remark,PointItem FROM DriverPoints
+JOIN Drivers ON Driverpoints.DriverId = Drivers.DriverId
+UNION ALL
+SELECT getdate(),SUM(amount),0,'','','','','' FROM DriverPoints</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="CDate" DataSetColumn="CDate" />
+              <Mapping SourceColumn="Amount" DataSetColumn="Amount" />
+              <Mapping SourceColumn="DriverId" DataSetColumn="DriverId" />
+              <Mapping SourceColumn="MobileNo" DataSetColumn="MobileNo" />
+              <Mapping SourceColumn="CarNo" DataSetColumn="CarNo" />
+              <Mapping SourceColumn="CarYear" DataSetColumn="CarYear" />
+              <Mapping SourceColumn="Remark" DataSetColumn="Remark" />
+              <Mapping SourceColumn="PointItem" DataSetColumn="PointItem" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="UseListDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msdata:EnforceConstraints="False" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="UseListDataSet" msprop:Generator_UserDSName="UseListDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="AccountList" msprop:Generator_TableClassName="AccountListDataTable" msprop:Generator_TableVarName="tableAccountList" msprop:Generator_RowChangedName="AccountListRowChanged" msprop:Generator_TablePropName="AccountList" msprop:Generator_RowDeletingName="AccountListRowDeleting" msprop:Generator_RowChangingName="AccountListRowChanging" msprop:Generator_RowEvHandlerName="AccountListRowChangeEventHandler" msprop:Generator_RowDeletedName="AccountListRowDeleted" msprop:Generator_RowClassName="AccountListRow" msprop:Generator_UserTableName="AccountList" msprop:Generator_RowEvArgName="AccountListRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Idx" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIdx" msprop:Generator_ColumnPropNameInRow="Idx" msprop:Generator_ColumnPropNameInTable="IdxColumn" msprop:Generator_UserColumnName="Idx" type="xs:int" />
+              <xs:element name="PayDate" msprop:Generator_ColumnVarNameInTable="columnPayDate" msprop:Generator_ColumnPropNameInRow="PayDate" msprop:Generator_ColumnPropNameInTable="PayDateColumn" msprop:Generator_UserColumnName="PayDate" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ClientName" msprop:nullValue="" msprop:Generator_ColumnPropNameInRow="ClientName" msprop:Generator_ColumnVarNameInTable="columnClientName" msprop:Generator_ColumnPropNameInTable="ClientNameColumn" msprop:Generator_UserColumnName="ClientName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ClientId" msprop:Generator_ColumnVarNameInTable="columnClientId" msprop:Generator_ColumnPropNameInRow="ClientId" msprop:Generator_ColumnPropNameInTable="ClientIdColumn" msprop:Generator_UserColumnName="ClientId" type="xs:int" minOccurs="0" />
+              <xs:element name="ClientCode" msprop:nullValue="" msprop:Generator_ColumnPropNameInRow="ClientCode" msprop:Generator_ColumnVarNameInTable="columnClientCode" msprop:Generator_ColumnPropNameInTable="ClientCodeColumn" msprop:Generator_UserColumnName="ClientCode" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DriverName" msprop:nullValue="" msprop:Generator_ColumnPropNameInRow="DriverName" msprop:Generator_ColumnVarNameInTable="columnDriverName" msprop:Generator_ColumnPropNameInTable="DriverNameColumn" msprop:Generator_UserColumnName="DriverName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DriverId" msprop:Generator_ColumnVarNameInTable="columnDriverId" msprop:Generator_ColumnPropNameInRow="DriverId" msprop:Generator_ColumnPropNameInTable="DriverIdColumn" msprop:Generator_UserColumnName="DriverId" type="xs:int" minOccurs="0" />
+              <xs:element name="LGD_MID" msprop:nullValue="" msprop:Generator_ColumnPropNameInRow="LGD_MID" msprop:Generator_ColumnVarNameInTable="columnLGD_MID" msprop:Generator_ColumnPropNameInTable="LGD_MIDColumn" msprop:Generator_UserColumnName="LGD_MID" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PayState" msprop:Generator_ColumnVarNameInTable="columnPayState" msprop:Generator_ColumnPropNameInRow="PayState" msprop:Generator_ColumnPropNameInTable="PayStateColumn" msprop:Generator_UserColumnName="PayState" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Amount" msprop:Generator_ColumnVarNameInTable="columnAmount" msprop:Generator_ColumnPropNameInRow="Amount" msprop:Generator_ColumnPropNameInTable="AmountColumn" msprop:Generator_UserColumnName="Amount" type="xs:decimal" minOccurs="0" />
+              <xs:element name="VAT" msprop:Generator_ColumnVarNameInTable="columnVAT" msprop:Generator_ColumnPropNameInRow="VAT" msprop:Generator_ColumnPropNameInTable="VATColumn" msprop:Generator_UserColumnName="VAT" type="xs:decimal" minOccurs="0" />
+              <xs:element name="PayAmount" msprop:Generator_ColumnVarNameInTable="columnPayAmount" msprop:Generator_ColumnPropNameInRow="PayAmount" msprop:Generator_ColumnPropNameInTable="PayAmountColumn" msprop:Generator_UserColumnName="PayAmount" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ApproveNum" msprop:Generator_ColumnVarNameInTable="columnApproveNum" msprop:Generator_ColumnPropNameInRow="ApproveNum" msprop:Generator_ColumnPropNameInTable="ApproveNumColumn" msprop:Generator_UserColumnName="ApproveNum" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LGD_OID" msprop:Generator_ColumnVarNameInTable="columnLGD_OID" msprop:Generator_ColumnPropNameInRow="LGD_OID" msprop:Generator_ColumnPropNameInTable="LGD_OIDColumn" msprop:Generator_UserColumnName="LGD_OID" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CreateDate" msprop:Generator_ColumnVarNameInTable="columnCreateDate" msprop:Generator_ColumnPropNameInRow="CreateDate" msprop:Generator_ColumnPropNameInTable="CreateDateColumn" msprop:Generator_UserColumnName="CreateDate" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ClientsTaxList" msprop:Generator_TableClassName="ClientsTaxListDataTable" msprop:Generator_TableVarName="tableClientsTaxList" msprop:Generator_RowChangedName="ClientsTaxListRowChanged" msprop:Generator_TablePropName="ClientsTaxList" msprop:Generator_RowDeletingName="ClientsTaxListRowDeleting" msprop:Generator_RowChangingName="ClientsTaxListRowChanging" msprop:Generator_RowEvHandlerName="ClientsTaxListRowChangeEventHandler" msprop:Generator_RowDeletedName="ClientsTaxListRowDeleted" msprop:Generator_RowClassName="ClientsTaxListRow" msprop:Generator_UserTableName="ClientsTaxList" msprop:Generator_RowEvArgName="ClientsTaxListRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CDate" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCDate" msprop:Generator_ColumnPropNameInRow="CDate" msprop:Generator_ColumnPropNameInTable="CDateColumn" msprop:Generator_UserColumnName="CDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Amount" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnAmount" msprop:Generator_ColumnPropNameInRow="Amount" msprop:Generator_ColumnPropNameInTable="AmountColumn" msprop:Generator_UserColumnName="Amount" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ClientId" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnClientId" msprop:Generator_ColumnPropNameInRow="ClientId" msprop:Generator_ColumnPropNameInTable="ClientIdColumn" msprop:Generator_UserColumnName="ClientId" type="xs:int" minOccurs="0" />
+              <xs:element name="MobileNo" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnMobileNo" msprop:Generator_ColumnPropNameInRow="MobileNo" msprop:Generator_ColumnPropNameInTable="MobileNoColumn" msprop:Generator_UserColumnName="MobileNo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Name" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CEO" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCEO" msprop:Generator_ColumnPropNameInRow="CEO" msprop:Generator_ColumnPropNameInTable="CEOColumn" msprop:Generator_UserColumnName="CEO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MethodType" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnMethodType" msprop:Generator_ColumnPropNameInRow="MethodType" msprop:Generator_ColumnPropNameInTable="MethodTypeColumn" msprop:Generator_UserColumnName="MethodType" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Remark" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnRemark" msprop:Generator_ColumnPropNameInRow="Remark" msprop:Generator_ColumnPropNameInTable="RemarkColumn" msprop:Generator_UserColumnName="Remark" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DriverTaxList" msprop:Generator_TableClassName="DriverTaxListDataTable" msprop:Generator_TableVarName="tableDriverTaxList" msprop:Generator_RowChangedName="DriverTaxListRowChanged" msprop:Generator_TablePropName="DriverTaxList" msprop:Generator_RowDeletingName="DriverTaxListRowDeleting" msprop:Generator_RowChangingName="DriverTaxListRowChanging" msprop:Generator_RowEvHandlerName="DriverTaxListRowChangeEventHandler" msprop:Generator_RowDeletedName="DriverTaxListRowDeleted" msprop:Generator_RowClassName="DriverTaxListRow" msprop:Generator_UserTableName="DriverTaxList" msprop:Generator_RowEvArgName="DriverTaxListRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CDate" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCDate" msprop:Generator_ColumnPropNameInRow="CDate" msprop:Generator_ColumnPropNameInTable="CDateColumn" msprop:Generator_UserColumnName="CDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Amount" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnAmount" msprop:Generator_ColumnPropNameInRow="Amount" msprop:Generator_ColumnPropNameInTable="AmountColumn" msprop:Generator_UserColumnName="Amount" type="xs:decimal" minOccurs="0" />
+              <xs:element name="DriverId" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDriverId" msprop:Generator_ColumnPropNameInRow="DriverId" msprop:Generator_ColumnPropNameInTable="DriverIdColumn" msprop:Generator_UserColumnName="DriverId" type="xs:int" minOccurs="0" />
+              <xs:element name="MobileNo" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnMobileNo" msprop:Generator_ColumnPropNameInRow="MobileNo" msprop:Generator_ColumnPropNameInTable="MobileNoColumn" msprop:Generator_UserColumnName="MobileNo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CarNo" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCarNo" msprop:Generator_ColumnPropNameInRow="CarNo" msprop:Generator_ColumnPropNameInTable="CarNoColumn" msprop:Generator_UserColumnName="CarNo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CarYear" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCarYear" msprop:Generator_ColumnPropNameInRow="CarYear" msprop:Generator_ColumnPropNameInTable="CarYearColumn" msprop:Generator_UserColumnName="CarYear" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Remark" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnRemark" msprop:Generator_ColumnPropNameInRow="Remark" msprop:Generator_ColumnPropNameInTable="RemarkColumn" msprop:Generator_UserColumnName="Remark" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PointItem" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnPointItem" msprop:Generator_ColumnPropNameInRow="PointItem" msprop:Generator_ColumnPropNameInTable="PointItemColumn" msprop:Generator_UserColumnName="PointItem" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:AccountList" />
+      <xs:field xpath="mstns:Idx" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="PayExcelDataSet" targetNamespace="http://tempuri.org/PayExcelDataSet.xsd" xmlns:mstns="http://tempuri.org/PayExcelDataSet.xsd" xmlns="http://tempuri.org/PayExcelDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="TruckConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="TruckConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.mycalltruck.Admin.Properties.Settings.GlobalReference.Default.TruckConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="PayExcelTableAdapter" GeneratorDataComponentClassName="PayExcelTableAdapter" Name="PayExcel" UserDataComponentName="PayExcelTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TruckConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT  PayExcel.idx, PayExcel.PayDate, PayExcel.SalesDate, PayExcel.ShopID, PayExcel.DriverName, PayExcel.DriverBizNo, PayExcel.PayGubun, PayExcel.JMoney, PayExcel.Amount, 
+               PayExcel.Comm, PayExcel.Vat, PayExcel.CommSum, PayExcel.PaySum, PayExcel.ClientCode, PayExcel.ClientName, Drivers.CarYear
+FROM     PayExcel INNER JOIN
+               Drivers ON PayExcel.ShopID = Drivers.LoginId</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="idx" DataSetColumn="idx" />
+              <Mapping SourceColumn="PayDate" DataSetColumn="PayDate" />
+              <Mapping SourceColumn="SalesDate" DataSetColumn="SalesDate" />
+              <Mapping SourceColumn="ShopID" DataSetColumn="ShopID" />
+              <Mapping SourceColumn="DriverName" DataSetColumn="DriverName" />
+              <Mapping SourceColumn="DriverBizNo" DataSetColumn="DriverBizNo" />
+              <Mapping SourceColumn="PayGubun" DataSetColumn="PayGubun" />
+              <Mapping SourceColumn="JMoney" DataSetColumn="JMoney" />
+              <Mapping SourceColumn="Amount" DataSetColumn="Amount" />
+              <Mapping SourceColumn="Comm" DataSetColumn="Comm" />
+              <Mapping SourceColumn="Vat" DataSetColumn="Vat" />
+              <Mapping SourceColumn="CommSum" DataSetColumn="CommSum" />
+              <Mapping SourceColumn="PaySum" DataSetColumn="PaySum" />
+              <Mapping SourceColumn="ClientCode" DataSetColumn="ClientCode" />
+              <Mapping SourceColumn="ClientName" DataSetColumn="ClientName" />
+              <Mapping SourceColumn="CarYear" DataSetColumn="CarYear" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="TruckConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBySearch" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBySearch" GeneratorSourceName="FillBySearch" GetMethodModifier="Public" GetMethodName="GetDataBySearch" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBySearch" UserSourceName="FillBySearch">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT  PayExcel.Amount, PayExcel.ClientCode, PayExcel.ClientName, PayExcel.Comm, PayExcel.CommSum, PayExcel.DriverBizNo, PayExcel.DriverName, PayExcel.JMoney, PayExcel.PayDate, 
+               PayExcel.PayGubun, PayExcel.PaySum, PayExcel.SalesDate, PayExcel.ShopID, PayExcel.Vat, PayExcel.idx, Drivers.CarYear
+FROM     PayExcel INNER JOIN
+               Drivers ON PayExcel.ShopID = Drivers.LoginId
+WHERE  (PayExcel.SalesDate &gt;= @Sdate) AND (PayExcel.SalesDate &lt;= @Edate) AND (PayExcel.Amount &gt; 0) AND (Drivers.CarYear LIKE '%' + @CarYear + '%')
+ORDER BY PayExcel.idx DESC</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="Sdate" ColumnName="SalesDate" DataSourceName="Truck.dbo.PayExcel" DataTypeServer="nvarchar(MAX)" DbType="String" Direction="Input" ParameterName="@Sdate" Precision="0" ProviderType="NVarChar" Scale="0" Size="2147483647" SourceColumn="SalesDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Edate" ColumnName="SalesDate" DataSourceName="Truck.dbo.PayExcel" DataTypeServer="nvarchar(MAX)" DbType="String" Direction="Input" ParameterName="@Edate" Precision="0" ProviderType="NVarChar" Scale="0" Size="2147483647" SourceColumn="SalesDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="CarYear" ColumnName="CarYear" DataSourceName="Truck.dbo.Drivers" DataTypeServer="nvarchar(MAX)" DbType="String" Direction="Input" ParameterName="@CarYear" Precision="0" ProviderType="NVarChar" Scale="0" Size="2147483647" SourceColumn="CarYear" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="TruckConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBySearchClient" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBySearchClient" GeneratorSourceName="FillBySearchClient" GetMethodModifier="Public" GetMethodName="GetDataBySearchClient" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBySearchClient" UserSourceName="FillBySearchClient">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT  PayExcel.Amount, PayExcel.ClientCode, PayExcel.ClientName, PayExcel.Comm, PayExcel.CommSum, PayExcel.DriverBizNo, PayExcel.DriverName, PayExcel.JMoney, PayExcel.PayDate, 
+               PayExcel.PayGubun, PayExcel.PaySum, PayExcel.SalesDate, PayExcel.ShopID, PayExcel.Vat, PayExcel.idx, Drivers.CarYear
+FROM     PayExcel INNER JOIN
+               Drivers ON PayExcel.ShopID = Drivers.LoginId
+WHERE  (PayExcel.SalesDate &gt;= @Sdate) AND (PayExcel.SalesDate &lt;= @Edate) AND (PayExcel.ClientCode LIKE '%' + @ClientCode + '%') AND (PayExcel.Amount &gt; 0) AND 
+               (Drivers.CarYear LIKE '%' + @CarYear + '%')
+ORDER BY PayExcel.idx DESC</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="Sdate" ColumnName="SalesDate" DataSourceName="Truck.dbo.PayExcel" DataTypeServer="nvarchar(MAX)" DbType="String" Direction="Input" ParameterName="@Sdate" Precision="0" ProviderType="NVarChar" Scale="0" Size="2147483647" SourceColumn="SalesDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Edate" ColumnName="SalesDate" DataSourceName="Truck.dbo.PayExcel" DataTypeServer="nvarchar(MAX)" DbType="String" Direction="Input" ParameterName="@Edate" Precision="0" ProviderType="NVarChar" Scale="0" Size="2147483647" SourceColumn="SalesDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="ClientCode" ColumnName="ClientCode" DataSourceName="Truck.dbo.PayExcel" DataTypeServer="nvarchar(MAX)" DbType="String" Direction="Input" ParameterName="@ClientCode" Precision="0" ProviderType="NVarChar" Scale="0" Size="2147483647" SourceColumn="ClientCode" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="CarYear" ColumnName="CarYear" DataSourceName="Truck.dbo.Drivers" DataTypeServer="nvarchar(MAX)" DbType="String" Direction="Input" ParameterName="@CarYear" Precision="0" ProviderType="NVarChar" Scale="0" Size="2147483647" SourceColumn="CarYear" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="PayExcelDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="PayExcelDataSet" msprop:Generator_UserDSName="PayExcelDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="PayExcel" msprop:Generator_TableClassName="PayExcelDataTable" msprop:Generator_TableVarName="tablePayExcel" msprop:Generator_TablePropName="PayExcel" msprop:Generator_RowDeletingName="PayExcelRowDeleting" msprop:Generator_RowChangingName="PayExcelRowChanging" msprop:Generator_RowEvHandlerName="PayExcelRowChangeEventHandler" msprop:Generator_RowDeletedName="PayExcelRowDeleted" msprop:Generator_UserTableName="PayExcel" msprop:Generator_RowChangedName="PayExcelRowChanged" msprop:Generator_RowEvArgName="PayExcelRowChangeEvent" msprop:Generator_RowClassName="PayExcelRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="idx" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidx" msprop:Generator_ColumnPropNameInRow="idx" msprop:Generator_ColumnPropNameInTable="idxColumn" msprop:Generator_UserColumnName="idx" type="xs:int" />
+              <xs:element name="PayDate" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="PayDate" msprop:Generator_ColumnVarNameInTable="columnPayDate" msprop:Generator_ColumnPropNameInTable="PayDateColumn" msprop:Generator_UserColumnName="PayDate" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SalesDate" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="SalesDate" msprop:Generator_ColumnVarNameInTable="columnSalesDate" msprop:Generator_ColumnPropNameInTable="SalesDateColumn" msprop:Generator_UserColumnName="SalesDate" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ShopID" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="ShopID" msprop:Generator_ColumnVarNameInTable="columnShopID" msprop:Generator_ColumnPropNameInTable="ShopIDColumn" msprop:Generator_UserColumnName="ShopID" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DriverName" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="DriverName" msprop:Generator_ColumnVarNameInTable="columnDriverName" msprop:Generator_ColumnPropNameInTable="DriverNameColumn" msprop:Generator_UserColumnName="DriverName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DriverBizNo" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="DriverBizNo" msprop:Generator_ColumnVarNameInTable="columnDriverBizNo" msprop:Generator_ColumnPropNameInTable="DriverBizNoColumn" msprop:Generator_UserColumnName="DriverBizNo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PayGubun" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="PayGubun" msprop:Generator_ColumnVarNameInTable="columnPayGubun" msprop:Generator_ColumnPropNameInTable="PayGubunColumn" msprop:Generator_UserColumnName="PayGubun" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="JMoney" msprop:nullValue="0" msprop:Generator_ColumnPropNameInRow="JMoney" msprop:Generator_ColumnVarNameInTable="columnJMoney" msprop:Generator_ColumnPropNameInTable="JMoneyColumn" msprop:Generator_UserColumnName="JMoney" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Amount" msprop:nullValue="0" msprop:Generator_ColumnPropNameInRow="Amount" msprop:Generator_ColumnVarNameInTable="columnAmount" msprop:Generator_ColumnPropNameInTable="AmountColumn" msprop:Generator_UserColumnName="Amount" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Comm" msprop:nullValue="0" msprop:Generator_ColumnPropNameInRow="Comm" msprop:Generator_ColumnVarNameInTable="columnComm" msprop:Generator_ColumnPropNameInTable="CommColumn" msprop:Generator_UserColumnName="Comm" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Vat" msprop:nullValue="0" msprop:Generator_ColumnPropNameInRow="Vat" msprop:Generator_ColumnVarNameInTable="columnVat" msprop:Generator_ColumnPropNameInTable="VatColumn" msprop:Generator_UserColumnName="Vat" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CommSum" msprop:nullValue="0" msprop:Generator_ColumnPropNameInRow="CommSum" msprop:Generator_ColumnVarNameInTable="columnCommSum" msprop:Generator_ColumnPropNameInTable="CommSumColumn" msprop:Generator_UserColumnName="CommSum" type="xs:decimal" minOccurs="0" />
+              <xs:element name="PaySum" msprop:nullValue="0" msprop:Generator_ColumnPropNameInRow="PaySum" msprop:Generator_ColumnVarNameInTable="columnPaySum" msprop:Generator_ColumnPropNameInTable="PaySumColumn" msprop:Generator_UserColumnName="PaySum" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ClientCode" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="ClientCode" msprop:Generator_ColumnVarNameInTable="columnClientCode" msprop:Generator_ColumnPropNameInTable="ClientCodeColumn" msprop:Generator_UserColumnName="ClientCode" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ClientName" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="ClientName" msprop:Generator_ColumnVarNameInTable="columnClientName" msprop:Generator_ColumnPropNameInTable="ClientNameColumn" msprop:Generator_UserColumnName="ClientName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CarYear" msprop:Generator_ColumnVarNameInTable="columnCarYear" msprop:Generator_ColumnPropNameInRow="CarYear" msprop:Generator_ColumnPropNameInTable="CarYearColumn" msprop:Generator_UserColumnName="CarYear">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:PayExcel" />
+      <xs:field xpath="mstns:idx" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,243 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="PointsDataSet" targetNamespace="http://tempuri.org/PointsDataSet.xsd" xmlns:mstns="http://tempuri.org/PointsDataSet.xsd" xmlns="http://tempuri.org/PointsDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="TruckConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="TruckConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.mycalltruck.Admin.Properties.Settings.GlobalReference.Default.TruckConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DriverPointsListTableAdapter" GeneratorDataComponentClassName="DriverPointsListTableAdapter" Name="DriverPointsList" UserDataComponentName="DriverPointsListTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TruckConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT  DP.CDate, DP.Amount, D.LoginId, D.CarNo, D.CarYear, D.CEO, '카드' AS ChargeGubun, CASE WHEN DP.PointItem = '충전' THEN '승인' ELSE '취소' END AS AccFunction, AC.LGD_TID, 
+               AC.CardNo, AC.LGD_RESPCODE, CASE WHEN DP.PointItem = '충전' AND AC.LGD_RESPCODE = '0000' THEN ac.LGD_RESPMSG ELSE '취소성공' END AS LGD_RESPMSG
+FROM     DriverPoints AS DP INNER JOIN
+               AccLogs AS AC ON DP.DriverId = AC.TradeId AND AC.LGD_MID = 'chasero' AND DP.LGD_Result = AC.LGD_TID INNER JOIN
+               Drivers AS D ON DP.DriverId = D.DriverId</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="CDate" DataSetColumn="CDate" />
+              <Mapping SourceColumn="Amount" DataSetColumn="Amount" />
+              <Mapping SourceColumn="LoginId" DataSetColumn="LoginId" />
+              <Mapping SourceColumn="CarNo" DataSetColumn="CarNo" />
+              <Mapping SourceColumn="CarYear" DataSetColumn="CarYear" />
+              <Mapping SourceColumn="CEO" DataSetColumn="CEO" />
+              <Mapping SourceColumn="ChargeGubun" DataSetColumn="ChargeGubun" />
+              <Mapping SourceColumn="AccFunction" DataSetColumn="AccFunction" />
+              <Mapping SourceColumn="LGD_TID" DataSetColumn="LGD_TID" />
+              <Mapping SourceColumn="CardNo" DataSetColumn="CardNo" />
+              <Mapping SourceColumn="LGD_RESPCODE" DataSetColumn="LGD_RESPCODE" />
+              <Mapping SourceColumn="LGD_RESPMSG" DataSetColumn="LGD_RESPMSG" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ClientPointsListTableAdapter" GeneratorDataComponentClassName="ClientPointsListTableAdapter" Name="ClientPointsList" UserDataComponentName="ClientPointsListTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TruckConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT  CP.ClientPointId, CP.CDate, CP.Amount, C.Code, C.Name, C.BizNo, C.CEO, C.VBankName, C.VAccount, CP.ClientId, CP.EtaxCanCelYN, CP.EtaxWriteDate, CP.invoicerMgtKey, CP.IssueState, 
+               CP.Issue
+FROM     ClientPoints AS CP INNER JOIN
+               Clients AS C ON CP.ClientId = C.ClientId
+WHERE  (CP.Remark = '가상계좌 입금')</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ClientPointId" DataSetColumn="ClientPointId" />
+              <Mapping SourceColumn="CDate" DataSetColumn="CDate" />
+              <Mapping SourceColumn="Amount" DataSetColumn="Amount" />
+              <Mapping SourceColumn="Code" DataSetColumn="Code" />
+              <Mapping SourceColumn="Name" DataSetColumn="Name" />
+              <Mapping SourceColumn="BizNo" DataSetColumn="BizNo" />
+              <Mapping SourceColumn="CEO" DataSetColumn="CEO" />
+              <Mapping SourceColumn="VBankName" DataSetColumn="VBankName" />
+              <Mapping SourceColumn="VAccount" DataSetColumn="VAccount" />
+              <Mapping SourceColumn="ClientId" DataSetColumn="ClientId" />
+              <Mapping SourceColumn="EtaxCanCelYN" DataSetColumn="EtaxCanCelYN" />
+              <Mapping SourceColumn="EtaxWriteDate" DataSetColumn="EtaxWriteDate" />
+              <Mapping SourceColumn="invoicerMgtKey" DataSetColumn="invoicerMgtKey" />
+              <Mapping SourceColumn="IssueState" DataSetColumn="IssueState" />
+              <Mapping SourceColumn="Issue" DataSetColumn="Issue" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="PointsDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msdata:EnforceConstraints="False" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="PointsDataSet" msprop:Generator_UserDSName="PointsDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DriverPointsList" msprop:Generator_TableClassName="DriverPointsListDataTable" msprop:Generator_TableVarName="tableDriverPointsList" msprop:Generator_TablePropName="DriverPointsList" msprop:Generator_RowDeletingName="DriverPointsListRowDeleting" msprop:Generator_RowChangingName="DriverPointsListRowChanging" msprop:Generator_RowEvHandlerName="DriverPointsListRowChangeEventHandler" msprop:Generator_RowDeletedName="DriverPointsListRowDeleted" msprop:Generator_UserTableName="DriverPointsList" msprop:Generator_RowChangedName="DriverPointsListRowChanged" msprop:Generator_RowEvArgName="DriverPointsListRowChangeEvent" msprop:Generator_RowClassName="DriverPointsListRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CDate" msprop:Generator_ColumnVarNameInTable="columnCDate" msprop:Generator_ColumnPropNameInRow="CDate" msprop:Generator_ColumnPropNameInTable="CDateColumn" msprop:Generator_UserColumnName="CDate" type="xs:dateTime" />
+              <xs:element name="Amount" msprop:Generator_ColumnVarNameInTable="columnAmount" msprop:Generator_ColumnPropNameInRow="Amount" msprop:Generator_ColumnPropNameInTable="AmountColumn" msprop:Generator_UserColumnName="Amount" type="xs:decimal" />
+              <xs:element name="LoginId" msprop:Generator_ColumnVarNameInTable="columnLoginId" msprop:Generator_ColumnPropNameInRow="LoginId" msprop:Generator_ColumnPropNameInTable="LoginIdColumn" msprop:Generator_UserColumnName="LoginId">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CarNo" msprop:Generator_ColumnVarNameInTable="columnCarNo" msprop:Generator_ColumnPropNameInRow="CarNo" msprop:Generator_ColumnPropNameInTable="CarNoColumn" msprop:Generator_UserColumnName="CarNo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CarYear" msprop:Generator_ColumnVarNameInTable="columnCarYear" msprop:Generator_ColumnPropNameInRow="CarYear" msprop:Generator_ColumnPropNameInTable="CarYearColumn" msprop:Generator_UserColumnName="CarYear">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CEO" msprop:Generator_ColumnVarNameInTable="columnCEO" msprop:Generator_ColumnPropNameInRow="CEO" msprop:Generator_ColumnPropNameInTable="CEOColumn" msprop:Generator_UserColumnName="CEO">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ChargeGubun" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnChargeGubun" msprop:Generator_ColumnPropNameInRow="ChargeGubun" msprop:Generator_ColumnPropNameInTable="ChargeGubunColumn" msprop:Generator_UserColumnName="ChargeGubun" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AccFunction" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnAccFunction" msprop:Generator_ColumnPropNameInRow="AccFunction" msprop:Generator_ColumnPropNameInTable="AccFunctionColumn" msprop:Generator_UserColumnName="AccFunction" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LGD_TID" msprop:Generator_ColumnVarNameInTable="columnLGD_TID" msprop:Generator_ColumnPropNameInRow="LGD_TID" msprop:Generator_ColumnPropNameInTable="LGD_TIDColumn" msprop:Generator_UserColumnName="LGD_TID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CardNo" msprop:Generator_ColumnVarNameInTable="columnCardNo" msprop:Generator_ColumnPropNameInRow="CardNo" msprop:Generator_ColumnPropNameInTable="CardNoColumn" msprop:Generator_UserColumnName="CardNo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LGD_RESPCODE" msprop:Generator_ColumnVarNameInTable="columnLGD_RESPCODE" msprop:Generator_ColumnPropNameInRow="LGD_RESPCODE" msprop:Generator_ColumnPropNameInTable="LGD_RESPCODEColumn" msprop:Generator_UserColumnName="LGD_RESPCODE">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LGD_RESPMSG" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnLGD_RESPMSG" msprop:Generator_ColumnPropNameInRow="LGD_RESPMSG" msprop:Generator_ColumnPropNameInTable="LGD_RESPMSGColumn" msprop:Generator_UserColumnName="LGD_RESPMSG" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ClientPointsList" msprop:Generator_TableClassName="ClientPointsListDataTable" msprop:Generator_TableVarName="tableClientPointsList" msprop:Generator_TablePropName="ClientPointsList" msprop:Generator_RowDeletingName="ClientPointsListRowDeleting" msprop:Generator_RowChangingName="ClientPointsListRowChanging" msprop:Generator_RowEvHandlerName="ClientPointsListRowChangeEventHandler" msprop:Generator_RowDeletedName="ClientPointsListRowDeleted" msprop:Generator_UserTableName="ClientPointsList" msprop:Generator_RowChangedName="ClientPointsListRowChanged" msprop:Generator_RowEvArgName="ClientPointsListRowChangeEvent" msprop:Generator_RowClassName="ClientPointsListRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ClientPointId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnClientPointId" msprop:Generator_ColumnPropNameInRow="ClientPointId" msprop:Generator_ColumnPropNameInTable="ClientPointIdColumn" msprop:Generator_UserColumnName="ClientPointId" type="xs:int" />
+              <xs:element name="CDate" msprop:Generator_ColumnVarNameInTable="columnCDate" msprop:Generator_ColumnPropNameInRow="CDate" msprop:Generator_ColumnPropNameInTable="CDateColumn" msprop:Generator_UserColumnName="CDate" type="xs:dateTime" />
+              <xs:element name="Amount" msprop:Generator_ColumnVarNameInTable="columnAmount" msprop:Generator_ColumnPropNameInRow="Amount" msprop:Generator_ColumnPropNameInTable="AmountColumn" msprop:Generator_UserColumnName="Amount" type="xs:decimal" />
+              <xs:element name="Code" msprop:Generator_ColumnVarNameInTable="columnCode" msprop:Generator_ColumnPropNameInRow="Code" msprop:Generator_ColumnPropNameInTable="CodeColumn" msprop:Generator_UserColumnName="Code" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BizNo" msprop:Generator_ColumnVarNameInTable="columnBizNo" msprop:Generator_ColumnPropNameInRow="BizNo" msprop:Generator_ColumnPropNameInTable="BizNoColumn" msprop:Generator_UserColumnName="BizNo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CEO" msprop:Generator_ColumnVarNameInTable="columnCEO" msprop:Generator_ColumnPropNameInRow="CEO" msprop:Generator_ColumnPropNameInTable="CEOColumn" msprop:Generator_UserColumnName="CEO">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="VBankName" msprop:Generator_ColumnVarNameInTable="columnVBankName" msprop:Generator_ColumnPropNameInRow="VBankName" msprop:Generator_ColumnPropNameInTable="VBankNameColumn" msprop:Generator_UserColumnName="VBankName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="VAccount" msprop:Generator_ColumnVarNameInTable="columnVAccount" msprop:Generator_ColumnPropNameInRow="VAccount" msprop:Generator_ColumnPropNameInTable="VAccountColumn" msprop:Generator_UserColumnName="VAccount" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ClientId" msprop:Generator_ColumnVarNameInTable="columnClientId" msprop:Generator_ColumnPropNameInRow="ClientId" msprop:Generator_ColumnPropNameInTable="ClientIdColumn" msprop:Generator_UserColumnName="ClientId" type="xs:int" />
+              <xs:element name="EtaxCanCelYN" msprop:nullValue="N" msprop:Generator_ColumnPropNameInRow="EtaxCanCelYN" msprop:Generator_ColumnVarNameInTable="columnEtaxCanCelYN" msprop:Generator_ColumnPropNameInTable="EtaxCanCelYNColumn" msprop:Generator_UserColumnName="EtaxCanCelYN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EtaxWriteDate" msprop:Generator_ColumnVarNameInTable="columnEtaxWriteDate" msprop:Generator_ColumnPropNameInRow="EtaxWriteDate" msprop:Generator_ColumnPropNameInTable="EtaxWriteDateColumn" msprop:Generator_UserColumnName="EtaxWriteDate" type="xs:dateTime" />
+              <xs:element name="invoicerMgtKey" msprop:Generator_ColumnVarNameInTable="columninvoicerMgtKey" msprop:Generator_ColumnPropNameInRow="invoicerMgtKey" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInTable="invoicerMgtKeyColumn" msprop:Generator_UserColumnName="invoicerMgtKey" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IssueState" msprop:Generator_ColumnVarNameInTable="columnIssueState" msprop:Generator_ColumnPropNameInRow="IssueState" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInTable="IssueStateColumn" msprop:Generator_UserColumnName="IssueState" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Issue" msprop:Generator_ColumnVarNameInTable="columnIssue" msprop:Generator_ColumnPropNameInRow="Issue" msprop:nullValue="0" msprop:Generator_ColumnPropNameInTable="IssueColumn" msprop:Generator_UserColumnName="Issue" type="xs:boolean" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:ClientPointsList" />
+      <xs:field xpath="mstns:ClientPointId" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

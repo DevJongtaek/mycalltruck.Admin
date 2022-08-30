@@ -1,0 +1,33 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="mycalltruck.Admin.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="TR_DBConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=220.73.136.46;Initial Catalog=TR_DB;Persist Security Info=True;User ID=edubill;Password=edubill&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=220.73.136.46;Initial Catalog=TR_DB;Persist Security Info=True;User ID=edubill;Password=edubill</Value>
+    </Setting>
+    <Setting Name="mycalltruck_Admin_DTIService_DTIServiceService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://ws.nicedata.co.kr/services/DTIService</Value>
+    </Setting>
+    <Setting Name="TruckConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=222.231.9.253,2899;Initial Catalog=Truck;Persist Security Info=True;User ID=edubillsys;Password=edubillsysdb2202#$&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=222.231.9.253,2899;Initial Catalog=Truck;Persist Security Info=True;User ID=edubillsys;Password=edubillsysdb2202#$</Value>
+    </Setting>
+    <Setting Name="KPROConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=222.231.9.253,2899;Initial Catalog=kpro_client;Persist Security Info=True;User ID=edubillsys;Password=edubillsysdb2202#$&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=222.231.9.253,2899;Initial Catalog=kpro_client;Persist Security Info=True;User ID=edubillsys;Password=edubillsysdb2202#$</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

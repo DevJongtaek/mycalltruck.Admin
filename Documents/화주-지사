@@ -1,0 +1,21 @@
+Login
+
+1. ClientUsers -> LoginId/Password 로 로그인
+2. ClientUsers -> SubClientId 로 지사 정보 조회
+
+
+배차
+
+1. Customers -> SubClientId = 자신의 SubClientId AND Self(새로 추가된 필드) = 1 로 자신과 동일한 거래처를 거래처로 선택
+2. Orders -> SubClientId / ClientId 정보를 포함하여 배차, SourceType = 0, Agubun = 2, Wgubun = PC
+
+역발행
+1. Trades -> SubClientId 포함하여 역발행
+
+결제
+
+1. 기존과 동일
+
+
+추가해야 할 필드
+Customers -> Self(bool)

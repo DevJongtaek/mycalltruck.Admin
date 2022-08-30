@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebPayApplication", "WebPayApplication.csproj", "{9C128943-41C7-4AED-BF43-95154740C1B8}"
+	ProjectSection(ProjectDependencies) = postProject
+		{70ED1ECA-EEF7-4C5B-BF83-F367EC9E0D87} = {70ED1ECA-EEF7-4C5B-BF83-F367EC9E0D87}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SilverlightApplication1.Web", "SilverlightApplication1.Web\SilverlightApplication1.Web.csproj", "{70ED1ECA-EEF7-4C5B-BF83-F367EC9E0D87}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9C128943-41C7-4AED-BF43-95154740C1B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C128943-41C7-4AED-BF43-95154740C1B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C128943-41C7-4AED-BF43-95154740C1B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C128943-41C7-4AED-BF43-95154740C1B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70ED1ECA-EEF7-4C5B-BF83-F367EC9E0D87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70ED1ECA-EEF7-4C5B-BF83-F367EC9E0D87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70ED1ECA-EEF7-4C5B-BF83-F367EC9E0D87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70ED1ECA-EEF7-4C5B-BF83-F367EC9E0D87}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

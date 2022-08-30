@@ -1,0 +1,1198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="AppSMS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AppSMS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="APP설치문자입력" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\APP설치문자입력.xlsx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="BizTalkBack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BizTalkBack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="black_010" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\black_010.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="black_020" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\black_020.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="black_030" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\black_030.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="black_030___복사본" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\black_030 - 복사본.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="black_040" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\black_040.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="black_050" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\black_050.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="black_060" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\black_060.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="black_070" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\black_070.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="black_080" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\black_080.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="black_090" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\black_090.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="black_090___복사본" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\black_090 - 복사본.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="black_100" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\black_100.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="black_110" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\black_110.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="black_120" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\black_120.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="black_130" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\black_130.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="black_140" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\black_140.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="black_150" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\black_150.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="black_160" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\black_160.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="blue_000" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\blue_000.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="blue_0001" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\blue_0001.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btn_save" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btn_save.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btn_send" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btn_send.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Call" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Call.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CallBack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CallBack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CallCustomer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CallCustomer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CallMemo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CallMemo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="callmenu" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\callmenu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CallPopupBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CallPopupBackground.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CallQ" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CallQ.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CallRe" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CallRe.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CallSend" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CallSend.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CallSetting" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CallSetting.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CallSms" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CallSms.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CallTitle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CallTitle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ChaseroLogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ChaseroLogo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ClientVaccountList" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ClientVaccountList.xlsx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Customer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Customer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Customer1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Customer1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Customer11" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Customer11.xlsx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Customer2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Customer2.xlsx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Done" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Done.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DriverMisuUpload" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DriverMisuUpload.xlsx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="drivers" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\drivers.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DriverShareUpload" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DriverShareUpload.xlsx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="DriverUpload" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DriverUpload.xlsx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="DriverVaccount" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DriverVaccount.xlsx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="excel_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\excel_16.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ezhelp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ezhelp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="gray_010" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gray_010.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="gray_020" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gray_020.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="gray_030" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gray_030.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="gray_040" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gray_040.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="gray_050" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gray_050.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="gray_060" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gray_060.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="gray_070" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gray_070.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="gray_080" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gray_080.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="gray_090" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gray_090.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="gray_100" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gray_100.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="gray_110" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gray_110.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="gray_120" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gray_120.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="gray_130" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gray_130.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="gray_140" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gray_140.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="gray_150" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gray_150.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="gray_160" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gray_160.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="gray_170" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gray_170.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="gray_180" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gray_180.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Help01_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Help01-01.mht;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Help01_02" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Help01-02.mht;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Help01_03" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Help01-03.mht;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Help01_04" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Help01-04.mht;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Help01_05" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Help01-05.mht;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Help01_06" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Help01-06.mht;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Help01_07" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Help01-07.mht;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Help01_08" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Help01-08.mht;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="home" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\home.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_add_gray" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_add_gray.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_call" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_call.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_call_end" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_call_end.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_call_end_gray" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_call_end_gray.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_call_gray" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_call_gray.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_Empty_gray" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_Empty_gray.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Icon_Location" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icon_Location.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Icon_LocationNew" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icon_LocationNew.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_memo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_memo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_memo_gray" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_memo_gray.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_question" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_question.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_question_yellow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_question_yellow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_receive" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_receive.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_receive_gray" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_receive_gray.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_send" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_send.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_send_gray" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_send_gray.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_setting" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_setting.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_setting_gray" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_setting_gray.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_sms" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_sms.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_sms_gray" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_sms_gray.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic_photo_black_48dp_2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ic_photo_black_48dp_2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic_photo_gray_48dp_2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ic_photo_gray_48dp_2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic_photo_white_48dp_2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ic_photo_white_48dp_2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="img_tax" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\img_tax.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="KEB하나_대량이체" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\KEB하나_대량이체.xps;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="KEB하나_대량이체1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\KEB하나_대량이체.mht;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="KEB하나_이체처리결과" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\KEB하나_이체처리결과.mht;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="login_bg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\login_bg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="manual" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\manual.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="manualmenu" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\manualmenu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="manualmovie" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\manualmovie.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Memo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Memo1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mycallTruckManual" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mycallTruckManual.mht;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Order" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Order.xlsx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="orderlist" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\orderlist.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="orders" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\orders.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Order_Default" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Order_Default.xlsx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Order_List" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Order_List.xlsx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Order_Mini" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Order_Mini.xlsx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Phone" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Phone.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Phone1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Phone1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Phone_disabled" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Phone_disabled.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="press" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\press.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rotate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rotate.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Sales" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Sales.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SalesList" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SalesList.xlsx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="SalesListRemarkDriver_blank" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SalesListRemarkDriver_blank.xlsx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="SalesListRemark_1_blank" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SalesListRemark-1_blank.xlsx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="SalesListRemark_blank" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SalesListRemark_blank.xlsx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="SalesList_1_blank" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SalesList-1_blank.xlsx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="SalesList_blank" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SalesList_blank.xlsx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Setting1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Setting1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sms" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sms.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Sms1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Sms1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="stats" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\stats.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Stats1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Stats1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Stats2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Stats2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Stats3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Stats3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Stats4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Stats4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Stats5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Stats5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Trade" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Trade.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Wait" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Wait.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="yellow_010" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\yellow_010.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="yellow_020" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\yellow_020.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="youtube_512" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\youtube-512.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_00" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\00.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_01_New" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\01_New.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_04_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\04_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_04_2_disabled" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\04_2_disabled.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_05_New" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\05_New.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_08_New" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\08_New.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_08_New_disabled" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\08_New_disabled.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_10" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\10.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_100" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\100.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_101" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\10.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_12_New" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\12_New.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_13_New" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\13_New.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_14_New" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\14_New.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_15" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\15.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_20" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\20.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_30" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\30.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_40" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\40.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_50" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\50.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_60" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\60.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_70" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\70.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_80" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\80.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_90" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\90.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_default" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\default.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_오프라인PG__일괄_아이디신청_양식_160330" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\(오프라인PG)_일괄_아이디신청_양식_160330.xls;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="가상계좌번호입력" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\가상계좌번호입력.xlsx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="거래처_미수미지급" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\거래처_미수미지급.xlsx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="거래처관리입력양식" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\거래처관리입력양식.xlsx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="거래처관리입력양식_Blank" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\거래처관리입력양식_Blank.xlsx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="거래처일괄등록" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\거래처일괄등록.xls;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="고객별사용내역" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\고객별사용내역.xlsx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="국민_대량이체" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\국민_대량이체.xps;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="국민_대량이체1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\국민_대량이체.mht;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="국민_대량이체2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\국민_대량이체.pdf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="국민_대량이체_업로드" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\국민_대량이체_업로드.xlsx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="국민_대량이체_업로드1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\국민_대량이체_업로드1.xls;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="국민_대량이체_업로드2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\국민_대량이체_업로드.xls;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="국민_이체처리결과" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\국민_이체처리결과.xps;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="국민_이체처리결과1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\국민_이체처리결과.mht;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="국민대량이체" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\국민대량이체.pdf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="국민대량이체결과" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\국민대량이체결과.pdf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="기사관리입력양식" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\기사관리입력양식.xlsx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="기사정보일괄입력" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\기사정보일괄입력.xls;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="기업_대량이체" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\기업_대량이체.xps;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="기업_대량이체1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\기업_대량이체.mht;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="기업_이체처리결과" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\기업_이체처리결과.xps;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="기업_이체처리결과1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\기업_이체처리결과.mht;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="기업은행_대량이체_업로드" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\기업은행_대량이체_업로드.xls;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="기업은행대량이체" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\기업은행대량이체.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="기업은행대량이체결과" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\기업은행대량이체결과.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="농협_대량이체" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\농협_대량이체.xps;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="농협_대량이체1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\농협_대량이체.mht;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="농협_대량이체_업로드" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\농협_대량이체_업로드.xls;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="농협_이체처리결과" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\농협_이체처리결과.xps;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="농협_이체처리결과1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\농협_이체처리결과.mht;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="농협대량이체" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\농협대량이체.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="농협은행_양식" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\농협은행 양식.xlsx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="농협은행_양식1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\농협은행 양식.xls;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="농협이체결과" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\농협이체결과.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="다복종합물류_엑셀양식__1_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\다복종합물류_엑셀양식 (1).xls;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="대량이체" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\대량이체.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="대량이체결과" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\대량이체결과.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="매입차주정산양식_Blank" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\매입차주정산양식_Blank.xlsx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="매출주선위탁사정산_Blank" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\매출주선위탁사정산_Blank.xlsx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="매출화주정산양식_Blank" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\매출화주정산양식_Blank.xlsx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="배차관리_일괄등록_간편양식" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\배차관리_일괄등록_간편양식.xlsx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="배차일보_Blank" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\배차일보_Blank.xlsx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="배차정보입력양식" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\배차정보입력양식.xlsx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="배차정보입력양식1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\배차정보입력양식.xls;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="부가가치세_신고양식" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\부가가치세_신고양식.xls;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="서브몰일괄입력_양식" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\서브몰일괄입력_양식.xls;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="세금계산서" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\세금계산서.xlsx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="슬라이드1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\슬라이드1.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="슬라이드10" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\슬라이드10.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="슬라이드11" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\슬라이드11.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="슬라이드12" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\슬라이드12.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="슬라이드13" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\슬라이드13.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="슬라이드14" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\슬라이드14.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="슬라이드15" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\슬라이드15.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="슬라이드16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\슬라이드16.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="슬라이드17" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\슬라이드17.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="슬라이드18" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\슬라이드18.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="슬라이드19" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\슬라이드19.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="슬라이드2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\슬라이드2.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="슬라이드20" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\슬라이드20.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="슬라이드21" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\슬라이드21.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="슬라이드22" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\슬라이드22.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="슬라이드23" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\슬라이드23.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="슬라이드24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\슬라이드24.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="슬라이드25" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\슬라이드25.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="슬라이드26" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\슬라이드26.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="슬라이드27" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\슬라이드27.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="슬라이드28" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\슬라이드28.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="슬라이드29" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\슬라이드29.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="슬라이드3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\슬라이드3.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="슬라이드30" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\슬라이드30.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="슬라이드31" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\슬라이드31.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="슬라이드32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\슬라이드32.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="슬라이드33" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\슬라이드33.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="슬라이드34" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\슬라이드34.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="슬라이드35" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\슬라이드35.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="슬라이드36" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\슬라이드36.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="슬라이드37" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\슬라이드37.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="슬라이드38" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\슬라이드38.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="슬라이드39" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\슬라이드39.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="슬라이드4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\슬라이드4.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="슬라이드40" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\슬라이드40.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="슬라이드41" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\슬라이드41.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="슬라이드42" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\슬라이드42.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="슬라이드5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\슬라이드5.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="슬라이드6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\슬라이드6.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="슬라이드7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\슬라이드7.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="슬라이드8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\슬라이드8.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="슬라이드9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\슬라이드9.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="승인결과" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\승인결과.xls;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="신용대출" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\신용대출.xlsx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="신한_대량이체" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\신한_대량이체.xps;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="신한_대량이체1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\신한_대량이체.mht;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="신한_이체처리결과" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\신한_이체처리결과.xps;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="신한_이체처리결과1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\신한_이체처리결과.mht;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="신한은행_대량이체_업로드" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\신한은행_대량이체_업로드.xls;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="신한은행_양식" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\신한은행 양식.xlsx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="신한은행대량이체" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\신한은행대량이체.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="신한은행대량이체결과" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\신한은행대량이체결과.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="실패결과" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\실패결과.xls;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="알림톡_일괄등록" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\알림톡_일괄등록.xls;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="알림톡일괄등록양식" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\알림톡일괄등록양식.xlsx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="엑셀_배차관리_외부양식__1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\엑셀_배차관리_외부양식_#1.xls;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="우리_대량이체" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\우리_대량이체.xps;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="우리_대량이체1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\우리_대량이체.mht;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="우리_대량이체_업로드" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\우리_대량이체_업로드.xlsx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="우리_대량이체_업로드1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\우리_대량이체_업로드.xls;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="우리_이체처리결과" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\우리_이체처리결과.xps;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="우리_이체처리결과1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\우리_이체처리결과.mht;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="우리은행대량이체" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\우리은행대량이체.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="우리은행대량이체결과" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\우리은행대량이체결과.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="운송사몰_내보내기_양식" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\운송사몰_내보내기_양식.xls;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="운송완료건_일괄등록" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\운송완료건_일괄등록.xls;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="운송완료건_일괄등록양식" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\운송완료건_일괄등록양식.xls;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="위수탁관리입력양식" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\위수탁관리입력양식.xlsx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="위수탁관리입력양식_Blank" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\위수탁관리입력양식_Blank.xlsx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="위탁관리일괄입력양식" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\위탁관리일괄입력양식.xls;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="일괄입력사용자_신고양식_미대행_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\일괄입력사용자_신고양식(미대행).xls;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="일괄입력운송신고양식" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\일괄입력운송신고양식.xls;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="일괄입력위탁신고양식" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\일괄입력위탁신고양식.xlsx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="일괄입력위탁신고양식1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\일괄입력위탁신고양식.xls;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="적용상세내역" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\적용상세내역.xls;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="정산요약" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\정산요약.xlsx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="지입차일괄역발행양식" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\지입차일괄역발행양식.xlsx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="지입차일괄역발행양식1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\지입차일괄역발행양식.xls;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="지입차일괄역발행양식_Blank" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\지입차일괄역발행양식_Blank.xlsx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="차량_미수미지급" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\차량_미수미지급.xlsx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="차량_일괄입력_기본형" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\차량_일괄입력_기본형.xls;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="차량관리" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\차량관리.xlsx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="차량관리1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\차량관리.xls;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="차량관리공유양식" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\차량관리공유양식.xlsx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="차량관리입력양식_기본_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\차량관리입력양식(기본).xlsx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="차량관리입력양식_기본__Blank" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\차량관리입력양식(기본)_Blank.xlsx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="차량관리입력양식_기본___XLSX" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\차량관리입력양식(기본)__XLSX.xlsx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="차량관리입력양식_표준__Blank" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\차량관리입력양식(표준)_Blank.xlsx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="차량관리입력양식_표준__XLSX" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\차량관리입력양식(표준)_XLSX.xlsx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="차량일괄입력_양식" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\차량일괄입력_양식.xls;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="차세로_문서용" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\차세로_문서용.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="차주몰_내보내기_양식" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\차주몰_내보내기_양식.xlsx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="차주몰_내보내기_양식1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\차주몰_내보내기_양식.xls;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="차주수수료계산서발행내역_Blank" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\차주수수료계산서발행내역_Blank.xlsx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="카드페이_운송사_메뉴얼_Ver2_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\카드페이_운송사_메뉴얼_Ver2.0.xps;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="카드페이_지입_화물_반품_내역" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\카드페이_지입_화물_반품_내역.xlsx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="카드페이_지입_화물_배차_내역" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\카드페이_지입_화물_배차_내역.xlsx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="카드페이_화물_배차_내역" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\카드페이_화물_배차_내역.xlsx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="하나_대량이체_업로드" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\하나_대량이체_업로드.xls;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="하나은행_대량이체" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\하나은행_대량이체.xps;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="하나은행_이체처리결과" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\하나은행_이체처리결과.xps;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="하나은행대량이체" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\하나은행대량이체.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="하나은행대량이체결과" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\하나은행대량이체결과.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="협력업체일괄역발행양식" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\협력업체일괄역발행양식.xls;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="회원가입_배차정보입력양식" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\회원가입_배차정보입력양식.xlsx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="회원가입_배차정보입력양식2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\회원가입_배차정보입력양식2.xlsx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="회원가입_배차정보입력양식_Blank" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\회원가입_배차정보입력양식_Blank.xlsx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="회원정보" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\회원정보.xlsx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="회원정보1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\회원정보.xls;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="NanumGothic" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NanumGothic.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="NanumGothicBold" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NanumGothicBold.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="NanumGothicExtraBold" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NanumGothicExtraBold.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="NanumGothicLight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NanumGothicLight.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="NanumSquareB" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NanumSquareB.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="NanumSquareEB" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NanumSquareEB.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="NanumSquareL" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NanumSquareL.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="NanumSquareR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NanumSquareR.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="bank" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bank.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="delivery" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\delivery.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="delivery_truck" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\delivery-truck.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="menucall" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\menucall.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="menucustomer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\menucustomer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="menuezhelp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\menuezhelp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="menuhomapage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\menuhomapage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="menumanual1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\menumanual1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="menumanual2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\menumanual2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="menunorderlist" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\menunorderlist.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="menuorders" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\menuorders.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="menusales" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\menusales.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="menusms" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\menusms.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="menustats" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\menustats.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="menutrade" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\menutrade.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="menuClient" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\menuClient.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="menudealers" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\menudealers.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="menusetting" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\menusetting.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="menutrade1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\menutrade.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Chasero_Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Chasero_Logo.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Login_New" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Login_New.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="checkboxbg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\checkboxbg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ClientList" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ClientList.xlsx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CustomerOrderList" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CustomerOrderList.xlsx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Excel_Order_Import" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Excel_Order_Import.xlsx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="전자세금계산서_발행건수" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\전자세금계산서 발행건수.xlsx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+</root>

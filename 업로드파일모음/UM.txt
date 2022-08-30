@@ -1,0 +1,2 @@
+ApplicationName|Version|Release date|downloadUrl|FileName
+mycalltruck.Admin|1.001|08/29/2020|http://115.144.110.96:82/|UM.zip

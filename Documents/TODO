@@ -1,0 +1,39 @@
+데이터베이스 분리 **
+화주-지사 분리 **
+CustomerPay Flag 추가
+Order -> 결제 내용 컬럼 추가 *
+선/착불 -> 세금계산서 이중 청구 금지
+기사 포인트 관리
+통계 변경 *
+차주별 미결제 현황
+화주별 미수금 현황
+
+등록
+
+화주추가 Flag Agubun : 2 -> 4
+화주웹 결제방법 *
+화주웹 배송상태 변경 *
+화주웹 OrderPhoneNo, Customer *
+관리자 PointMethod *
+
+화주웹 Street->Detail*
+화주앱 Street->Detail*
+
+화주웹 화물정보*
+화주앱 화물정보*
+
+매입
+
+DriverName
+Name
+BizNo
+
+
+포인트 관리 **
+화주 -> 포인트 사용이면, 자동으로 포인트 차감 체크
+if 포인트 체크
+기사 검색 목록에서 포인트 부족 기사 붉은색
+포인트 부족 기사 선택시 -> 확인 메시지박스
+
+출금 -> Orders
+입금 -> DrvierPay

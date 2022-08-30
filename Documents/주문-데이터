@@ -1,0 +1,108 @@
+MetaData
+    OrderId
+    CreateTime
+    CreateDate
+    ClientId
+    SubClientId
+    ClientUserId
+화물
+    - 상차지
+        StartState
+        StartCity
+        StartStreet
+        StartDetail
+    - 하차지
+        StopState
+        StopCity
+        StopStreet
+        StopDetail
+    - 톤수
+        CarSize
+    - 차종
+        CarType
+    - 도착
+        StopDateHelper
+    - 대수
+        CarCount
+    - 운송비구분
+        PayLocation
+    - 운송료
+        Price
+    - 수수료
+        
+    - 합계
+        ClientPrice
+    - 추가정보
+        Item
+    - 화물정보
+        Remark
+    - 화물중량
+        ItemSize
+        ItemSizeInclude
+    - 독차/혼적
+        IsShared
+        SharedItemLength
+        SharedItemSize
+    - 긴급
+        Emergency
+    - 왕복
+        Round
+    - 예약
+        Reservation
+    - 상차방법
+        StartInfo
+    - 상차일시
+        StartTimeType
+        StartTimeHour
+        StartTimeHalf
+    - 하차방법
+        StopInfo
+    - 하차일시
+        StopTimeType
+        StopTimeHour
+        StopTimeHalf
+    - 의뢰자
+        CustomerId
+        Customer
+        OrderPhoneNo
+        StopPhoneNo
+    - 배차
+        DriverId
+        Driver
+        DriverCarNo
+        DriverPhoneNo
+        DriverCarModel
+        AcceptTime
+    - 상태
+        OrderStatus        
+연동
+    - 중복방지
+        UniqueKey
+결제
+    - 세금계산서
+        TradeId
+        SalesManageId
+    - 차주 결제
+        DriverPoint *
+        DriverPayDate *
+        DriverPayPrice *
+        DriverPayVAT *
+        UseCardPay *
+    - 화주 결제
+        CustomerPayDate *
+        CustomerPayPrice *
+        CustomerPayVAT *
+구분
+    - 등록 구분
+        Agubun
+    - 배차 구분
+        Wgugun
+    - 화주 결제
+        CustomerPay *
+FPIS
+    - 연동 구분
+        FPIS_ID
+이전 데이터 연동
+    StartTime
+    StopTime
+    StartDate

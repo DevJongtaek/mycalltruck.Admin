@@ -1,0 +1,1465 @@
+﻿using mycalltruck.Admin.Class.Common;
+using mycalltruck.Admin.Models;
+using mycalltruck.Admin.UI;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Data.SqlClient;
+using System.Diagnostics;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace mycalltruck.Admin
+{
+    public partial class FrmMN0212_SALESMANAGE : Form
+    {
+        string Up_Status = string.Empty;
+        List<AddressViewModel> AddressList = new List<AddressViewModel>();
+        int GridIndex = 0;
+
+        public FrmMN0212_SALESMANAGE()
+        {
+            foreach (var item in SingleDataSet.Instance.AddressReferences)
+            {
+                if (String.IsNullOrEmpty(item.State) || String.IsNullOrEmpty(item.City) || String.IsNullOrEmpty(item.Street))
+                    continue;
+                if (!AddressList.Any(c => c.State == item.State && c.City == item.City && c.Street == item.Street))
+                {
+                    AddressList.Add(new AddressViewModel
+                    {
+                        State = item.State,
+                        City = item.City,
+                        Street = item.Street,
+                    });
+                }
+            }
+
+
+            InitializeComponent();
+
+            if (LocalUser.Instance.LogInInfomation.UserGubun != 3)
+            {
+
+                dataGridView1.Columns["PayDate"].Visible = false;
+                dtp_PayDate.Visible = false;
+                label5.Visible = false;
+               
+            }
+            else
+            {
+                dataGridView1.Columns["PayDate"].Visible = true;
+                dtp_PayDate.Visible = true;
+                label5.Visible = true;
+            }
+        }
+
+       
+
+        private void FrmMN0212_SALESMANAGE_Load(object sender, EventArgs e)
+        {
+            // TODO: 이 코드는 데이터를 'cMDataSet.SalesManage' 테이블에 로드합니다. 필요한 경우 이 코드를 이동하거나 제거할 수 있습니다.
+            this.salesManageTableAdapter.Fill(this.cMDataSet.SalesManage);
+
+            clientsTableAdapter.Fill(this.cMDataSet.Clients);
+            _InitCmb();
+
+          
+
+
+            dtp_Sdate.Value = DateTime.Now.AddMonths(-3);
+            dtp_Edate.Value = DateTime.Now;
+            cmb_Search.SelectedIndex = 0;
+            txt_Search.Text = "";
+            cmb_Etax.SelectedIndex = 0;
+            cmb_Date.SelectedIndex = 0;
+
+
+            if (LocalUser.Instance.LogInInfomation.UserGubun == 3)
+            {
+
+            }
+
+
+
+            btn_Search_Click(null, null);
+        }
+        private void _InitCmb()
+        {
+
+
+
+
+
+
+            var CarstateDataSource = (from a in SingleDataSet.Instance.AddressReferences select new { a.State }).Distinct().ToArray();
+            cmb_AddressState.DataSource = CarstateDataSource;
+            cmb_AddressState.DisplayMember = "State";
+            cmb_AddressState.ValueMember = "State";
+
+
+            var CarCityDataSource = (from a in SingleDataSet.Instance.AddressReferences select new { a.City }).Distinct().ToArray();
+            cmb_AddressCity.DataSource = CarCityDataSource;
+            cmb_AddressCity.DisplayMember = "City";
+            cmb_AddressCity.ValueMember = "City";
+
+
+            Dictionary<bool, string> HasACCList = new Dictionary<bool, string>();
+
+            HasACCList.Add(false, "현금");
+            HasACCList.Add(true, "카드");
+            cmb_HasAcc.DataSource = new BindingSource(HasACCList, null);
+            cmb_HasAcc.DisplayMember = "Value";
+            cmb_HasAcc.ValueMember = "Key";
+
+
+
+
+        }
+        private void btn_New_Click(object sender, EventArgs e)
+        {
+            FrmMN0212_SALESMANAGE_ADD _Form = new FrmMN0212_SALESMANAGE_ADD();
+            _Form.Owner = this;
+            _Form.StartPosition = FormStartPosition.CenterParent;
+            _Form.ShowDialog(
+
+            );
+            btn_Search_Click(null, null);
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            err.Clear();
+
+            if (txt_SangHo.Text == "")
+            {
+                MessageBox.Show(ButtonMessage.GetMessage(MessageType.필수항목누락, "", -1), "필수항목누락");
+                err.SetError(txt_SangHo, ButtonMessage.GetMessage(MessageType.필수항목누락, "", -1));
+                return;
+            }
+
+
+
+            if (txt_BizNo.Text.Length != 12)
+            {
+                MessageBox.Show("사업자 번호가 완전하지 않습니다.", "사업자 번호 불완전");
+                err.SetError(txt_BizNo, "사업자 번호가 완전하지 않습니다.");
+
+                return;
+            }
+
+            if (txt_CEO.Text == "")
+            {
+                MessageBox.Show(ButtonMessage.GetMessage(MessageType.필수항목누락, "", -1), "필수항목누락");
+                err.SetError(txt_CEO, ButtonMessage.GetMessage(MessageType.필수항목누락, "", -1));
+                return ;
+            }
+
+
+            if (txt_Uptae.Text == "")
+            {
+                MessageBox.Show(ButtonMessage.GetMessage(MessageType.필수항목누락, "", -1), "필수항목누락");
+                err.SetError(txt_Uptae, ButtonMessage.GetMessage(MessageType.필수항목누락, "", -1));
+                return;
+            }
+            if (txt_Upjong.Text == "")
+            {
+                MessageBox.Show(ButtonMessage.GetMessage(MessageType.필수항목누락, "", -1), "필수항목누락");
+                err.SetError(txt_Upjong, ButtonMessage.GetMessage(MessageType.필수항목누락, "", -1));
+                return;
+            }
+
+            if (txt_AddrDetail.Text == "")
+            {
+                MessageBox.Show(ButtonMessage.GetMessage(MessageType.필수항목누락, "", -1), "필수항목누락");
+                err.SetError(txt_AddrDetail, ButtonMessage.GetMessage(MessageType.필수항목누락, "", -1));
+                return ;
+            }
+            if (txt_Email.Text == "")
+            {
+                MessageBox.Show(ButtonMessage.GetMessage(MessageType.필수항목누락, "", -1), "필수항목누락");
+                err.SetError(txt_Email, ButtonMessage.GetMessage(MessageType.필수항목누락, "", -1));
+                return ;
+            }
+
+            if (txt_ContRactName.Text == "")
+            {
+                MessageBox.Show(ButtonMessage.GetMessage(MessageType.필수항목누락, "", -1), "필수항목누락");
+                err.SetError(txt_ContRactName, ButtonMessage.GetMessage(MessageType.필수항목누락, "", -1));
+                return ;
+            }
+
+
+            if (txt_MobileNo.Text.Replace(" ", "").Replace("-", "") == "")
+            {
+                MessageBox.Show(ButtonMessage.GetMessage(MessageType.필수항목누락, "", -1), "필수항목누락");
+                err.SetError(txt_MobileNo, ButtonMessage.GetMessage(MessageType.필수항목누락, "", -1));
+                return ;
+            }
+
+
+            if (txt_Item.Text.Replace(" ", "").Replace("-", "") == "")
+            {
+                MessageBox.Show(ButtonMessage.GetMessage(MessageType.필수항목누락, "", -1), "필수항목누락");
+                err.SetError(txt_Item, ButtonMessage.GetMessage(MessageType.필수항목누락, "", -1));
+                return ;
+            }
+
+
+            if (txt_UnitPrice.Text.Replace(" ", "").Replace("-", "") == "")
+            {
+                MessageBox.Show(ButtonMessage.GetMessage(MessageType.필수항목누락, "", -1), "필수항목누락");
+                err.SetError(txt_UnitPrice, ButtonMessage.GetMessage(MessageType.필수항목누락, "", -1));
+                return ;
+            }
+
+
+            if (txt_Num.Text.Replace(" ", "").Replace("-", "") == "")
+            {
+                MessageBox.Show(ButtonMessage.GetMessage(MessageType.필수항목누락, "", -1), "필수항목누락");
+                err.SetError(txt_Num, ButtonMessage.GetMessage(MessageType.필수항목누락, "", -1));
+                return ;
+            }
+
+            Up_Status = "Update";
+            int _rows = UpdateDB(Up_Status);
+        }
+        private int UpdateDB(string Status)
+        {
+            int _rows = 0;
+            try
+            {
+
+                salesManageBindingSource.EndEdit();
+                _rows = SingleDataSet.Instance.SalesManage.Where(c => c.RowState != DataRowState.Unchanged).Count();
+
+
+                var Row = ((DataRowView)salesManageBindingSource.Current).Row as CMDataSet.SalesManageRow;
+
+              
+                Row.AddressState = cmb_AddressState.Text;
+                Row.AddressCity = cmb_AddressCity.Text;
+
+
+                //  clientsTableAdapter.Update(SingleDataSet.Instance.Clients);
+
+                if (Status == "Update")
+                {
+
+                    salesManageTableAdapter.Update(Row);
+                    MessageBox.Show(ButtonMessage.GetMessage(MessageType.수정성공, "매출관리", 1), "매출관리 수정 성공");
+
+                    if (dataGridView1.RowCount > 1)
+                    {
+                        GridIndex = salesManageBindingSource.Position;
+                        btn_Search_Click(null, null);
+                        dataGridView1.CurrentCell = dataGridView1.Rows[GridIndex].Cells[0];
+                    }
+                    else
+                    {
+                        btn_Search_Click(null, null);
+                    }
+                }
+                else if (Status == "Delete")
+                {
+                    salesManageTableAdapter.Update(cMDataSet.SalesManage);
+                    MessageBox.Show(ButtonMessage.GetMessage(MessageType.삭제성공, "매출관리", 1), "매출관리 삭제 성공");
+                    btn_Search_Click(null, null);
+                }
+
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message, "매출관리 변경 실패", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                _rows = -1;
+            }
+            return _rows;
+        }
+        private void btnCurrentDelete_Click(object sender, EventArgs e)
+        {
+            List<DataGridViewRow> deleteRows = new List<DataGridViewRow>();
+
+            if (dataGridView1.SelectedCells.Count > 0)
+            {
+                foreach (DataGridViewCell item in dataGridView1.SelectedCells)
+                {
+                    if (item.RowIndex != -1 && deleteRows.Contains(item.OwningRow) == false) deleteRows.Add(item.OwningRow);
+                }
+                int Customercount = 0;
+                //foreach (DataGridViewRow dRow in deleteRows)
+                //{
+
+                //  //  Customercount += (int)driverAddTableAdapter.GetByDriverAdd(dRow.Cells["DriverId"].Value.ToString(), dRow.Cells["nameDataGridViewTextBoxColumn"].Value.ToString());
+
+                //}
+                //if (Customercount > 0)
+                //{
+                //    MessageBox.Show(string.Format("사용중인 데이터 {0}건이  존재하므로\n이 기사정보는 삭제할 수 없습니다.",
+                //        DriverAddcount), "기사정보 삭제 실패");
+                //    return;
+                //}
+
+
+
+                if (MessageBox.Show(ButtonMessage.GetMessage(MessageType.삭제질문, "매출관리", deleteRows.Count), "선택항목 삭제 여부 확인", MessageBoxButtons.YesNo) != DialogResult.Yes) return;
+                foreach (DataGridViewRow row in deleteRows)
+                {
+                    dataGridView1.Rows.Remove(row);
+                }
+            }
+            Up_Status = "Delete";
+            int _rows = UpdateDB(Up_Status);
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        //private void LoadTable()
+        //{
+         
+            
+        //        //if (cmb_Date.SelectedIndex == 0)
+        //        //{
+        //        //    this.tradesTableAdapter.FillForClientByRequestDate(this.cMDataSet.Trades, LocalUser.Instance.LogInInfomation.ClientId, dtp_From.Value.Date, dtp_To.Value.Date.AddDays(1));
+        //        //    this.trades2TableAdapter.FillForClientByRequestDate(this.cMDataSet.Trades2, LocalUser.Instance.LogInInfomation.ClientId, dtp_From.Value.Date, dtp_To.Value.Date.AddDays(1));
+
+        //        //}
+        //        //else if (cmb_Date.SelectedIndex == 1)
+        //        //{
+        //        //    this.tradesTableAdapter.FillForClientByPayDate(this.cMDataSet.Trades, LocalUser.Instance.LogInInfomation.ClientId, dtp_From.Value.Date, dtp_To.Value.Date.AddDays(1));
+        //        //    this.trades2TableAdapter.FillForClientByPayDate(this.cMDataSet.Trades2, LocalUser.Instance.LogInInfomation.ClientId, dtp_From.Value.Date, dtp_To.Value.Date.AddDays(1));
+        //        //}
+        //        //else
+        //        //{
+        //        //    this.tradesTableAdapter.FillByClientByRequestDateSC(this.cMDataSet.Trades, LocalUser.Instance.LogInInfomation.ClientId, dtp_From.Value.Date, dtp_To.Value.Date.AddDays(1));
+        //        //    this.trades2TableAdapter.FillForClientByRequestDate(this.cMDataSet.Trades2, LocalUser.Instance.LogInInfomation.ClientId, dtp_From.Value.Date, dtp_To.Value.Date.AddDays(1));
+        //        //}
+            
+
+
+
+        //}
+        private void LoadTable()
+        {
+            salesManageTableAdapter.Fill(cMDataSet.SalesManage);
+                if (cmb_Date.SelectedIndex == 0)
+                {
+
+                    this.salesManageTableAdapter.FillByCreateDate(this.cMDataSet.SalesManage, LocalUser.Instance.LogInInfomation.ClientId, dtp_Sdate.Value.Date, dtp_Edate.Value.Date.AddDays(1));
+                   
+
+                }
+                else if (cmb_Date.SelectedIndex == 1)
+                {
+                    this.salesManageTableAdapter.FillByPayDate(this.cMDataSet.SalesManage, LocalUser.Instance.LogInInfomation.ClientId, dtp_Sdate.Value.Date, dtp_Edate.Value.Date.AddDays(1));
+                   
+                }
+              
+          
+
+        }
+
+        private void _Search()
+        {
+
+            LoadTable();
+
+            
+            string _FilterString = string.Empty;
+            string _cmbSearchString = string.Empty;
+            string _DateSearchString = string.Empty;
+            string _StatusSearchString = string.Empty;
+            string _EtaxSearch = string.Empty;
+
+            try
+            {
+
+                if (cmb_Search.Text == "사업자번호")
+                {
+
+                    string filter = string.Format("BizNo Like  '%{0}%'", txt_Search.Text);
+                    _cmbSearchString = filter;
+
+
+                }
+
+                else if (cmb_Search.Text == "상호")
+                {
+
+                    string filter = string.Format("SangHo Like  '%{0}%'", txt_Search.Text);
+                    _cmbSearchString = filter;
+
+
+                }
+
+                else if (cmb_Search.Text == "품목명")
+                {
+
+                    string filter = string.Format("Item Like  '%{0}%'", txt_Search.Text);
+                    _cmbSearchString = filter;
+
+
+                }
+             
+
+
+                 _FilterString += _cmbSearchString ;
+
+              //  _DateSearchString = "CREATE_DATE1 >= '" + dtp_Sdate.Text + "'  AND CREATE_DATE1 <= '" + dtp_Edate.Text + "'";
+
+
+                //if (_FilterString != string.Empty && _DateSearchString != string.Empty)
+                //{
+                //    _FilterString += " AND " + _DateSearchString;
+                //}
+                //else
+                //{
+                //    _FilterString += _DateSearchString;
+                //}
+
+
+                if (cmb_Etax.SelectedIndex == 1)
+                {
+                    _EtaxSearch = String.Format(" ISNULL(IssueDate,'9999-12-31 00:00:00.000') <>'{0}' ", "9999-12-31 00:00:00.000");
+                }
+                else if (cmb_Etax.SelectedIndex == 2)
+                {
+                    _EtaxSearch = String.Format(" ISNULL(IssueDate,'9999-12-31 00:00:00.000') = '{0}' ", "9999-12-31 00:00:00.000");
+                }             
+                else
+                {
+                    _EtaxSearch = "";
+                }
+
+                if (_FilterString != string.Empty && _EtaxSearch != string.Empty)
+                {
+                    _FilterString += " AND " + _EtaxSearch;
+                }
+                else
+                {
+                    _FilterString += _EtaxSearch;
+                }
+
+
+
+
+
+                try
+                {
+                    salesManageBindingSource.Filter = _FilterString;
+
+
+                    //if (LocalUser.Instance.LogInInfomation.UserGubun == 2)
+                    //{
+
+                    //    salesManageBindingSource.Filter = _FilterString;
+                    //}
+                    //else
+                    //{
+                    //    if (_FilterString != string.Empty)
+                    //    {
+                    //        salesManageBindingSource.Filter = _FilterString + " AND ClientId = '" + LocalUser.Instance.LogInInfomation.ClientId + "'";
+                    //    }
+                    //    else
+                    //    {
+                    //        salesManageBindingSource.Filter = " ClientId = '" + LocalUser.Instance.LogInInfomation.ClientId + "'";
+                    //    }
+                    //}
+                }
+                catch
+                {
+                    btn_Search_Click(null, null);
+                }
+            }
+            catch
+            {
+            }
+
+
+        }
+
+
+        private void btn_Search_Click(object sender, EventArgs e)
+        {
+            _Search();
+        }
+
+        private void cmb_AddressState_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmb_AddressState.SelectedValue == null)
+                return;
+
+
+            cmb_AddressCity.Enabled = true;
+
+
+            var ParkCityDataSource = AddressList.Where(c => c.State == cmb_AddressState.SelectedValue.ToString()).Select(c => new { c.City }).Distinct().ToArray();
+            cmb_AddressCity.DataSource = ParkCityDataSource;
+            cmb_AddressCity.DisplayMember = "City";
+            cmb_AddressCity.ValueMember = "City";
+        }
+
+        private void btn_CustomerInfo_Click(object sender, EventArgs e)
+        {
+            if (rdb_Normal.Checked)
+            {
+                FrmCustomerSearch _frmCustomerSearch = new FrmCustomerSearch("1,3");
+                _frmCustomerSearch.grid1.KeyDown += new KeyEventHandler((object isender, KeyEventArgs ie) =>
+                {
+                    if (ie.KeyCode != Keys.Return) return;
+                    if (_frmCustomerSearch.grid1.SelectedCells.Count == 0) return;
+                    if (_frmCustomerSearch.grid1.SelectedCells[0].RowIndex < 0) return;
+
+                    txt_SangHo.Text = _frmCustomerSearch.grid1[0, _frmCustomerSearch.grid1.SelectedCells[0].RowIndex].Value.ToString();
+                    txt_BizNo.Text = _frmCustomerSearch.grid1[1, _frmCustomerSearch.grid1.SelectedCells[0].RowIndex].Value.ToString();
+                    txt_CEO.Text = _frmCustomerSearch.grid1[2, _frmCustomerSearch.grid1.SelectedCells[0].RowIndex].Value.ToString();
+                    txt_Uptae.Text = _frmCustomerSearch.grid1[3, _frmCustomerSearch.grid1.SelectedCells[0].RowIndex].Value.ToString();
+                    txt_Upjong.Text = _frmCustomerSearch.grid1[4, _frmCustomerSearch.grid1.SelectedCells[0].RowIndex].Value.ToString();
+
+                    cmb_AddressState.SelectedValue = _frmCustomerSearch.grid1[5, _frmCustomerSearch.grid1.SelectedCells[0].RowIndex].Value.ToString();
+                    cmb_AddressCity.SelectedValue = _frmCustomerSearch.grid1[6, _frmCustomerSearch.grid1.SelectedCells[0].RowIndex].Value.ToString();
+                    txt_AddrDetail.Text = _frmCustomerSearch.grid1[7, _frmCustomerSearch.grid1.SelectedCells[0].RowIndex].Value.ToString();
+                    txt_Email.Text = _frmCustomerSearch.grid1[8, _frmCustomerSearch.grid1.SelectedCells[0].RowIndex].Value.ToString();
+                    txt_ContRactName.Text = _frmCustomerSearch.grid1[9, _frmCustomerSearch.grid1.SelectedCells[0].RowIndex].Value.ToString();
+                    txt_MobileNo.Text = _frmCustomerSearch.grid1[10, _frmCustomerSearch.grid1.SelectedCells[0].RowIndex].Value.ToString();
+                    txt_CardPayGubun.Text = "N";
+                    txt_CustomerId.Text = _frmCustomerSearch.grid1[12, _frmCustomerSearch.grid1.SelectedCells[0].RowIndex].Value.ToString();
+                    _frmCustomerSearch.Close();
+                });
+                _frmCustomerSearch.grid1.MouseDoubleClick += new MouseEventHandler((object isender, MouseEventArgs ie) =>
+                {
+                    if (_frmCustomerSearch.grid1.SelectedCells.Count == 0) return;
+                    if (_frmCustomerSearch.grid1.SelectedCells[0].RowIndex < 0) return;
+                    txt_SangHo.Text = _frmCustomerSearch.grid1[0, _frmCustomerSearch.grid1.SelectedCells[0].RowIndex].Value.ToString();
+                    txt_BizNo.Text = _frmCustomerSearch.grid1[1, _frmCustomerSearch.grid1.SelectedCells[0].RowIndex].Value.ToString();
+                    txt_CEO.Text = _frmCustomerSearch.grid1[2, _frmCustomerSearch.grid1.SelectedCells[0].RowIndex].Value.ToString();
+                    txt_Uptae.Text = _frmCustomerSearch.grid1[3, _frmCustomerSearch.grid1.SelectedCells[0].RowIndex].Value.ToString();
+                    txt_Upjong.Text = _frmCustomerSearch.grid1[4, _frmCustomerSearch.grid1.SelectedCells[0].RowIndex].Value.ToString();
+
+                    cmb_AddressState.SelectedValue = _frmCustomerSearch.grid1[5, _frmCustomerSearch.grid1.SelectedCells[0].RowIndex].Value.ToString();
+                    cmb_AddressCity.SelectedValue = _frmCustomerSearch.grid1[6, _frmCustomerSearch.grid1.SelectedCells[0].RowIndex].Value.ToString();
+                    txt_AddrDetail.Text = _frmCustomerSearch.grid1[7, _frmCustomerSearch.grid1.SelectedCells[0].RowIndex].Value.ToString();
+                    txt_Email.Text = _frmCustomerSearch.grid1[8, _frmCustomerSearch.grid1.SelectedCells[0].RowIndex].Value.ToString();
+                    txt_ContRactName.Text = _frmCustomerSearch.grid1[9, _frmCustomerSearch.grid1.SelectedCells[0].RowIndex].Value.ToString();
+                    txt_MobileNo.Text = _frmCustomerSearch.grid1[10, _frmCustomerSearch.grid1.SelectedCells[0].RowIndex].Value.ToString();
+                    txt_CardPayGubun.Text = "N";
+                    txt_CustomerId.Text = _frmCustomerSearch.grid1[12, _frmCustomerSearch.grid1.SelectedCells[0].RowIndex].Value.ToString();
+                    _frmCustomerSearch.Close();
+                });
+
+
+
+
+
+
+                _frmCustomerSearch.Owner = this;
+                _frmCustomerSearch.StartPosition = FormStartPosition.CenterParent;
+                _frmCustomerSearch.ShowDialog();
+                // txt_AddrDetail.Focus();
+
+            }
+            else
+            {
+                FrmCardSearch _frmCardSearch = new FrmCardSearch();
+                _frmCardSearch.grid1.KeyDown += new KeyEventHandler((object isender, KeyEventArgs ie) =>
+                {
+                    if (ie.KeyCode != Keys.Return) return;
+                    if (_frmCardSearch.grid1.SelectedCells.Count == 0) return;
+                    if (_frmCardSearch.grid1.SelectedCells[0].RowIndex < 0) return;
+
+                    txt_SangHo.Text = _frmCardSearch.grid1[0, _frmCardSearch.grid1.SelectedCells[0].RowIndex].Value.ToString();
+                    txt_BizNo.Text = _frmCardSearch.grid1[1, _frmCardSearch.grid1.SelectedCells[0].RowIndex].Value.ToString();
+                    txt_CEO.Text = _frmCardSearch.grid1[2, _frmCardSearch.grid1.SelectedCells[0].RowIndex].Value.ToString();
+                    txt_Uptae.Text = _frmCardSearch.grid1[3, _frmCardSearch.grid1.SelectedCells[0].RowIndex].Value.ToString();
+                    txt_Upjong.Text = _frmCardSearch.grid1[4, _frmCardSearch.grid1.SelectedCells[0].RowIndex].Value.ToString();
+
+                    cmb_AddressState.SelectedValue = _frmCardSearch.grid1[5, _frmCardSearch.grid1.SelectedCells[0].RowIndex].Value.ToString();
+                    cmb_AddressCity.SelectedValue = _frmCardSearch.grid1[6, _frmCardSearch.grid1.SelectedCells[0].RowIndex].Value.ToString();
+                    txt_AddrDetail.Text = _frmCardSearch.grid1[7, _frmCardSearch.grid1.SelectedCells[0].RowIndex].Value.ToString();
+                    txt_Email.Text = _frmCardSearch.grid1[8, _frmCardSearch.grid1.SelectedCells[0].RowIndex].Value.ToString();
+                    txt_ContRactName.Text = _frmCardSearch.grid1[2, _frmCardSearch.grid1.SelectedCells[0].RowIndex].Value.ToString();
+                    txt_MobileNo.Text = _frmCardSearch.grid1[10, _frmCardSearch.grid1.SelectedCells[0].RowIndex].Value.ToString();
+                    txt_CardPayGubun.Text = "C";
+                    txt_CustomerId.Text = _frmCardSearch.grid1[12, _frmCardSearch.grid1.SelectedCells[0].RowIndex].Value.ToString();
+                    txt_BizNo_Leave(null, null);
+                    _frmCardSearch.Close();
+                });
+                _frmCardSearch.grid1.MouseDoubleClick += new MouseEventHandler((object isender, MouseEventArgs ie) =>
+                {
+                    if (_frmCardSearch.grid1.SelectedCells.Count == 0) return;
+                    if (_frmCardSearch.grid1.SelectedCells[0].RowIndex < 0) return;
+                    txt_SangHo.Text = _frmCardSearch.grid1[0, _frmCardSearch.grid1.SelectedCells[0].RowIndex].Value.ToString();
+                    txt_BizNo.Text = _frmCardSearch.grid1[1, _frmCardSearch.grid1.SelectedCells[0].RowIndex].Value.ToString();
+                    txt_CEO.Text = _frmCardSearch.grid1[2, _frmCardSearch.grid1.SelectedCells[0].RowIndex].Value.ToString();
+                    txt_Uptae.Text = _frmCardSearch.grid1[3, _frmCardSearch.grid1.SelectedCells[0].RowIndex].Value.ToString();
+                    txt_Upjong.Text = _frmCardSearch.grid1[4, _frmCardSearch.grid1.SelectedCells[0].RowIndex].Value.ToString();
+
+                    cmb_AddressState.SelectedValue = _frmCardSearch.grid1[5, _frmCardSearch.grid1.SelectedCells[0].RowIndex].Value.ToString();
+                    cmb_AddressCity.SelectedValue = _frmCardSearch.grid1[6, _frmCardSearch.grid1.SelectedCells[0].RowIndex].Value.ToString();
+                    txt_AddrDetail.Text = _frmCardSearch.grid1[7, _frmCardSearch.grid1.SelectedCells[0].RowIndex].Value.ToString();
+                    txt_Email.Text = _frmCardSearch.grid1[8, _frmCardSearch.grid1.SelectedCells[0].RowIndex].Value.ToString();
+                    txt_ContRactName.Text = _frmCardSearch.grid1[2, _frmCardSearch.grid1.SelectedCells[0].RowIndex].Value.ToString();
+                    txt_MobileNo.Text = _frmCardSearch.grid1[10, _frmCardSearch.grid1.SelectedCells[0].RowIndex].Value.ToString();
+                    txt_CardPayGubun.Text = "C";
+                    txt_CustomerId.Text = _frmCardSearch.grid1[12, _frmCardSearch.grid1.SelectedCells[0].RowIndex].Value.ToString();
+                    txt_BizNo_Leave(null, null);
+                    _frmCardSearch.Close();
+                });
+
+
+                _frmCardSearch.Owner = this;
+                _frmCardSearch.StartPosition = FormStartPosition.CenterParent;
+                _frmCardSearch.ShowDialog();
+
+            }
+        }
+
+        private void salesManageBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+            err.Clear();
+
+
+            if (salesManageBindingSource.Current == null)
+                return;
+
+            var Selected = ((DataRowView)salesManageBindingSource.Current).Row as CMDataSet.SalesManageRow;
+            if (Selected != null)
+            {
+
+
+                cmb_AddressState.SelectedValue = Selected.AddressState;
+                cmb_AddressCity.SelectedValue = Selected.AddressCity;
+
+              
+
+                if (Selected.CardPayGubun == "C")
+                {
+                    rdb_Cardpay.Checked = true;
+                    lbl_HasAcc.Visible = true;
+                    cmb_HasAcc.Visible = true;
+                    panel4.Visible = true;
+
+
+                   // dtp_PayDate.Visible = true;
+
+                    //
+                    //label5.Visible = true;
+                }
+                else
+                {
+                    rdb_Normal.Checked = true;
+                    lbl_HasAcc.Visible = false;
+                    cmb_HasAcc.Visible = false;
+                    panel4.Visible = false;
+                    cmb_HasAcc.SelectedValue = false;
+
+                    //dtp_PayDate.Visible = false;
+                    //label5.Visible = false;
+                  
+                }
+                if (LocalUser.Instance.LogInInfomation.UserGubun == 3)
+                {
+                    dtp_PayDate.Text = Selected.PayDate1;
+                }
+               
+
+            }
+        }
+
+        private void txt_UnitPrice_Leave(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txt_UnitPrice.Text) && !string.IsNullOrEmpty(txt_Num.Text))
+            {
+
+
+               
+                if (chk_Vat.Checked == true)
+                {
+                    // txt_Price.Text = ((Int64.Parse(txt_Price.Text) * Int64.Parse(txt_Num.Text))).ToString();
+                    txt_VAT.Text = Math.Truncate((int.Parse(txt_UnitPrice.Text) * int.Parse(txt_Num.Text)) * 0.1).ToString();
+                    txt_Price.Text = ((Int64.Parse(txt_UnitPrice.Text) * Int64.Parse(txt_Num.Text))).ToString();
+                    txt_Amount.Text = ((Int64.Parse(txt_UnitPrice.Text) * Int64.Parse(txt_Num.Text)) + Int64.Parse(txt_VAT.Text)).ToString();
+                }
+                else
+                {
+
+                    // txt_Price.Text = ((Int64.Parse(txt_Price.Text) * Int64.Parse(txt_Num.Text))).ToString();
+                    txt_VAT.Text = "0";
+                    txt_Price.Text = ((Int64.Parse(txt_UnitPrice.Text) * Int64.Parse(txt_Num.Text))).ToString();
+                    txt_Amount.Text = ((Int64.Parse(txt_UnitPrice.Text) * Int64.Parse(txt_Num.Text)) + Int64.Parse(txt_VAT.Text)).ToString();
+                }
+
+
+            }
+        }
+
+        private void txt_Num_Leave(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txt_UnitPrice.Text) && !string.IsNullOrEmpty(txt_Num.Text))
+            {
+
+              //  txt_Price.Text = ((Int64.Parse(txt_UnitPrice.Text) * Int64.Parse(txt_Num.Text))).ToString();
+                if (chk_Vat.Checked == true)
+                {
+                    // txt_Price.Text = ((Int64.Parse(txt_Price.Text) * Int64.Parse(txt_Num.Text))).ToString();
+                    txt_VAT.Text = Math.Truncate((int.Parse(txt_UnitPrice.Text) * int.Parse(txt_Num.Text)) * 0.1).ToString();
+                    txt_Price.Text = ((Int64.Parse(txt_UnitPrice.Text) * Int64.Parse(txt_Num.Text))).ToString();
+                    txt_Amount.Text = ((Int64.Parse(txt_UnitPrice.Text) * Int64.Parse(txt_Num.Text)) + Int64.Parse(txt_VAT.Text)).ToString();
+                }
+                else
+                {
+
+                    // txt_Price.Text = ((Int64.Parse(txt_Price.Text) * Int64.Parse(txt_Num.Text))).ToString();
+                    txt_VAT.Text = "0";
+                    txt_Price.Text = ((Int64.Parse(txt_UnitPrice.Text) * Int64.Parse(txt_Num.Text))).ToString();
+                    txt_Amount.Text = ((Int64.Parse(txt_UnitPrice.Text) * Int64.Parse(txt_Num.Text)) + Int64.Parse(txt_VAT.Text)).ToString();
+                }
+
+
+
+
+            }
+        }
+
+        private void chk_Vat_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txt_UnitPrice.Text) && !string.IsNullOrEmpty(txt_Num.Text))
+            {
+
+                if (chk_Vat.Checked == true)
+                {
+                    // txt_Price.Text = ((Int64.Parse(txt_Price.Text) * Int64.Parse(txt_Num.Text))).ToString();
+                    txt_VAT.Text = Math.Truncate((int.Parse(txt_UnitPrice.Text) * int.Parse(txt_Num.Text)) * 0.1).ToString();
+                    txt_Price.Text = ((Int64.Parse(txt_UnitPrice.Text) * Int64.Parse(txt_Num.Text))).ToString();
+                    txt_Amount.Text = ((Int64.Parse(txt_UnitPrice.Text) * Int64.Parse(txt_Num.Text)) + Int64.Parse(txt_VAT.Text)).ToString();
+                }
+                else
+                {
+
+                    // txt_Price.Text = ((Int64.Parse(txt_Price.Text) * Int64.Parse(txt_Num.Text))).ToString();
+                    txt_VAT.Text = "0";
+                    txt_Price.Text = ((Int64.Parse(txt_UnitPrice.Text) * Int64.Parse(txt_Num.Text))).ToString();
+                    txt_Amount.Text = ((Int64.Parse(txt_UnitPrice.Text) * Int64.Parse(txt_Num.Text)) + Int64.Parse(txt_VAT.Text)).ToString();
+                }
+
+
+            }
+        }
+
+        private void txt_UnitPrice_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsDigit(e.KeyChar) || e.KeyChar == Convert.ToChar(Keys.Back)))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txt_Num_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsDigit(e.KeyChar) || e.KeyChar == Convert.ToChar(Keys.Back)))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.ColumnIndex == 1 && e.RowIndex >= 0)
+            {
+                dataGridView1[e.ColumnIndex, e.RowIndex].Value = (dataGridView1.Rows.Count - e.RowIndex).ToString("N0").Replace(",", "");
+            }
+             if (dataGridView1.Columns[e.ColumnIndex] == createDateDataGridViewTextBoxColumn)
+            {
+                e.Value = ((DateTime)e.Value).ToString("d").Replace("-", "/");
+            }
+             if (dataGridView1.Columns[e.ColumnIndex] == requestDateDataGridViewTextBoxColumn)
+            {
+                e.Value = ((DateTime)e.Value).ToString("d").Replace("-", "/");
+            }
+             if (dataGridView1.Columns[e.ColumnIndex] == unitPriceDataGridViewTextBoxColumn)
+            {
+                if (!String.IsNullOrEmpty(e.Value.ToString()))
+                {
+                    e.Value = String.Format("{0:#,##0}", Convert.ToInt64(e.Value));
+                }
+
+            }
+             if (dataGridView1.Columns[e.ColumnIndex] == numDataGridViewTextBoxColumn)
+            {
+                if (!String.IsNullOrEmpty(e.Value.ToString()))
+                {
+                    e.Value = String.Format("{0:#,##0}", Convert.ToInt64(e.Value));
+                }
+
+            }
+             if (dataGridView1.Columns[e.ColumnIndex] == vatDataGridViewTextBoxColumn)
+            {
+                if (!String.IsNullOrEmpty(e.Value.ToString()))
+                {
+                    e.Value = String.Format("{0:#,##0}", Convert.ToInt64(e.Value));
+                }
+
+            }
+             if (dataGridView1.Columns[e.ColumnIndex] == priceDataGridViewTextBoxColumn)
+            {
+                if (!String.IsNullOrEmpty(e.Value.ToString()))
+                {
+                    e.Value = String.Format("{0:#,##0}", Convert.ToInt64(e.Value));
+                }
+
+            }
+
+
+             if (dataGridView1.Columns[e.ColumnIndex] == issueDateDataGridViewTextBoxColumn)
+             {
+                 var Selected = ((DataRowView)dataGridView1.Rows[e.RowIndex].DataBoundItem).Row as CMDataSet.SalesManageRow;
+
+                 if (Selected.Issue == true)
+                 {
+                     dataGridView1[e.ColumnIndex, e.RowIndex].Style.ForeColor = Color.Red;
+                 }
+
+             }
+
+             if (dataGridView1.Columns[e.ColumnIndex] == CardPayGubun)
+             {
+                 var Selected = ((DataRowView)dataGridView1.Rows[e.RowIndex].DataBoundItem).Row as CMDataSet.SalesManageRow;
+
+                 if (Selected.CardPayGubun == "C")
+                 {
+                     e.Value = "카드페이 거래처";
+                 }
+                 else
+                 {
+                     e.Value = "일반 거래처";
+
+                 }
+
+             }
+
+
+             if (dataGridView1.Columns[e.ColumnIndex] == bizNoDataGridViewTextBoxColumn)
+             {
+                 var Selected = ((DataRowView)dataGridView1.Rows[e.RowIndex].DataBoundItem).Row as CMDataSet.SalesManageRow;
+
+                 var Query = cMDataSet.Clients.Where(c => c.ClientId == Selected.CustomerId).ToArray();
+
+                 if (Query.Any())
+                 {
+                     e.Value = Query.First().BizNo;
+                 }
+
+             }
+             if (dataGridView1.Columns[e.ColumnIndex] == sangHoDataGridViewTextBoxColumn)
+             {
+                 var Selected = ((DataRowView)dataGridView1.Rows[e.RowIndex].DataBoundItem).Row as CMDataSet.SalesManageRow;
+
+                 var Query = cMDataSet.Clients.Where(c => c.ClientId == Selected.CustomerId).ToArray();
+
+                 if (Query.Any())
+                 {
+                     e.Value = Query.First().Name;
+                 }
+
+             }
+            
+        }
+
+        private void cmb_Search_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txt_Search.Clear();
+            if (cmb_Search.SelectedIndex == 0)
+            {
+                txt_Search.ReadOnly = true;
+            }
+            else
+            {
+                txt_Search.ReadOnly = false;
+            }
+        }
+
+        private void txt_Search_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode != Keys.Return) return;
+            _Search();
+        }
+
+        private void btn_Inew_Click(object sender, EventArgs e)
+        {
+            dtp_Sdate.Value = DateTime.Now.AddMonths(-3);
+            dtp_Edate.Value = DateTime.Now;
+            cmb_Search.SelectedIndex = 0;
+            txt_Search.Text = "";
+            cmb_Etax.SelectedIndex = 0;
+            _Search();
+        }
+
+        bool overhead = false;
+        List<string> checkedCodes = new List<string>();
+
+        private void chkAllSelect_CheckedChanged(object sender, EventArgs e)
+        {
+            
+            overhead = true;
+            for (int i = 0; i < dataGridView1.RowCount; i++)
+            {
+                dataGridView1[SalesChk.Index, i].Value = chkAllSelect.Checked;
+            }
+            overhead = false;
+            dataGridView1_CellValueChanged(null, null);
+        }
+
+        private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                
+                if (e.ColumnIndex == 0)
+                {
+                    object o = dataGridView1[e.ColumnIndex, e.RowIndex].Value;
+
+                    var IssueDate1 = ((DataRowView)salesManageBindingSource[e.RowIndex])["IssueDate1"].ToString();
+                    string code = ((DataRowView)salesManageBindingSource[e.RowIndex])["SalesId"].ToString();
+                    if (Convert.ToBoolean(o))
+                    {
+                        if (!checkedCodes.Contains(code) && IssueDate1 == "")
+                            checkedCodes.Add(code);
+                    }
+                    else
+                    {
+                        if (checkedCodes.Contains(code))
+                            checkedCodes.Remove(code);
+                    }
+                }
+            }
+            catch { }
+            if (overhead) return;
+          
+        }
+
+        private string getFilterString()
+        {
+            string r = "'0'";
+            if (checkedCodes.Count > 0)
+            {
+                r = String.Join(",", checkedCodes.Select(c => "'" + c + "'").ToArray());
+            }
+            return r;
+        }
+
+        private void btn_Tax_Click(object sender, EventArgs e)
+        {
+            getFilterString();
+            string errormessage = string.Empty;
+            if ( checkedCodes.Count() == 0)
+            {
+                MessageBox.Show("적용할 건을 선택하십시오.", Text, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+              
+                return;
+
+            }
+
+            FrmETAXIN _frmETAXIN = new FrmETAXIN(checkedCodes.Count().ToString());
+
+
+            _frmETAXIN.Owner = this;
+            _frmETAXIN.StartPosition = FormStartPosition.CenterParent;
+            if (_frmETAXIN.ShowDialog() == DialogResult.OK)
+            {
+                if (_frmETAXIN.label2.Text == "0") return;
+
+                _frmETAXIN.Close();
+                dtp_Date.Text = _frmETAXIN.dtp_Date.Text;
+
+                bar.Value = 0;
+                bar.Maximum = checkedCodes.Count();
+                bar.Visible = true;
+                pnProgress.Visible = true;
+                string title = string.Format("세금계산서 ({0}-{1})", dtp_Sdate.Text.Replace("/", "-"), dtp_Edate.Text.Replace("/", "-"));
+                List<CMDataSet.SalesManageRow> sales = new List<CMDataSet.SalesManageRow>();
+
+                sales.AddRange(cMDataSet.SalesManage.Where(c => c.CheckBox && c.IssueDate1 == "NULL"));
+                if (sales.Count() == 0)
+                {
+                    MessageBox.Show("적용할 건을 선택하십시오.", Text, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    bar.Visible = false;
+                    pnProgress.Visible = false;
+                    return;
+
+                }
+
+                else
+                {
+                    #region 화일생성일
+                    using (SqlConnection cn = new SqlConnection(Properties.Settings.Default.TruckConnectionString))
+                    {
+
+
+
+
+
+
+                        cn.Open();
+                        SqlCommand cmd = cn.CreateCommand();
+
+
+
+                        cmd.CommandText =
+                           "UPDATE SalesManage SET IssueDate = @IssueDate WHERE    SalesId in(" + String.Join(",", checkedCodes) + ") ";
+
+
+                        cmd.Parameters.AddWithValue("@IssueDate", dtp_Date.Value);
+
+                        cmd.ExecuteNonQuery();
+                        cn.Close();
+
+
+
+                    }
+                    #endregion
+
+
+                }
+                Thread t = new Thread(new ThreadStart(() =>
+                {
+
+
+                    var Table = new CMDataSet.TR_DUTYMASTERDataTable();
+                    var Table2 = new CMDataSet.TR_DUTYDETAILDataTable();
+
+                    var Query = SingleDataSet.Instance.Clients.Where(c => c.ClientId == LocalUser.Instance.LogInInfomation.ClientId);
+
+                    string DutyNum = string.Empty;
+                    int i = 0;
+
+
+
+                    foreach (var item in sales)
+                    {
+
+                        var Row = Table.NewTR_DUTYMASTERRow();
+                        var Row2 = Table2.NewTR_DUTYDETAILRow();
+
+                        using (SqlConnection cnduty = new SqlConnection(mycalltruck.Admin.Properties.Settings.Default.TR_DBConnectionString))
+                        {
+                            SqlCommand companyCmd = new SqlCommand(
+                                @"SELECT @DATE + '9' + RIGHT('00000' +	LTRIM(STR(ISNULL(MAX(RIGHT(DUTY_NUM, 5)) + 1, 1))), 5)
+                                              FROM	[TR_DUTYMASTER]
+                                              WHERE	LEFT(DUTY_NUM, 8) = @DATE", cnduty);
+                            companyCmd.Parameters.Add(new SqlParameter("@DATE", dtp_Date.Value.ToString("yyyyMMdd")));
+                            cnduty.Open();
+                            object o = companyCmd.ExecuteScalar();
+                            if (o != null) DutyNum = o.ToString();
+                            cnduty.Close();
+                        }
+
+                        Row.CUSTOMERID = "e" + Query.First().BizNo.Replace("-", "");
+                        Row.DUTY_NUM = dtp_Date.Value.ToString("yyyyMMdd") + "9" + (int.Parse(DutyNum.Substring(9)) + i).ToString().PadLeft(5, '0');
+
+
+                        Row.DUTY_TYPE = "매출";
+                        Row.MCLIENTNO = Query.First().BizNo.Replace("-", "");
+                        Row.MSANGHO = Query.First().Name;
+                        Row.MCEONM = Query.First().CEO;
+                        Row.MUPTEA = Query.First().Uptae;
+                        Row.MUPJONG = Query.First().Upjong;
+
+                        Row.MADDR = Query.First().AddressState + " " + Query.First().AddressCity + " " + Query.First().AddressStreet + " " + Query.First().AddressDetail;
+                        Row.WDATE = dtp_Date.Value.ToString("yyyyMMdd");
+                        Row.TRANSDATE = dtp_Date.Value.ToString("yyyyMMdd");
+                        Row.RECEIPT = "청구";
+
+                        Row.CLIENTNO = item["BizNo"].ToString();
+                        Row.SANGHO = item["SangHo"].ToString();
+                        Row.CEONM = item["Ceo"].ToString();
+                        Row.UPTEA = item["Uptae"].ToString();
+                        Row.UPJONG = item["Upjong"].ToString();
+                        Row.ADDR = item["AddressState"].ToString() + " " + item["AddressCity"].ToString() + " " + item["AddressDetail"].ToString();
+                        Row.COST = int.Parse(item["UnitPrice"].ToString()) * int.Parse(item["Num"].ToString());
+                        Row.VAT = decimal.Parse(item["Vat"].ToString());
+                        Row.EMAIL = item["Email"].ToString();
+                        Row.TITLE = item["Sangho"].ToString() + "(" + dtp_Sdate.Value.ToString("yyyy년MM월") + ") " + item["Item"].ToString();
+                        if (Row.VAT == 0)
+                        {
+                            Row.TAX_TYPE = "면세";
+
+                        }
+                        else
+                        {
+                            Row.TAX_TYPE = "과세";
+                        }
+
+                        Row2.CUSTOMERID = "e" + Query.First().BizNo.Replace("-", "");
+                        Row2.DUTY_NUM = dtp_Date.Value.ToString("yyyyMMdd") + "9" + (int.Parse(DutyNum.Substring(9)) + i).ToString().PadLeft(5, '0');
+                        Row2.ITMSEQ = 1;
+                        Row2.ITMMM = dtp_Date.Value.ToString("MM");
+                        Row2.ITMDD = dtp_Date.Value.ToString("dd");
+                        Row2.ITMNM = item["Item"].ToString();
+                        Row2.ITMQTY = 1;
+                        Row2.ITMNET = int.Parse(item["UnitPrice"].ToString()) * int.Parse(item["Num"].ToString());
+                        Row2.COST = int.Parse(item["UnitPrice"].ToString()) * int.Parse(item["Num"].ToString());
+                        Row2.VAT = decimal.Parse(item["Vat"].ToString());
+
+                        Table.AddTR_DUTYMASTERRow(Row);
+                        Table2.AddTR_DUTYDETAILRow(Row2);
+
+                        i++;
+
+                    }
+                    var Adapter = new CMDataSetTableAdapters.TR_DUTYMASTERTableAdapter();
+                    var Adapter2 = new CMDataSetTableAdapters.TR_DUTYDETAILTableAdapter();
+                    Adapter.Update(Table);
+                    Adapter2.Update(Table2);
+
+
+
+
+
+
+
+
+
+                    FrmETAXRESULT _FrmETAXRESULT = new FrmETAXRESULT(checkedCodes.Count().ToString(), _frmETAXIN.dtp_Date.Text);
+                    pnProgress.Invoke(new Action(() => pnProgress.Visible = false));
+                    pnProgress.Invoke(new Action(() => _FrmETAXRESULT.Show()));
+                    pnProgress.Invoke(new Action(() => btn_Search_Click(null,null)));
+
+                    //ProcessStartInfo web = new ProcessStartInfo("iexplore");
+                    //web.Arguments = String.Format(@"http://www.truebiz.co.kr/edubill.asp?cid=e{0}&pwd={1}&part=edubill", Query.First().BizNo.Replace("-", "")
+                    //    , Query.First().BizNo.Substring(7));
+                    //Process.Start(web);
+
+                   
+
+
+
+                }));
+                t.SetApartmentState(ApartmentState.STA);
+                t.Start();
+
+
+
+                //_frmETAXIN.Close();
+
+             
+            }
+
+            
+           
+
+           
+        }
+
+        private void dataGridView1_CurrentCellDirtyStateChanged(object sender, EventArgs e)
+        {
+            if (dataGridView1.IsCurrentCellDirty)
+            {
+                dataGridView1.CommitEdit(DataGridViewDataErrorContexts.Commit);
+            }
+        }
+
+        private void dataGridView1_Paint(object sender, PaintEventArgs e)
+        {
+            Rectangle rect1 = dataGridView1.GetColumnDisplayRectangle(SalesChk.Index, true);
+            chkAllSelect.Location = new Point(rect1.Location.X + 2, rect1.Location.Y + 4);
+            if (rect1.Width == 0) chkAllSelect.Visible = false;
+            else chkAllSelect.Visible = true;
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex != 25)
+                return;
+
+            var Selected = ((DataRowView)dataGridView1.SelectedRows[0].DataBoundItem).Row as CMDataSet.SalesManageRow;
+            if (Selected != null)
+            {
+                if (Selected.IssueDate1 != "NULL")
+                {
+                    FrmETAXREIN _frmETAXREIN = new FrmETAXREIN("1", Selected.SangHo, Selected.Item);
+
+
+                    _frmETAXREIN.Owner = this;
+                    _frmETAXREIN.StartPosition = FormStartPosition.CenterParent;
+                    if (_frmETAXREIN.ShowDialog() == DialogResult.OK)
+                    {
+                        if (_frmETAXREIN.label2.Text == "0") return;
+
+                        _frmETAXREIN.Close();
+                        dtp_Date.Text = _frmETAXREIN.dtp_Date.Text;
+
+                        bar.Value = 0;
+                        bar.Maximum = checkedCodes.Count();
+                        bar.Visible = true;
+                        pnProgress.Visible = true;
+                        string title = string.Format("세금계산서 ({0}-{1})", dtp_Sdate.Text.Replace("/", "-"), dtp_Edate.Text.Replace("/", "-"));
+                        List<CMDataSet.SalesManageRow> sales = new List<CMDataSet.SalesManageRow>();
+
+                        sales.AddRange(cMDataSet.SalesManage.Where(c => c.SalesId == Selected.SalesId));
+                        if (sales.Count() == 0)
+                        {
+                            MessageBox.Show("적용할 건을 선택하십시오.", Text, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            bar.Visible = false;
+                            pnProgress.Visible = false;
+                            return;
+
+                        }
+                        else
+                        {
+                            #region 화일생성일
+                            using (SqlConnection cn = new SqlConnection(Properties.Settings.Default.TruckConnectionString))
+                            {
+
+
+
+
+
+
+                                cn.Open();
+                                SqlCommand cmd = cn.CreateCommand();
+
+
+
+                                cmd.CommandText =
+                                   "UPDATE SalesManage SET IssueDate = @IssueDate, Issue = 1 WHERE    SalesId = " + Selected.SalesId + " ";
+
+
+                                cmd.Parameters.AddWithValue("@IssueDate", dtp_Date.Value);
+
+                                cmd.ExecuteNonQuery();
+                                cn.Close();
+
+
+
+                            }
+                            #endregion
+
+                        }
+                        Thread t = new Thread(new ThreadStart(() =>
+                        {
+
+
+                            var Table = new CMDataSet.TR_DUTYMASTERDataTable();
+                            var Table2 = new CMDataSet.TR_DUTYDETAILDataTable();
+
+                            var Query = SingleDataSet.Instance.Clients.Where(c => c.ClientId == LocalUser.Instance.LogInInfomation.ClientId);
+
+                            string DutyNum = string.Empty;
+                            int i = 0;
+
+
+
+
+                            var Row = Table.NewTR_DUTYMASTERRow();
+                            var Row2 = Table2.NewTR_DUTYDETAILRow();
+
+                            using (SqlConnection cnduty = new SqlConnection(mycalltruck.Admin.Properties.Settings.Default.TR_DBConnectionString))
+                            {
+                                SqlCommand companyCmd = new SqlCommand(
+                                    @"SELECT @DATE + '9' + RIGHT('00000' +	LTRIM(STR(ISNULL(MAX(RIGHT(DUTY_NUM, 5)) + 1, 1))), 5)
+                                              FROM	[TR_DUTYMASTER]
+                                              WHERE	LEFT(DUTY_NUM, 8) = @DATE", cnduty);
+                                companyCmd.Parameters.Add(new SqlParameter("@DATE", dtp_Date.Value.ToString("yyyyMMdd")));
+                                cnduty.Open();
+                                object o = companyCmd.ExecuteScalar();
+                                if (o != null) DutyNum = o.ToString();
+                                cnduty.Close();
+                            }
+
+                            Row.CUSTOMERID = "e" + Query.First().BizNo.Replace("-", "");
+                            Row.DUTY_NUM = dtp_Date.Value.ToString("yyyyMMdd") + "9" + (int.Parse(DutyNum.Substring(9)) + i).ToString().PadLeft(5, '0');
+
+
+                            Row.DUTY_TYPE = "매출";
+                            Row.MCLIENTNO = Query.First().BizNo.Replace("-", "");
+                            Row.MSANGHO = Query.First().Name;
+                            Row.MCEONM = Query.First().CEO;
+                            Row.MUPTEA = Query.First().Uptae;
+                            Row.MUPJONG = Query.First().Upjong;
+
+                            Row.MADDR = Query.First().AddressState + " " + Query.First().AddressCity + " " + Query.First().AddressStreet + " " + Query.First().AddressDetail;
+                            Row.WDATE = dtp_Date.Value.ToString("yyyyMMdd");
+                            Row.TRANSDATE = dtp_Date.Value.ToString("yyyyMMdd");
+                            Row.RECEIPT = "청구";
+
+                            Row.CLIENTNO = Selected.BizNo;
+                            Row.SANGHO = Selected.SangHo;
+                            Row.CEONM = Selected.Ceo;
+                            Row.UPTEA = Selected.Uptae;
+                            Row.UPJONG = Selected.Upjong;
+                            Row.ADDR = Selected.AddressState + " " + Selected.AddressCity + " " + Selected.AddressDetail;
+                            Row.COST = int.Parse(Selected.UnitPrice.ToString()) * int.Parse(Selected.Num.ToString());
+                            Row.VAT = decimal.Parse(Selected.Vat.ToString());
+                            Row.EMAIL = Selected.Email;
+                            Row.TITLE = Selected.SangHo + "(" + dtp_Sdate.Value.ToString("yyyy년MM월") + ") " + Selected.Item;
+                            if (Row.VAT == 0)
+                            {
+                                Row.TAX_TYPE = "면세";
+
+                            }
+                            else
+                            {
+                                Row.TAX_TYPE = "과세";
+                            }
+
+                            Row2.CUSTOMERID = "e" + Query.First().BizNo.Replace("-", "");
+                            Row2.DUTY_NUM = dtp_Date.Value.ToString("yyyyMMdd") + "9" + (int.Parse(DutyNum.Substring(9)) + i).ToString().PadLeft(5, '0');
+                            Row2.ITMSEQ = 1;
+                            Row2.ITMMM = dtp_Date.Value.ToString("MM");
+                            Row2.ITMDD = dtp_Date.Value.ToString("dd");
+                            Row2.ITMNM = Selected.Item;
+                            Row2.ITMQTY = 1;
+                            Row2.ITMNET = int.Parse(Selected.UnitPrice.ToString()) * int.Parse(Selected.Num.ToString());
+                            Row2.COST = int.Parse(Selected.UnitPrice.ToString()) * int.Parse(Selected.Num.ToString());
+                            Row2.VAT = decimal.Parse(Selected.Vat.ToString());
+
+                            Table.AddTR_DUTYMASTERRow(Row);
+                            Table2.AddTR_DUTYDETAILRow(Row2);
+
+                            i++;
+
+
+                            var Adapter = new CMDataSetTableAdapters.TR_DUTYMASTERTableAdapter();
+                            var Adapter2 = new CMDataSetTableAdapters.TR_DUTYDETAILTableAdapter();
+                            Adapter.Update(Table);
+                            Adapter2.Update(Table2);
+
+
+                            pnProgress.Invoke(new Action(() => pnProgress.Visible = false));
+                            FrmETAXRERESULT _frmETAXRERESULT = new FrmETAXRERESULT("1",_frmETAXREIN.dtp_Date.Text);
+                            pnProgress.Invoke(new Action(() => pnProgress.Visible = false));
+                            pnProgress.Invoke(new Action(() =>  _frmETAXRERESULT.Show()));
+                            pnProgress.Invoke(new Action(() => btn_Search_Click(null, null)));
+
+
+                        }));
+                        t.SetApartmentState(ApartmentState.STA);
+                        t.Start();
+
+
+
+
+
+                        try
+                        {
+                          
+
+
+                           
+
+                        }
+                        catch { }
+                    }
+                }
+
+               
+
+
+            }
+        }
+
+        private void dataGridView1_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if (e.ColumnIndex == 26 && e.RowIndex >= 0)
+            {
+                var Selected = ((DataRowView)dataGridView1.Rows[e.RowIndex].DataBoundItem).Row as CMDataSet.SalesManageRow;
+                if (Selected != null)
+                {
+                    if (Selected.IssueDate1 == "NULL")
+                    {
+                        if ((e.PaintParts & DataGridViewPaintParts.Background) == DataGridViewPaintParts.Background)
+                        {
+                            SolidBrush cellBackground = new SolidBrush(e.CellStyle.BackColor);
+                            e.Graphics.FillRectangle(cellBackground, e.CellBounds);
+                            cellBackground.Dispose();
+                        }
+                        e.Handled = true;
+                    }
+                }
+            }
+
+
+
+            if (e.ColumnIndex == 0 && e.RowIndex >= 0)
+            {
+                var Selected = ((DataRowView)dataGridView1.Rows[e.RowIndex].DataBoundItem).Row as CMDataSet.SalesManageRow;
+                if (Selected != null)
+                {
+                    if (Selected.IssueDate1 != "NULL")
+                    {
+                        if ((e.PaintParts & DataGridViewPaintParts.Background) == DataGridViewPaintParts.Background)
+                        {
+                            SolidBrush cellBackground = new SolidBrush(e.CellStyle.BackColor);
+                            e.Graphics.FillRectangle(cellBackground, e.CellBounds);
+                            cellBackground.Dispose();
+                        }
+                        e.Handled = true;
+                    }
+                }
+            }
+        }
+
+        private void txt_BizNo_Leave(object sender, EventArgs e)
+        {
+
+            if (txt_BizNo.Text.Length != 12)
+            {
+                lbl_HasAcc.Visible = false;
+                cmb_HasAcc.Visible = false;
+                panel4.Visible = false;
+                cmb_HasAcc.SelectedIndex = 0;
+                return;
+            }
+
+            var Query = cMDataSet.Clients.Where(c => c.BizNo.Replace("-", "") == txt_BizNo.Text.Replace("-", "")).Where(c => c.PAYLOGISYN == 1).ToArray();
+
+            if (Query.Any())
+            {
+                lbl_HasAcc.Visible = true;
+                cmb_HasAcc.Visible = true;
+                panel4.Visible = true;
+            }
+            else
+            {
+                lbl_HasAcc.Visible = false;
+                cmb_HasAcc.Visible = false;
+                panel4.Visible = false;
+                cmb_HasAcc.SelectedIndex = 0;
+            }
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var Query = SingleDataSet.Instance.Clients.Where(c => c.ClientId == LocalUser.Instance.LogInInfomation.ClientId);
+
+            ProcessStartInfo web = new ProcessStartInfo("iexplore");
+           // web.Arguments = String.Format(@"http://www.truebiz.co.kr/edubill.asp?cid=e{0}&pwd={1}&part=edubill", Query.First().BizNo.Replace("-", "")
+            web.Arguments = String.Format(@"https://www.popbill.com/");
+            Process.Start(web);
+        }
+
+        private void rdb_Normal_CheckedChanged(object sender, EventArgs e)
+        {
+            lbl_HasAcc.Visible = false;
+            cmb_HasAcc.Visible = false;
+            panel4.Visible = false;
+            //cmb_HasAcc.SelectedIndex = 0;
+        }
+
+        private void rdb_Cardpay_CheckedChanged(object sender, EventArgs e)
+        {
+            lbl_HasAcc.Visible = true;
+            cmb_HasAcc.Visible = true;
+            panel4.Visible = true;
+        }
+
+    }
+}

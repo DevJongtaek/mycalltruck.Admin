@@ -1,0 +1,49 @@
+﻿Drivers - CandidateId
+Clients - ClientId
+DriverInstances
+	- DriverId
+	- ClientId
+
+Find Usage
+EXCEL_INSERT_DRIVER -
+EXCEL_INSERT_DRIVER_DEFAULT *
+EXCEL_INSERT_DRIVER_LG -
+EXCEL_INSERT_DRIVER2 -
+EXCEL_INSERT_SubMall -
+EXCEL_INSERT_Trade *
+EXCELINSERT3 *
+Frm0104_DTGTOTAL *
+FrmCarNumSearch *
+FrmMN0104_DRIVERRECORDMANAGE *
+FrmMN0203_CAROWNERMANAGE * 
+FrmMN0203_CAROWNERMANAGE_Add X
+FrmMN0203_CAROWNERMANAGE_Add2 X
+FrmMN0203_CAROWNERMANAGE_FAULT_Add *
+FrmMN0206_SETMANAGE *
+FrmMN0301_CARGOACCEPT *
+FrmMN0303_CARGOFPIS *
+FrmMN0404_CHAGECARMANAGE *
+FrmMN0701_DRIVERPAY *
+FrmMNCardAccTest *
+FrmTrade_Add *
+FrmTradeNew2
+FrmTrade *
+
+***
+SubClientId, ClientUserId, GroupName 조회/변경 부분 수정
+지사정보/그룹정보 -> DriverInstances
+
+***
+APP
+회원가입
+해지 차량은 로그인 불가 *
+그룹정보 삭제
+
+***
+데이터 이전
+1. Drivers -> DriverInstance : ClientId, SubClientId, ClientUserId, CarGubun, RequestFrom, RequestTo
+2. DriverGroup -> DriverInstance : ClientId, GroupName, CarGubun
+
+***
+공차조회/공차예고조회
+어플/관리자 모두 테스트
